@@ -1,28 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class N1_Actividad1 : MonoBehaviour
 {
     // Imagen que se usará como cursor
     public RectTransform cursorImage;
 
-    // Contenedor donde instanciar las imágenes
+    //GameObject que generan y guardan las imágenes
     public GameObject generador;
-    // Lista de sprites a mostrar
     public List<Sprite> imagenes;
+    private Image generadorImage;
 
-    // Prefab de Image UI que usaremos para mostrar los sprites
-    public GameObject imagePrefab;
 
     void Start()
     {
         Cursor.visible = false; // Oculta el cursor del sistema
 
-        // Iniciar la corrutina de generación
+        // Obtiene el componente Image de generador
+        generadorImage = generador.GetComponent<Image>();
+       
         StartCoroutine(Act1());
+
+        //Esto asegura que el generador tenga un CanvasGroup (para que funcione lo de coger el objeto)
+        if (generador.GetComponent<CanvasGroup>() == null)
+        {
+            generador.AddComponent<CanvasGroup>();
+        }
+
+        //Esto añade un manegador de eventos para coger y soltar
+        if(generador.GetComponent<N1_DragAndDrop>() == null)
+        {
+            generador.AddComponent<N1_DragAndDrop>();
+        }
     }
 
     void Update()
@@ -34,28 +47,50 @@ public class N1_Actividad1 : MonoBehaviour
 
     private IEnumerator Act1()
     {
-        // Bucle infinito que recorre la lista
+        // Bucle infinito que recorre la lista de sprites
         while (true)
         {
             foreach (Sprite sprite in imagenes)
             {
-                // Instancia el prefab como hijo de "generador"
-                GameObject instancia = Instantiate(imagePrefab, generador.transform);
+                generadorImage.sprite = sprite;
 
-                // Asigna el sprite al componente Image del prefab
-                Image imgComponent = instancia.GetComponent<Image>();
-                if (imgComponent != null)
-                {
-                    imgComponent.sprite = sprite;
-                }
-
-                // Espera 7 segundos
                 yield return new WaitForSeconds(7f);
-
-                // Destruye la instancia antes de pasar a la siguiente
-                Destroy(instancia);
             }
         }
+    }
+}
+
+
+public class N1_DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+{
+    private CanvasGroup canvasGroup;
+
+    void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // Al iniciar el drag, permite que el objeto ignore los raycasts para no bloquear otros
+        canvasGroup.blocksRaycasts = false;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        // Mientras arrastramos, movemos el transform a la posición del cursor
+        RectTransform rt = GetComponent<RectTransform>();
+        Vector2 globalMousePos;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(rt.parent as RectTransform, eventData.position, eventData.pressEventCamera, out globalMousePos))
+        {
+            rt.localPosition = globalMousePos;
+        }
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        // Al soltar, vuelve a bloquear los raycasts
+        canvasGroup.blocksRaycasts = true;
     }
 }
 
