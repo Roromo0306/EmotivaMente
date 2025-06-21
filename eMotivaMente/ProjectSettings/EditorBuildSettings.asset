@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: "Assets/Scenes/Entreno mi pensamiento/Nivel 1/Men\xFA del nivel 1.unity"
+    guid: 4a2bd7f78c8008745a15a6af67615500
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 1/N1_Actividad 1.unity
+    guid: 2ee1cbe5174bf974da262e6524152409
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 1/N1_Actividad 2.unity
+    guid: 26611da9bdaea37469b1b7339163e317
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 1/N1_Actividad 3.unity
+    guid: f7e20be4316609243b9b3de8cdc4624b
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 1/N1_Actividad 4.unity
+    guid: d3aebf4ed708e1f49a3db7e4d4052ac7
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 1/N1_Actividad 5.unity
+    guid: a87ca25a133a6424294c197ed73aaa0d
   m_configObjects: {}
