@@ -678,7 +678,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 545150527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1432585249}
+        m_TargetAssemblyTypeName: Menu_Nivel1_Entrena, Assembly-CSharp
+        m_MethodName: sonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &545150527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1213,7 +1225,7 @@ Canvas:
   m_GameObject: {fileID: 1432585247}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

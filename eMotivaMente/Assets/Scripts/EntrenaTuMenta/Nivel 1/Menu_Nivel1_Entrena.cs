@@ -58,7 +58,7 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
         }
     }
 
-    private void sonido()
+    public void sonido()
     {
         fuenteAudio.Play();
     }
