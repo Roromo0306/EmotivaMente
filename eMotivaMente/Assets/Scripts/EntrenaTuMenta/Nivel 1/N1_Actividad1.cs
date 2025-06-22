@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class N1_Actividad1 : MonoBehaviour
+public class N1_Actividad1 : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     // Imagen que se usará como cursor
     public RectTransform cursorImage;
@@ -15,6 +15,11 @@ public class N1_Actividad1 : MonoBehaviour
     public List<Sprite> imagenes;
     private Image generadorImage;
 
+    //Variables para que funcione el arrastre
+    private Canvas canvas;
+    private RectTransform rectTransform;
+    private CanvasGroup canvasGroup;
+    private Vector2 originalPosition;
 
     void Start()
     {
@@ -22,20 +27,15 @@ public class N1_Actividad1 : MonoBehaviour
 
         // Obtiene el componente Image de generador
         generadorImage = generador.GetComponent<Image>();
-       
+
+        //Configuración inicila para el arratre
+        rectTransform = generador.GetComponent<RectTransform>();
+        canvas = GetComponentInParent<Canvas>();
+        canvasGroup = generador.GetComponent<CanvasGroup>() ?? generador.AddComponent<CanvasGroup>();
+        originalPosition = rectTransform.anchoredPosition;
+
+
         StartCoroutine(Act1());
-
-        //Esto asegura que el generador tenga un CanvasGroup (para que funcione lo de coger el objeto)
-        if (generador.GetComponent<CanvasGroup>() == null)
-        {
-            generador.AddComponent<CanvasGroup>();
-        }
-
-        //Esto añade un manegador de eventos para coger y soltar
-        if(generador.GetComponent<N1_DragAndDrop>() == null)
-        {
-            generador.AddComponent<N1_DragAndDrop>();
-        }
     }
 
     void Update()
@@ -53,44 +53,29 @@ public class N1_Actividad1 : MonoBehaviour
             foreach (Sprite sprite in imagenes)
             {
                 generadorImage.sprite = sprite;
+                rectTransform.anchoredPosition = originalPosition; //Restablece la posición
 
                 yield return new WaitForSeconds(7f);
             }
         }
     }
-}
 
-
-public class N1_DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
-{
-    private CanvasGroup canvasGroup;
-
-    void Awake()
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup = GetComponent<CanvasGroup>();
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        // Al iniciar el drag, permite que el objeto ignore los raycasts para no bloquear otros
-        canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = 0.6f; // Hace ligeramente transparente
+        canvasGroup.blocksRaycasts = false; // Permite que eventos pasen a objetos detrás
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        // Mientras arrastramos, movemos el transform a la posición del cursor
-        RectTransform rt = GetComponent<RectTransform>();
-        Vector2 globalMousePos;
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(rt.parent as RectTransform, eventData.position, eventData.pressEventCamera, out globalMousePos))
-        {
-            rt.localPosition = globalMousePos;
-        }
+        // Convierte la posición del ratón a coordenadas del Canvas
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
-        // Al soltar, vuelve a bloquear los raycasts
-        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f; // Restaura opacidad
+        canvasGroup.blocksRaycasts = true; // Habilita nuevamente los raycasts
     }
 }
 

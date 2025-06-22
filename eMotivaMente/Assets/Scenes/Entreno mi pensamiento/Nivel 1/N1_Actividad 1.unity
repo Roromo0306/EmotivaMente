@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 1939630410}
   - component: {fileID: 1939630412}
   - component: {fileID: 1939630413}
+  - component: {fileID: 1939630414}
   m_Layer: 5
   m_Name: LugarDeAparicion
   m_TagString: Untagged
@@ -621,6 +622,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &1939630414
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939630409}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2022531853
 GameObject:
   m_ObjectHideFlags: 0
