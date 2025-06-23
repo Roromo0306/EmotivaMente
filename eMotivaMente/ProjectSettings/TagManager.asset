@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ForeGround
+    uniqueID: 2063210445
+    locked: 0
+  - name: Mano
+    uniqueID: 4179622009
+    locked: 0
