@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class N1_Actividad1 : MonoBehaviour
@@ -18,6 +19,10 @@ public class N1_Actividad1 : MonoBehaviour
     private Vector3 offset;
 
     private BoxCollider2D boxCollider;
+
+    [HideInInspector] public int final; //Esto me va a servir como "ID" para saber qué victoria se ha logrado
+    public bool Fase = false; //Este bool me servirá pasa asegurarme de que las condiciones de victoria no salten antes de terminar la actividad
+    public int fase = 0;
 
     void Awake()
     {
@@ -83,24 +88,33 @@ public class N1_Actividad1 : MonoBehaviour
         }
 
         //Condición de victoria
-        if(GenS.puntospos == 7 && GenS.puntosneg == 0)
+        if(Fase)
         {
-            //Ha acertado al 100%
-        }
-        else
-        {
-            if(GenS.puntospos <=7 && GenS.puntosneg <= 2)
+            if (GenS.puntospos == 7 && GenS.puntosneg == 0)
             {
-                //Esta bien pero con algunos fallos
+                //Ha acertado al 100%
+                final = 1;
             }
             else
             {
-                if(GenS.puntosneg == 3)
+                if (GenS.puntosneg == 3 || GenS.puntospos == 0 && GenS.puntosneg == 0)
                 {
                     //esta mal
+                    final = 3;
+                }
+
+                else
+                {
+                   
+                    if (GenS.puntospos <= 7 && GenS.puntosneg <= 2)
+                    {
+                        //Esta bien pero con algunos fallos
+                        final = 2;
+                    }
                 }
             }
         }
+
  
     }
 
@@ -115,8 +129,11 @@ public class N1_Actividad1 : MonoBehaviour
                 GenS.parada = false;
                 generadorRenderer.sprite = sprite;
                 generador.transform.position = originalPosition;
-
-
+                fase++;
+                if(fase == 11)
+                {
+                    Fase = true;
+                }
                 yield return new WaitForSeconds(7f);
                 
                 

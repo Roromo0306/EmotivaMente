@@ -11,6 +11,8 @@ public class DetectorColision : MonoBehaviour
     private SpriteRenderer sp;
 
     public bool parada = false; //Uso este bool para parar la corrutina
+
+    public GameObject manager;
     private void Start()
     {
         esto = this.gameObject;
@@ -19,6 +21,7 @@ public class DetectorColision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        N1_Actividad1 n = manager.GetComponent<N1_Actividad1>();
         if (collision.gameObject.CompareTag("Maleta"))
         {
             if(sp.sprite.name == "auriculares")
@@ -70,6 +73,7 @@ public class DetectorColision : MonoBehaviour
             if(sp.sprite.name == "zapatillas")
             {
                 puntospos++;
+                n.Fase = true;
             }
         }
     }

@@ -8,7 +8,7 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
 {
     public Button Sonido, N1, N2, N3, N4, N5;
     public AudioSource fuenteAudio;
-    public bool n1 = false, n2= false, n3=false, n4=false, n5=false; 
+    public static bool n1 = false, n2= false, n3=false, n4=false, n5=false; 
     void Start()
     {
         Sonido.onClick.AddListener(sonido);
