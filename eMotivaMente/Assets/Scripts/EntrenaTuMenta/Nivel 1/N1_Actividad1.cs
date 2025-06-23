@@ -35,6 +35,7 @@ public class N1_Actividad1 : MonoBehaviour
 
         // Guarda posición original del generador
         originalPosition = generador.transform.position;
+        Time.timeScale = 1;
     }
 
     void Start()
@@ -42,6 +43,7 @@ public class N1_Actividad1 : MonoBehaviour
         // Inicia el ciclo de sprites
         StartCoroutine(Act1());
         boxCollider = generador.GetComponent<BoxCollider2D>();
+        Time.timeScale = 1;
     }
 
     void Update()
