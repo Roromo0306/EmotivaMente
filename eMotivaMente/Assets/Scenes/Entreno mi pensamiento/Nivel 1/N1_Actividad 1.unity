@@ -266,6 +266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a08d1e7568321e428e0f94728222cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntospos: 0
+  puntosneg: 0
+  parada: 0
 --- !u!50 &82286253
 Rigidbody2D:
   serializedVersion: 4
@@ -354,7 +357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.8, y: 11.27}
+  m_Size: {x: 12.83, y: 11.29}
   m_EdgeRadius: 0
 --- !u!212 &198331941
 SpriteRenderer:
