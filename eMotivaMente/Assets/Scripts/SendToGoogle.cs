@@ -19,7 +19,7 @@ public class SendToGoogle : MonoBehaviour
     private string residencia;
 
     // URL del formulario de Google Forms donde vamos a enviar los datos
-    [SerializeField] private string URL = "https://docs.google.com/forms/d/e/1FAIpQLSd8kaRT96vI1GBIKM6sgPQg9wxHfWvZeCaOb46VQ3jwTkI9rA/formResponse";
+    [SerializeField] private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8kaRT96vI1GBIKM6sgPQg9wxHfWvZeCaOb46VQ3jwTkI9rA/formResponse";
 
     // Coroutine para enviar los datos al formulario mediante POST
     IEnumerator Post(string nombre, string edad, string residencia)
