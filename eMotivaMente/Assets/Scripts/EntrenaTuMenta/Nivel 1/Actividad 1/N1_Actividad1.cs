@@ -6,14 +6,14 @@ using UnityEngine;
 public class N1_Actividad1 : MonoBehaviour
 {
    
-    public GameObject cursorImage;
+    public GameObject cursorImage; //Imagen del cursor
 
     public GameObject generador;
     public List<Sprite> imagenes;
 
     private SpriteRenderer generadorRenderer;
     private Collider2D generadorCollider;
-    private Vector3 originalPosition;
+    private Vector3 originalPosition; //Posición original del generador
 
     private bool isDragging = false;
     private Vector3 offset;
