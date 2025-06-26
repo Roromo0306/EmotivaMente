@@ -33,46 +33,55 @@ public class DetectorColision : MonoBehaviour
             if(sp.sprite.name == "camiseta")
             {
                 puntospos++;
+                parada = true;
             }
 
             if(sp.sprite.name == "cushion-gbe1cbcd51_1280")
             {
                 puntosneg++;
+                parada = true;
             }
 
             if(sp.sprite.name == "jabón")
             {
                 puntospos++;
+                parada = true;
             }
 
             if(sp.sprite.name == "móvil")
             {
                 puntospos++;
+                parada = true;
             }
 
             if(sp.sprite.name == "pantalón")
             {
                 puntospos++;
+                parada = true;
             }
 
             if(sp.sprite.name == "paraguas")
             {
                 puntosneg++;
+                parada = true;
             }
 
             if(sp.sprite.name == "peine")
             {
                 puntospos++;
+                parada = true;
             }
 
             if(sp.sprite.name == "pelota")
             {
                 puntosneg++;
+                parada = true;
             }
 
             if(sp.sprite.name == "zapatillas")
             {
                 puntospos++;
+                parada = true;
                 n.Fase = true;
             }
         }
