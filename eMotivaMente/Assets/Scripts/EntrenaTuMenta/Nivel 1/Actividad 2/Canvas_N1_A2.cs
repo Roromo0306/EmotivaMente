@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class Canvas_N1_A2 : MonoBehaviour
 {
-    public Canvas canvas, canvas2;
-    public Button Ejemplo, Actividad, Menu, Reintentar;
-    public int modo = 0; //Para identificar si activar ejemplo o actividad.
+    public Canvas canvas, canvas2, canvasfin;
+    public Button Ejemplo, Actividad;
 
-    public GameObject managaer;
+    public GameObject managaer, detector;
     void Start()
     {
         canvas2.enabled = false;
@@ -17,6 +16,7 @@ public class Canvas_N1_A2 : MonoBehaviour
         Ejemplo.onClick.AddListener(ejemplo);
         Actividad.onClick.AddListener(actividad);
         canvas.enabled = true;
+        canvasfin.enabled = false;
     }
 
     
@@ -31,7 +31,7 @@ public class Canvas_N1_A2 : MonoBehaviour
         canvas.enabled = false;
         Ejemplo.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(false);
-        modo = 1;
+        m.StartCoroutine(m.Act2Ejemplo());
         m.canvas = true;
         Time.timeScale = 1;
 
@@ -45,6 +45,24 @@ public class Canvas_N1_A2 : MonoBehaviour
 
     private void actividad()
     {
+        Manager_N1_A2 m = managaer.GetComponent<Manager_N1_A2>();
+        Detector_Ejemplo_Col d = detector.GetComponent<Detector_Ejemplo_Col>();
 
+        canvas.enabled = false;
+        Ejemplo.gameObject.SetActive(false);
+        Actividad.gameObject.SetActive(false);
+        m.StartCoroutine(m.Act2());
+        m.canvas = true;
+        Time.timeScale = 1;
+
+        //Activo cusor
+        m.cursor = true;
+
+        //Activo el sprite renderer u el collider del generador de ejemplo
+        m.generadorEjemploRenderer.enabled = true;
+        m.generadorEjemploCollider.enabled = true;
+
+        d.puntosPositivos = 0;
+        d.puntosNegativos = 0;
     }
 }
