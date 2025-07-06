@@ -15,17 +15,19 @@ public class Manager_N1_A2 : MonoBehaviour
 
     public GameObject cursorImage;
 
-    private SpriteRenderer generadorEjemploRenderer;
-    private Collider2D generadorEjemploCollider;
+    [HideInInspector] public SpriteRenderer generadorEjemploRenderer;
+    [HideInInspector] public Collider2D generadorEjemploCollider;
     private Vector3 originalPositionEjemplo;
 
-    private bool isDragging = false;
+    public bool isDragging = false;
     private Vector3 offset;
 
     private BoxCollider2D boxCollider;
 
     public int fase = 0;
-    public bool Fase = false;
+    public bool Fase = false, canvas =false;
+
+    [HideInInspector] public bool cursor = false;
 
     void Start()
     {
@@ -40,83 +42,123 @@ public class Manager_N1_A2 : MonoBehaviour
         originalPositionEjemplo = generador_ejemplo.transform.position;
 
         // Inicia el ciclo de sprites
-       // StartCoroutine(Act2Ejemplo());
+        StartCoroutine(Act2Ejemplo());
         boxCollider = generador_ejemplo.GetComponent<BoxCollider2D>();
         Time.timeScale = 1;
 
         canva2.enabled = true;
         texto2.gameObject.SetActive(false);
         texto3.gameObject.SetActive(false);
+        texto1.gameObject.SetActive(false);
+
+        generadorEjemploRenderer.enabled = false;
+        generadorEjemploCollider.enabled = false;   
+
     }
 
    
     void Update()
     {
-        DetectorColision GenS = generador_ejemplo.GetComponent<DetectorColision>();
+        Detector_Ejemplo_Col gen_ejemplo = generador_ejemplo.GetComponent<Detector_Ejemplo_Col>();
+        Canvas_N1_A2 can = canva.GetComponent<Canvas_N1_A2>();
 
         //Actualiza posición del cursor personalizado
-        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorld.z = 0;
-        cursorImage.transform.position = mouseWorld;
-
-        //Detecta clic inicial
-        if (Input.GetMouseButtonDown(0))
+        if (cursor)
         {
-            Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
-            if (hit == generadorEjemploCollider)
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorld.z = 0;
+            cursorImage.transform.position = mouseWorld;
+
+            //Detecta clic inicial
+            if (Input.GetMouseButtonDown(0))
             {
-                isDragging = true;
-                offset = generador_ejemplo.transform.position - mouseWorld;
+                Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
+                if (hit == generadorEjemploCollider)
+                {
+                    isDragging = true;
+                    offset = generador_ejemplo.transform.position - mouseWorld;
+                }
+            }
+
+
+            //Con este if lo que controlo es que si se detecta una colision entre la
+            //caja o el playo y el sprite, el jugador ya no puede coger el objeto hasta que cambie
+            if (gen_ejemplo.parada)
+            {
+
+            }
+            else
+            {
+
+                if (isDragging) //Arrastrar el sprite
+                {
+                    generador_ejemplo.transform.position = mouseWorld + offset;
+                    boxCollider.enabled = false;
+                }
+
+
+                if (Input.GetMouseButtonUp(0) && isDragging) //Suelto el sprite
+                {
+                    boxCollider.enabled = true;
+                    isDragging = false;
+                }
             }
         }
 
 
-        //Con este if lo que controlo es que si se detecta una colision entre la
-        //caja o el playo y el sprite, el jugador ya no puede coger el objeto hasta que cambie
-        /*if (GenS.parada)
+
+        //Condiconales para la activacion de los textos
+        if (canvas)
         {
+            texto1.gameObject.SetActive(true);
+            texto2.gameObject.SetActive(false);
+            texto3.gameObject.SetActive(false);
 
         }
-        else
+        if (fase == 2)
         {
-
-            if (isDragging) //Arrastrar el sprite
-            {
-                generador_ejemplo.transform.position = mouseWorld + offset;
-                boxCollider.enabled = false;
-            }
-
-
-            if (Input.GetMouseButtonUp(0) && isDragging) //Suelto el sprite
-            {
-                boxCollider.enabled = true;
-                isDragging = false;
-            }
-        }*/
-
-
-        if(fase == 1)
-        {
+            canvas = false;
             texto1.gameObject.SetActive(false);
             texto2.gameObject.SetActive(true);
             texto3.gameObject.SetActive(false);
         }
-        if (fase == 2)
+        if (fase == 3)
         {
             texto1.gameObject.SetActive(false);
             texto2.gameObject.SetActive(false);
             texto3.gameObject.SetActive(true);
         }
+        if (fase == 4)
+        {
+            texto1.gameObject.SetActive(false);
+            texto2.gameObject.SetActive(false);
+            texto3.gameObject.SetActive(false);
+
+            //Vuelta al canvas
+
+            Time.timeScale = 0; //Devuelvo el tiempo a 0
+            can.canvas.enabled = true; //Activo el canvas
+            can.modo = 0;       //Ponto el modo a 0
+            can.Ejemplo.gameObject.SetActive(true);
+            can.Actividad.gameObject.SetActive(true);
+
+            generadorEjemploCollider.enabled = false; //Desabilito el colider y el renderer del generador de ejemplo
+            generadorEjemploRenderer.enabled = false;
+            fase = 0; //Vuelvo a poner la fase en 0
+            cursor = false; //Desactivo cursor
+        }
+
+
     }
 
-    /*private IEnumerator Act2Ejemplo()
+    private IEnumerator Act2Ejemplo()
     {
-        //DetectorColision GenS = generador_ejemplo.GetComponent<DetectorColision>();
+        Detector_Ejemplo_Col gen_ejemplo = generador_ejemplo.GetComponent<Detector_Ejemplo_Col>();
         while (true)
         {
             foreach (var sprite in sprite_ejemplo)
             {
-                GenS.parada = false;
+                gen_ejemplo.parada = false;
                 generadorEjemploRenderer.sprite = sprite;
                 generador_ejemplo.transform.position = originalPositionEjemplo;
 
@@ -126,5 +168,5 @@ public class Manager_N1_A2 : MonoBehaviour
 
             }
         }
-    }*/
+    }
 }
