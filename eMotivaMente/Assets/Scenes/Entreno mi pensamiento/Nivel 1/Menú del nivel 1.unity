@@ -1171,11 +1171,6 @@ MonoBehaviour:
   N4: {fileID: 80452911}
   N5: {fileID: 1372806866}
   fuenteAudio: {fileID: 1432585248}
-  n1: 0
-  n2: 0
-  n3: 0
-  n4: 0
-  n5: 0
 --- !u!114 &1432585250
 MonoBehaviour:
   m_ObjectHideFlags: 0

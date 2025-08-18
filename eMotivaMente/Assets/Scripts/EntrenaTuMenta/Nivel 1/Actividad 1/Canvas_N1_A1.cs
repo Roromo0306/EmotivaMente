@@ -42,7 +42,9 @@ public class Canvas_N1_A1 : MonoBehaviour
         {
             canvas.enabled=true;
             Time.timeScale = 0;
-            if(n.final == 1)
+            Cursor.visible = true;
+            n.cursorImage.SetActive(false);
+            if (n.final == 1)
             {
                 menu.gameObject.SetActive(true);
                 texto1.gameObject.SetActive(true);

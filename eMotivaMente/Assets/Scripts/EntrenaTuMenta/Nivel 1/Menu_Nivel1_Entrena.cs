@@ -17,6 +17,7 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
         N3.onClick.AddListener(Nivel3);
         N4.onClick.AddListener(Nivel4);
         N5.onClick.AddListener(Nivel5);
+        Cursor.visible = true;
 
     }
 

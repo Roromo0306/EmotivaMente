@@ -33,8 +33,8 @@ public class Manager_N1_A2 : MonoBehaviour
     {
         Canvas_N1_A2 can = canva.GetComponent<Canvas_N1_A2>();
 
-        // Oculta cursor del sistema
-        Cursor.visible = false;
+        cursor = false; //Desactivo cursor
+        Cursor.visible = true; //Activo el cursor para que se vea
 
         // Obtiene componentes
         generadorEjemploRenderer = generador_ejemplo.GetComponent<SpriteRenderer>();
@@ -142,10 +142,11 @@ public class Manager_N1_A2 : MonoBehaviour
             can.Ejemplo.gameObject.SetActive(true);
             can.Actividad.gameObject.SetActive(true);
 
-            generadorEjemploCollider.enabled = false; //Desabilito el colider y el renderer del generador de ejemplo
+            generadorEjemploCollider.enabled = false; //Deshabilito el colider y el renderer del generador de ejemplo
             generadorEjemploRenderer.enabled = false;
             fase = 0; //Vuelvo a poner la fase en 0
-            cursor = false; //Desactivo cursor
+            cursor = false; //Desactivo la imagen de la mano (para que no lo siga)
+            Cursor.visible = true; //Activo el cursor para que se vea
         }
 
         //Condición de fin al terminar la actividad principal
@@ -158,6 +159,9 @@ public class Manager_N1_A2 : MonoBehaviour
             generadorEjemploRenderer.enabled = false;
             fase = 0; //Vuelvo a poner la fase en 0
             cursor = false; //Desactivo cursor
+            Cursor.visible = true; //Activo el cursor para que se vea
+
+            can.empezado = true;
         }
 
 

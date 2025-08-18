@@ -28,6 +28,7 @@ public class N1_Actividad1 : MonoBehaviour
     {
         // Oculta cursor del sistema
         Cursor.visible = false;
+        
 
         // Obtiene componentes
         generadorRenderer = generador.GetComponent<SpriteRenderer>();
@@ -44,6 +45,7 @@ public class N1_Actividad1 : MonoBehaviour
         StartCoroutine(Act1());
         boxCollider = generador.GetComponent<BoxCollider2D>();
         Time.timeScale = 1;
+        cursorImage.SetActive(true);
     }
 
     void Update()

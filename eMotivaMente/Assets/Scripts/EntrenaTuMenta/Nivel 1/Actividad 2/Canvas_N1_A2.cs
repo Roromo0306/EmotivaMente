@@ -9,6 +9,8 @@ public class Canvas_N1_A2 : MonoBehaviour
     public Button Ejemplo, Actividad;
 
     public GameObject managaer, detector;
+
+    [HideInInspector] public bool empezado;
     void Start()
     {
         canvas2.enabled = false;
@@ -17,6 +19,7 @@ public class Canvas_N1_A2 : MonoBehaviour
         Actividad.onClick.AddListener(actividad);
         canvas.enabled = true;
         canvasfin.enabled = false;
+        empezado = false;
     }
 
     
@@ -37,6 +40,7 @@ public class Canvas_N1_A2 : MonoBehaviour
 
         //Activo cusor
         m.cursor = true;
+        Cursor.visible = false;
 
         //Activo el sprite renderer u el collider del generador de ejemplo
         m.generadorEjemploRenderer.enabled = true;
@@ -49,14 +53,16 @@ public class Canvas_N1_A2 : MonoBehaviour
         Detector_Ejemplo_Col d = detector.GetComponent<Detector_Ejemplo_Col>();
 
         canvas.enabled = false;
+        canvas2.enabled = false; //Desactivo el canvas 2 para que no salgan los textos
         Ejemplo.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(false);
         m.StartCoroutine(m.Act2());
         m.canvas = true;
         Time.timeScale = 1;
 
-        //Activo cusor
+        //Activo cusor. Lo primero es para activar que la imagen siga al cursor y el segundo para desactivar la imagen del cursor
         m.cursor = true;
+        Cursor.visible = false;
 
         //Activo el sprite renderer u el collider del generador de ejemplo
         m.generadorEjemploRenderer.enabled = true;
