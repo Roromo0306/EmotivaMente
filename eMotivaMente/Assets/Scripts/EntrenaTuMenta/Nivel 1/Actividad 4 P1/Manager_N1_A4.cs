@@ -24,7 +24,8 @@ public class Manager_N1_A4 : MonoBehaviour
 
     public float segundosEspera = 1f; //El tiempo que espera antes de resetear
 
-    private Image imagen1, imagen2;
+    public Image imagen1, imagen2;
+    public Button cuadrado1, cuadrado2;
 
     public GameObject cesta_ejemplo, cesta_actividad;
 
@@ -61,7 +62,6 @@ public class Manager_N1_A4 : MonoBehaviour
             if (!activado)
             {
                 EmpezarActividad();
-
             }
 
             if (colA.puntosActividad == 8)
@@ -183,12 +183,14 @@ public class Manager_N1_A4 : MonoBehaviour
             {
                 nombre1 = img.name;
                 imagen1 = Comida_actividad[i];
+                cuadrado1 = cuadrados_actividad[i];
             }
 
             if (baldosa == 1)
             {
                 nombre2 = img.name;
                 imagen2 = Comida_actividad[i];
+                cuadrado2 = cuadrados_actividad[i];
             }
 
             baldosa++;
@@ -210,11 +212,12 @@ public class Manager_N1_A4 : MonoBehaviour
                 nombre1 = nombre2 = null;
                 imagen1 = null;
                 imagen2 = null;
+                cuadrado1 = cuadrado2 = null;
             }
 
             if (nombre1 != nombre2)
             {
-                StartCoroutine(Reseteo());
+                StartCoroutine(ReseteoA());
             }
         }
 
@@ -239,6 +242,32 @@ public class Manager_N1_A4 : MonoBehaviour
             imagen2 = null;
 
         }
+    }
+
+    private IEnumerator ReseteoA()
+    {
+        yield return new WaitForSeconds(segundosEspera);
+
+        int cant = Mathf.Min(cuadrados_actividad.Count, Comida_actividad.Count); //Lo que hace es contar los elementos de cada lista y se queda con el más pequeño
+
+        /*for (int i = 0; i < cant; i++)
+        {
+            cuadrados_actividad[i].gameObject.SetActive(true);
+            Comida_actividad[i].gameObject.SetActive(false);
+        }*/
+
+        imagen1.gameObject.SetActive(false);
+        imagen2.gameObject.SetActive(false);
+        cuadrado1.gameObject.SetActive(true);
+        cuadrado2.gameObject.SetActive(true);
+
+        nombre1 = null;
+        nombre2 = null;
+        baldosa = 0;
+
+        imagen1 = null;
+        imagen2 = null;
+        cuadrado1 = cuadrado2 = null;
     }
 
     private void finalE()

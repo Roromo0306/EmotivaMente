@@ -25,7 +25,8 @@ public class colision_N1_A4 : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Comida_A4"))
             {
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
                 puntosActividad += 0.5f;
             }
         }
