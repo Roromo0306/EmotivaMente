@@ -32,7 +32,7 @@ public class Manager_N1_A4 : MonoBehaviour
     public Canvas canvas_ejemplo, canvas_actividad, canvasFinal;
     void Start()
     {
-        
+        canvasFinal.enabled = false;
     }
 
    
