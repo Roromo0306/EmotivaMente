@@ -781,7 +781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1308925414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,7 +829,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308925413}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -1805,15 +1805,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tren: {fileID: 1849149191}
   coche: {fileID: 1490430848}
-  contador: 4
   opcion: 0
   aciertos: 0
   fallos: 0
   BCT: 0
+  contadorEjemplo: 0
+  contadorActividad: 0
   Coche: {fileID: 7442321}
   Tren: {fileID: 742780109}
   start: {fileID: 1791081111}
   empezar: 0
+  canvas: {fileID: 2070516530}
 --- !u!1 &1849149190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,7 +1963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2070516528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2062,6 +2064,8 @@ MonoBehaviour:
   ejemplo: {fileID: 1762554672}
   actividad: {fileID: 1327011696}
   canvas: {fileID: 2070516530}
+  canvasEjemplo: {fileID: 1308925416}
+  modo: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

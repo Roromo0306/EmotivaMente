@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class Canvas_N1_A3 : MonoBehaviour
 {
     public Button ejemplo, actividad;
-    public Canvas canvas;
+    public Canvas canvas, canvasEjemplo;
+    public int modo = 0;
+    
     void Start()
     {
         ejemplo.onClick.AddListener(Ejemplo);
         actividad.onClick.AddListener(Actividad);
         canvas.enabled = true;
+        canvasEjemplo.enabled = false;
+        Time.timeScale = 0;
     }
 
     
@@ -25,6 +29,9 @@ public class Canvas_N1_A3 : MonoBehaviour
         canvas.enabled = false;
         ejemplo.gameObject.SetActive(false);
         actividad.gameObject.SetActive(false);
+        canvasEjemplo.enabled = true; //Esto activa el texto de ejemplo
+        modo = 1;
+        Time.timeScale = 1;
     }
 
     private void Actividad()
@@ -32,5 +39,7 @@ public class Canvas_N1_A3 : MonoBehaviour
         canvas.enabled = false;
         ejemplo.gameObject.SetActive(false);
         actividad.gameObject.SetActive(false);
+        modo = 2;
+        Time.timeScale = 1;
     }
 }
