@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.ExceptionServices;
 //using Microsoft.Unity.VisualStudio.Editor;
 
 public class Manager_N1_A2 : MonoBehaviour
@@ -28,6 +29,7 @@ public class Manager_N1_A2 : MonoBehaviour
     public bool Fase = false, canvas =false;
 
     [HideInInspector] public bool cursor = false;
+
 
     void Start()
     {
@@ -171,6 +173,8 @@ public class Manager_N1_A2 : MonoBehaviour
     public IEnumerator Act2Ejemplo()
     {
         Detector_Ejemplo_Col gen_ejemplo = generador_ejemplo.GetComponent<Detector_Ejemplo_Col>();
+        Canvas_N1_A2 can = canva.GetComponent<Canvas_N1_A2>();
+
         while (true)
         {
             foreach (var sprite in sprite_ejemplo)
@@ -181,16 +185,18 @@ public class Manager_N1_A2 : MonoBehaviour
 
                 fase++;
                 yield return new WaitForSeconds(10f);
-
-
             }
         }
+        can.corru = null;
+        yield break;
     }
 
     //Corrutina de la actividad
     public IEnumerator Act2()
     {
         Detector_Ejemplo_Col gen_ejemplo = generador_ejemplo.GetComponent<Detector_Ejemplo_Col>();
+        Canvas_N1_A2 can = canva.GetComponent<Canvas_N1_A2>();
+
         while (true)
         {
             foreach (var sprite in sprite_actividad)
@@ -201,10 +207,11 @@ public class Manager_N1_A2 : MonoBehaviour
 
                 faseAct++;
                 yield return new WaitForSeconds(7f);
-
-
             }
+            
         }
+        can.corru = null;
+        yield break;
     }
 
 }

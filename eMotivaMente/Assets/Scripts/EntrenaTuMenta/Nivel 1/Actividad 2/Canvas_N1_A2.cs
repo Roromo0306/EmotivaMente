@@ -11,6 +11,8 @@ public class Canvas_N1_A2 : MonoBehaviour
     public GameObject managaer, detector;
 
     [HideInInspector] public bool empezado;
+
+    public Coroutine corru = null;
     void Start()
     {
         canvas2.enabled = false;
@@ -34,7 +36,14 @@ public class Canvas_N1_A2 : MonoBehaviour
         canvas.enabled = false;
         Ejemplo.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(false);
-        m.StartCoroutine(m.Act2Ejemplo());
+
+        //Paro cualquier corrutina del momento y activo la nueva
+        if(corru != null)
+        {
+            StopCoroutine(corru);
+        }
+        corru = m.StartCoroutine(m.Act2Ejemplo());
+
         m.canvas = true;
         Time.timeScale = 1;
 
@@ -56,7 +65,15 @@ public class Canvas_N1_A2 : MonoBehaviour
         canvas2.enabled = false; //Desactivo el canvas 2 para que no salgan los textos
         Ejemplo.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(false);
-        m.StartCoroutine(m.Act2());
+
+        //Paro cualquier corrutina del momento y activo la nueva
+        if (corru != null)
+        {
+            StopCoroutine(corru);
+        }
+        corru = m.StartCoroutine(m.Act2());
+
+
         m.canvas = true;
         Time.timeScale = 1;
 
