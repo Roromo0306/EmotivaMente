@@ -11,6 +11,8 @@ public class Manager_N1_A5 : MonoBehaviour
     public Sprite rojo, ambar, verde;
     public Image ej, act;
 
+    public Canvas canvaIncio;
+
     void Start()
     {
         
@@ -41,6 +43,13 @@ public class Manager_N1_A5 : MonoBehaviour
         int cont = 0;
         
         ej.sprite = ejemplo[cont];
+
+        if (cont >= 4)
+        {
+            cont = 0;
+            modo = 0;
+            canvaIncio.enabled = true;
+        }
     }
 
 }

@@ -7,6 +7,8 @@ public class Canvas_N1_A5 : MonoBehaviour
 {
     public Button Ejemplo, Actividad, Reintentar, Menu;
     public GameObject Manager;
+
+    public Canvas canvaIncio;
     void Start()
     {
         Ejemplo.onClick.AddListener(ejemplo);
@@ -22,6 +24,10 @@ public class Canvas_N1_A5 : MonoBehaviour
 
     private void ejemplo()
     {
+        Manager_N1_A5 m = Manager.GetComponent<Manager_N1_A5>();
+
+        canvaIncio.enabled = false;
+        m.modo = 1;
 
     }
 
