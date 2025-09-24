@@ -166,7 +166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221864977}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -548,11 +548,28 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5eb38c492d1d7a349aa81b74ecb7e0bf, type: 3}
   - {fileID: 21300000, guid: 03d55ec4fbbbe5642bbacf94cb7f61e5, type: 3}
   - {fileID: 21300000, guid: 87aba04d36236d34a8dd977530570598, type: 3}
+  actividad:
+  - {fileID: 21300000, guid: 03d55ec4fbbbe5642bbacf94cb7f61e5, type: 3}
+  - {fileID: 21300000, guid: 5eb38c492d1d7a349aa81b74ecb7e0bf, type: 3}
+  - {fileID: 21300000, guid: 03d55ec4fbbbe5642bbacf94cb7f61e5, type: 3}
+  - {fileID: 21300000, guid: 87aba04d36236d34a8dd977530570598, type: 3}
+  - {fileID: 21300000, guid: 5eb38c492d1d7a349aa81b74ecb7e0bf, type: 3}
+  - {fileID: 21300000, guid: 87aba04d36236d34a8dd977530570598, type: 3}
+  - {fileID: 21300000, guid: 03d55ec4fbbbe5642bbacf94cb7f61e5, type: 3}
+  - {fileID: 21300000, guid: 5eb38c492d1d7a349aa81b74ecb7e0bf, type: 3}
+  - {fileID: 21300000, guid: 87aba04d36236d34a8dd977530570598, type: 3}
+  - {fileID: 21300000, guid: 03d55ec4fbbbe5642bbacf94cb7f61e5, type: 3}
   rojo: {fileID: 21300000, guid: 5eb38c492d1d7a349aa81b74ecb7e0bf, type: 3}
   ambar: {fileID: 21300000, guid: 87aba04d36236d34a8dd977530570598, type: 3}
   verde: {fileID: 21300000, guid: 03d55ec4fbbbe5642bbacf94cb7f61e5, type: 3}
   ej: {fileID: 292218161}
   act: {fileID: 221864979}
+  canvaIncio: {fileID: 591603913}
+  Rojo: {fileID: 685623757}
+  Ambar: {fileID: 1743433856}
+  Verde: {fileID: 965724175}
+  cont: 0
+  puntuacion: 0
 --- !u!4 &485150937
 Transform:
   m_ObjectHideFlags: 0
@@ -825,6 +842,7 @@ MonoBehaviour:
   Reintentar: {fileID: 430575159}
   Menu: {fileID: 352967930}
   Manager: {fileID: 485150935}
+  canvaIncio: {fileID: 591603913}
 --- !u!1 &617670188
 GameObject:
   m_ObjectHideFlags: 0
