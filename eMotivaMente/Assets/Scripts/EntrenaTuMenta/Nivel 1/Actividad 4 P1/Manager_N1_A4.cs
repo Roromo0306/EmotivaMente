@@ -140,7 +140,7 @@ public class Manager_N1_A4 : MonoBehaviour
 
         if (baldosa == 2 && nombre1 != null && nombre2 != null)
         {
-            if (nombre1 == nombre2)
+            if (nombre1 != nombre2)
             {
                 Debug.Log("Pareja");
 
@@ -156,7 +156,7 @@ public class Manager_N1_A4 : MonoBehaviour
                 imagen2 = null;
             }
             
-            if(nombre1  != nombre2)
+            if(nombre1  == nombre2)
             {
                 StartCoroutine(Reseteo());
             }
@@ -198,7 +198,7 @@ public class Manager_N1_A4 : MonoBehaviour
 
         if (baldosa == 2 && nombre1 != null && nombre2 != null)
         {
-            if (nombre1 == nombre2)
+            if (nombre1 != nombre2)
             {
                 Debug.Log("Pareja");
 
@@ -215,7 +215,7 @@ public class Manager_N1_A4 : MonoBehaviour
                 cuadrado1 = cuadrado2 = null;
             }
 
-            if (nombre1 != nombre2)
+            if (nombre1 == nombre2)
             {
                 StartCoroutine(ReseteoA());
             }
