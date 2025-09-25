@@ -6,28 +6,29 @@ using UnityEngine.UI;
 public class Canvas_N1_A2 : MonoBehaviour
 {
     public Canvas canvas, canvas2, canvasfin;
-    public Button Ejemplo, Actividad;
+    public Button Ejemplo, Actividad, Audio;
 
     public GameObject managaer, detector;
 
     [HideInInspector] public bool empezado;
 
     public Coroutine corru = null;
+
+    public AudioSource fuenteAudio;
     void Start()
     {
         canvas2.enabled = false;
         Time.timeScale = 0;
         Ejemplo.onClick.AddListener(ejemplo);
         Actividad.onClick.AddListener(actividad);
+        Audio.onClick.AddListener(sonido);
         canvas.enabled = true;
         canvasfin.enabled = false;
         empezado = false;
     }
-
-    
-    void Update()
+    private void sonido()
     {
-
+        fuenteAudio.Play();
     }
 
     private void ejemplo()

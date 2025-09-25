@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class Canvas_N1_A5 : MonoBehaviour
 {
-    public Button Ejemplo, Actividad, Reintentar, Menu;
+    public Button Ejemplo, Actividad, Reintentar, Menu, Audio;
     public GameObject Manager;
 
     private int final = 0;
 
+    public AudioSource fuenteAudio;
     public Canvas canvaIncio;
     void Start()
     {
@@ -18,11 +19,12 @@ public class Canvas_N1_A5 : MonoBehaviour
         Actividad.onClick.AddListener(actividad);
         Reintentar.onClick.AddListener(reintentar);
         Menu.onClick.AddListener(menu);
+        Audio.onClick.AddListener(sonido);
     }
 
-    void Update()
+    private void sonido()
     {
-        
+        fuenteAudio.Play();
     }
 
     private void ejemplo()

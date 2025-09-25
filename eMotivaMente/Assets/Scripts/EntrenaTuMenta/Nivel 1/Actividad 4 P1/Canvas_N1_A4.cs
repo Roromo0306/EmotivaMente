@@ -6,9 +6,11 @@ using TMPro;
 
 public class Canvas_N1_A4 : MonoBehaviour
 {
-    public Button Ejemplo, Actividad;
+    public Button Ejemplo, Actividad, Audio;
     public Canvas canvas, canvas_ejemplo, canvas_actividad;
     public TextMeshProUGUI text;
+
+    public AudioSource fuenteAudio;
 
     [HideInInspector] public int tipo = 0;
     
@@ -16,14 +18,14 @@ public class Canvas_N1_A4 : MonoBehaviour
     {
         Ejemplo.onClick.AddListener(ejemplo);
         Actividad.onClick.AddListener(actividad);
+        Audio.onClick.AddListener(sonido);
         canvas_ejemplo.enabled = false;
         canvas_actividad.enabled = false;
     }
 
-    
-    void Update()
+    private void sonido()
     {
-        
+        fuenteAudio.Play();
     }
 
     private void ejemplo()

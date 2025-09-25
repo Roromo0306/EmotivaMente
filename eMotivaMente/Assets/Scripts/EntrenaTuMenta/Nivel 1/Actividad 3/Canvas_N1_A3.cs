@@ -5,23 +5,25 @@ using UnityEngine.UI;
 
 public class Canvas_N1_A3 : MonoBehaviour
 {
-    public Button ejemplo, actividad;
+    public Button ejemplo, actividad, Audio;
     public Canvas canvas, canvasEjemplo;
     public int modo = 0;
-    
+
+    public AudioSource fuenteAudio;
     void Start()
     {
         ejemplo.onClick.AddListener(Ejemplo);
         actividad.onClick.AddListener(Actividad);
+        Audio.onClick.AddListener(sonido);
         canvas.enabled = true;
         canvasEjemplo.enabled = false;
         Time.timeScale = 0;
     }
 
-    
-    void Update()
+
+    private void sonido()
     {
-        
+        fuenteAudio.Play();
     }
 
     private void Ejemplo()
