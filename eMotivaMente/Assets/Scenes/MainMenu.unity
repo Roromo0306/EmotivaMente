@@ -391,7 +391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566634337}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SendToGoogle, Assembly-CSharp
         m_MethodName: Send
         m_Mode: 1
@@ -609,7 +609,6 @@ GameObject:
   - component: {fileID: 566634335}
   - component: {fileID: 566634334}
   - component: {fileID: 566634333}
-  - component: {fileID: 566634337}
   - component: {fileID: 566634338}
   m_Layer: 5
   m_Name: Canvas
@@ -704,23 +703,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &566634337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566634332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b51213d0b2383f64cbcb879dcd103c5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: {fileID: 575439886}
-  Edad: {fileID: 596785662}
-  Residencia: {fileID: 1624951657}
-  StatusText: {fileID: 83471098}
-  URL: https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8kaRT96vI1GBIKM6sgPQg9wxHfWvZeCaOb46VQ3jwTkI9rA/formResponse
 --- !u!114 &566634338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2429,6 +2411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1983609590}
+  - component: {fileID: 1983609591}
   m_Layer: 0
   m_Name: Datos
   m_TagString: Untagged
@@ -2451,6 +2434,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1983609591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983609589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff88d7088818ef42821b64b42bb45d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  edad: 
+  residencia: 
+  puntuacionN1_A1: 0
+  tiempoN1_A1: 0
+  puntuacionN1_A2: 0
+  tiempoN1_A2: 0
+  puntuacionN1_A3: 0
+  tiempoN1_A3: 0
+  puntuacionN1_A4_1: 0
+  tiempoN1_A4_1: 0
+  puntuacionN1_A4_2: 0
+  tiempoN1_A4_2: 0
+  puntuacionN1_A5: 0
+  tiempoN1_A5: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class ObtenerDatos : MonoBehaviour
 {
@@ -22,5 +24,14 @@ public class ObtenerDatos : MonoBehaviour
         nombre = Name.GetComponent<TMP_InputField>().text.Trim();
         edad = Edad.GetComponent<TMP_InputField>().text.Trim();
         residencia = Residencia.GetComponent<TMP_InputField>().text.Trim();
+
+        //Envia los datos al singleton
+        DatosEmotivamente.Instance.Name = nombre;
+        DatosEmotivamente.Instance.edad = edad;
+        DatosEmotivamente.Instance.residencia = residencia;
+
+        //Carga la siguiente escena
+        SceneManager.LoadScene("Menú del nivel 1");
+
     }
 }
