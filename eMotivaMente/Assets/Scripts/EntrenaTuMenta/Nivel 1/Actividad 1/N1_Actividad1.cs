@@ -50,6 +50,7 @@ public class N1_Actividad1 : MonoBehaviour
     {
         Canvas_Inicio_N1_A1 can = CanvasInicio.GetComponent<Canvas_Inicio_N1_A1>();
 
+        //Modo ejemplo
         if(can.modo == 1)
         {
             if (!activado)
@@ -71,6 +72,7 @@ public class N1_Actividad1 : MonoBehaviour
             }
         }
 
+        //Modo Actividad
         if(can.modo == 2)
         {
             if (!activado)
@@ -148,7 +150,7 @@ public class N1_Actividad1 : MonoBehaviour
             {
                 if (GenS.puntosneg == 3 || GenS.puntospos == 0 && GenS.puntosneg == 0)
                 {
-                    //esta mal
+                    //Hay fallos
                     final = 3;
                 }
 

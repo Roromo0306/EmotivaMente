@@ -15,12 +15,12 @@ public class DatosEmotivamente : MonoBehaviour
 
     //Nivel 1
     //Actividad 1
-    public int puntuacionN1_A1;
-    public float tiempoN1_A1;
+    public int puntuacionPosN1_A1;
+    public int puntuacionNegN1_A1;
 
     //Actividad 2
-    public int puntuacionN1_A2;
-    public float tiempoN1_A2;
+    public int puntuacionPosN1_A2;
+    public int puntuacionNegN1_A2;
 
     //Actividad 3
     public int puntuacionN1_A3;
