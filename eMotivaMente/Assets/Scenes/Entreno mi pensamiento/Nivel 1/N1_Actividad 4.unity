@@ -4296,7 +4296,7 @@ GameObject:
   - component: {fileID: 1052545562}
   - component: {fileID: 1052545561}
   m_Layer: 0
-  m_Name: Manager_Ejemplo
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5475,6 +5475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   siguienteParte: {fileID: 257661155}
+  cronometro: {fileID: 0}
 --- !u!114 &1214285427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7819,6 +7820,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845249713}
   m_CullTransparentMesh: 1
+--- !u!1 &1888131951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888131953}
+  - component: {fileID: 1888131952}
+  m_Layer: 0
+  m_Name: "Cron\xF3metro"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1888131952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888131951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32eea09e51a13c44295ed6326e322b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cesta_actividad: {fileID: 0}
+  canvasInicio: {fileID: 0}
+  iniciado: 0
+  tiempo: 0
+--- !u!4 &1888131953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888131951}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 668.7396, y: 371.01828, z: -4.244917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1970155024
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,3 +8177,4 @@ SceneRoots:
   - {fileID: 1830823583}
   - {fileID: 257404197}
   - {fileID: 1214285430}
+  - {fileID: 1888131953}
