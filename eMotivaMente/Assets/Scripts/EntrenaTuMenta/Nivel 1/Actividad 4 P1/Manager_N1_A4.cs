@@ -270,6 +270,7 @@ public class Manager_N1_A4 : MonoBehaviour
         cuadrado1 = cuadrado2 = null;
     }
 
+    //Final del ejemplo
     private void finalE()
     {
         Canvas_N1_A4 c = Canvas.GetComponent<Canvas_N1_A4>();
@@ -282,10 +283,12 @@ public class Manager_N1_A4 : MonoBehaviour
 
     }
 
+    //Final de la actividad
     private void finalA()
     {
         Canvas_N1_A4 c = Canvas.GetComponent<Canvas_N1_A4>();
         colision_N1_A4 colA = cesta_actividad.GetComponent<colision_N1_A4>();
+
         c.tipo = 0;
         colA.puntosActividad = 0;
         canvas_actividad.enabled = false;

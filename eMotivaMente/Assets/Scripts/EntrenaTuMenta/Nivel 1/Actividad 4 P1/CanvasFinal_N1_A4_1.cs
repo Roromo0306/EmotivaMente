@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CanvasFinal_N1_A4_1 : MonoBehaviour
 {
     public Button siguienteParte;
+    public GameObject cronometro;
     void Start()
     {
         siguienteParte.onClick.AddListener(siguiente);
@@ -15,10 +16,5 @@ public class CanvasFinal_N1_A4_1 : MonoBehaviour
     private void siguiente()
     {
         SceneManager.LoadScene("N1_Actividad 4.2");
-    }
-   
-    void Update()
-    {
-        
     }
 }
