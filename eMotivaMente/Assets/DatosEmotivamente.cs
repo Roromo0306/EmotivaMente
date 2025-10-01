@@ -23,8 +23,8 @@ public class DatosEmotivamente : MonoBehaviour
     public int puntuacionNegN1_A2;
 
     //Actividad 3
-    public int puntuacionN1_A3;
-    public float tiempoN1_A3;
+    public int puntuacionPosN1_A3;
+    public int puntuacionNegN1_A3;
 
     //Actividad 4
     public int puntuacionN1_A4_1;
