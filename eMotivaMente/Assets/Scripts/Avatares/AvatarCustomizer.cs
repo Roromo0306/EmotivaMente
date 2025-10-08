@@ -5,24 +5,24 @@ using System.Collections.Generic;
 
 public class AvatarCustomizer : MonoBehaviour
 {
-    [Header("Capas (UI Images)")]
+    [Header("Capas")]
     public Image skinLayer;
     public Image hairLayer;
     public Image eyesLayer;
     public Image noseLayer;
     public Image mouthLayer;
 
-    [Header("Dropdowns de rasgos (opcional)")]
+    [Header("Dropdowns de rasgos")]
     public TMP_Dropdown hairDropdown;
     public TMP_Dropdown eyesDropdown;
     public TMP_Dropdown noseDropdown;
     public TMP_Dropdown mouthDropdown;
 
-    [Header("Controles de color (usa sliders o dropdowns)")]
+    [Header("Controles de color")]
     public Slider skinColorSlider;   // Rango 0 - (skinColors.Count - 1)
     public Slider hairColorSlider;   // Rango 0 - (hairColors.Count - 1)
 
-    [Header("Paletas de colores (editable desde Inspector)")]
+    [Header("Paletas de colores")]
     public List<Color> skinColors = new List<Color>()
     {
         new Color(1f, 0.8f, 0.6f),   // claro
