@@ -1,10 +1,13 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 
 public class AvatarCustomizer : MonoBehaviour
 {
+    public List<Sprite> hairSprites = new List<Sprite>();
+
+
     [Header("Capas")]
     public Image skinLayer;
     public Image hairLayer;
@@ -35,15 +38,15 @@ public class AvatarCustomizer : MonoBehaviour
     public List<Color> hairColors = new List<Color>()
     {
         new Color(0.1f, 0.05f, 0.02f), // negro
-        new Color(0.25f, 0.15f, 0.05f),// castaño oscuro
-        new Color(0.4f, 0.25f, 0.1f),  // castaño claro
+        new Color(0.25f, 0.15f, 0.05f),// castaÃ±o oscuro
+        new Color(0.4f, 0.25f, 0.1f),  // castaÃ±o claro
         new Color(0.7f, 0.55f, 0.2f),  // rubio
         new Color(0.8f, 0.5f, 0.2f),   // pelirrojo
         new Color(0.95f, 0.95f, 0.95f) // blanco / gris
     };
 
     private AvatarData avatar;
-
+   
     void Start()
     {
         // Cargar datos previos
@@ -70,7 +73,7 @@ public class AvatarCustomizer : MonoBehaviour
         ApplyAvatar();
     }
 
-    // Cambia color de piel según el índice del slider
+    // Cambia color de piel segÃºn el Ã­ndice del slider
     public void ChangeSkinColor(float index)
     {
         int i = Mathf.RoundToInt(index);
@@ -82,7 +85,7 @@ public class AvatarCustomizer : MonoBehaviour
         }
     }
 
-    // Cambia color de pelo según el índice del slider
+    // Cambia color de pelo segÃºn el Ã­ndice del slider
     public void ChangeHairColor(float index)
     {
         int i = Mathf.RoundToInt(index);
@@ -92,6 +95,27 @@ public class AvatarCustomizer : MonoBehaviour
             if (hairLayer != null)
                 hairLayer.color = avatar.hairColor;
         }
+    }
+
+    public void ChangeHairStyle(int dropdownIndex)
+    {
+        if (hairDropdown == null) return;
+
+        // Actualiza el nombre guardado
+        string style = hairDropdown.options[dropdownIndex].text;
+        avatar.hairStyle = style;
+
+        // Usa la lista de sprites asignada en el inspector
+        if (dropdownIndex >= 0 && dropdownIndex < hairSprites.Count && hairSprites[dropdownIndex] != null)
+        {
+            hairLayer.sprite = hairSprites[dropdownIndex];
+        }
+        else
+        {
+            Debug.LogWarning($"No hay sprite asignado en hairSprites[{dropdownIndex}]");
+        }
+
+        ApplyAvatar();
     }
 
     // Aplica todo el avatar visualmente

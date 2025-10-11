@@ -12,5 +12,5 @@ public class AvatarData
     public string eyes = "Eyes1";
     public string nose = "Nose1";
     public string mouth = "Mouth1";
-
+    public int hairStyleIndex = 0;
 }
