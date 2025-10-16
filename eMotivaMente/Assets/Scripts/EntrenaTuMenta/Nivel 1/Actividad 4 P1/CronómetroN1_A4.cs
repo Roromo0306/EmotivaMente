@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class CronómetroN1_A4 : MonoBehaviour
 {
-    //Desde estos objetos iniciaremos y pararemos el cronometro
-    public GameObject cesta_actividad;
-    public Canvas canvasInicio;
-
     //Booleano para saber si está activo
     public bool iniciado = false;
 
@@ -17,6 +13,7 @@ public class CronómetroN1_A4 : MonoBehaviour
     //Funcion para empezar el cronometro
     public void EmpezarCrono()
     {
+        tiempo = 0f;
         iniciado = true;
     }
 
@@ -24,7 +21,6 @@ public class CronómetroN1_A4 : MonoBehaviour
     public void PararCrono()
     {
         iniciado = false;
-        CalcularTiempo();
     }
 
     private void Update()
@@ -33,10 +29,5 @@ public class CronómetroN1_A4 : MonoBehaviour
         {
             tiempo += Time.deltaTime;
         }
-    }
-
-    private void CalcularTiempo()
-    {
-
     }
 }

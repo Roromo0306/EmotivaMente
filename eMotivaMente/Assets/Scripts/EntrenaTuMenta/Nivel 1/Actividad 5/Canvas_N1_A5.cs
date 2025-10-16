@@ -6,8 +6,17 @@ using UnityEngine.UI;
 
 public class Canvas_N1_A5 : MonoBehaviour
 {
-    public Button Ejemplo, Actividad, Reintentar, Menu, Audio;
+    [Header("Botones")]
+    public Button Ejemplo;
+    public Button Actividad;
+    public Button Reintentar;
+    public Button Menu;
+    public Button Audio;
+
+    [Header("Manager y cronometro")]
     public GameObject Manager;
+    public GameObject cronometro;
+
 
     private int final = 0;
 
@@ -39,7 +48,9 @@ public class Canvas_N1_A5 : MonoBehaviour
     private void actividad()
     {
         Manager_N1_A5 m = Manager.GetComponent<Manager_N1_A5>();
+        CronómetroN1_A4 cronos = cronometro.GetComponent<CronómetroN1_A4>();
 
+        cronos.iniciado = true;
         canvaIncio.enabled = false;
         m.modo = 2;
     }
@@ -57,7 +68,13 @@ public class Canvas_N1_A5 : MonoBehaviour
 
     private void menu()
     {
+        CronómetroN1_A4 cronos = cronometro.GetComponent<CronómetroN1_A4>();
+        Manager_N1_A5 m = Manager.GetComponent<Manager_N1_A5>();
+
         Menu_Nivel1_Entrena.n5 = true;
+        DatosEmotivamente.Instance.tiempoN1_A5 = cronos.tiempo;
+        DatosEmotivamente.Instance.puntuacionN1_A5 = m.puntuacion;
+
         SceneManager.LoadScene("Menú del nivel 1");
 
 

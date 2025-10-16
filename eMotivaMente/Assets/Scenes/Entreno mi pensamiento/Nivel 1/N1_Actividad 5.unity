@@ -570,6 +570,7 @@ MonoBehaviour:
   Verde: {fileID: 965724175}
   cont: 0
   puntuacion: 0
+  cronometro: {fileID: 1949971193}
 --- !u!4 &485150937
 Transform:
   m_ObjectHideFlags: 0
@@ -845,6 +846,7 @@ MonoBehaviour:
   Menu: {fileID: 352967930}
   Audio: {fileID: 1071996349}
   Manager: {fileID: 485150935}
+  cronometro: {fileID: 1949971193}
   fuenteAudio: {fileID: 591603916}
   canvaIncio: {fileID: 591603913}
 --- !u!82 &591603916
@@ -2173,6 +2175,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743433854}
   m_CullTransparentMesh: 1
+--- !u!1 &1949971193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949971195}
+  - component: {fileID: 1949971194}
+  m_Layer: 0
+  m_Name: Cronometro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1949971194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949971193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32eea09e51a13c44295ed6326e322b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iniciado: 0
+  tiempo: 0
+--- !u!4 &1949971195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949971193}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 808.6043, y: 349.9595, z: -5.1122837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050420144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,3 +2390,4 @@ SceneRoots:
   - {fileID: 2050420147}
   - {fileID: 485150937}
   - {fileID: 1625585415}
+  - {fileID: 1949971195}

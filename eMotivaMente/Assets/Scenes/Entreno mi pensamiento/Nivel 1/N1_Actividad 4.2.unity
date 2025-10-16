@@ -926,6 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volverMenu: {fileID: 355056045}
+  cronometro: {fileID: 475628483}
 --- !u!1 &292981421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2571,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469476301}
   m_CullTransparentMesh: 1
+--- !u!1 &475628483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475628485}
+  - component: {fileID: 475628484}
+  m_Layer: 0
+  m_Name: Cronometro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &475628484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475628483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32eea09e51a13c44295ed6326e322b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iniciado: 0
+  tiempo: 0
+--- !u!4 &475628485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475628483}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 808.6043, y: 349.9595, z: -5.1122837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480723796
 GameObject:
   m_ObjectHideFlags: 0
@@ -7271,6 +7318,7 @@ MonoBehaviour:
   cuadrado2: {fileID: 0}
   cesta_ejemplo: {fileID: 1371149763}
   cesta_actividad: {fileID: 437350773}
+  cronometro: {fileID: 475628483}
   canvas_ejemplo: {fileID: 643247569}
   canvas_actividad: {fileID: 60392992}
   canvasFinal: {fileID: 248757597}
@@ -8294,3 +8342,4 @@ SceneRoots:
   - {fileID: 643247570}
   - {fileID: 60392993}
   - {fileID: 2012899722}
+  - {fileID: 475628485}

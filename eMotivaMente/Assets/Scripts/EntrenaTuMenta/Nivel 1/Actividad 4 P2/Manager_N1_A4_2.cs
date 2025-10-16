@@ -27,9 +27,15 @@ public class Manager_N1_A4_2 : MonoBehaviour
     [HideInInspector] public Image imagen1, imagen2;
     [HideInInspector] public Button cuadrado1, cuadrado2;
 
-    public GameObject cesta_ejemplo, cesta_actividad;
+    [Header("Gameobjects cestas y cronometros")]
+    public GameObject cesta_ejemplo;
+    public GameObject cesta_actividad;
+    public GameObject cronometro;
 
-    public Canvas canvas_ejemplo, canvas_actividad, canvasFinal;
+    [Header("Canvas")]
+    public Canvas canvas_ejemplo;
+    public Canvas canvas_actividad;
+    public Canvas canvasFinal;
     void Start()
     {
         canvasFinal.enabled = false;
@@ -41,9 +47,10 @@ public class Manager_N1_A4_2 : MonoBehaviour
         Canvas_N1_A4 c = Canvas.GetComponent<Canvas_N1_A4>();
         colision_N1_A4 colE = cesta_ejemplo.GetComponent<colision_N1_A4>();
         colision_N1_A4 colA = cesta_actividad.GetComponent<colision_N1_A4>();
+        CronómetroN1_A4 crono = cronometro.GetComponent<CronómetroN1_A4>();
 
         //Ejemplo
-        if(c.tipo == 1)
+        if (c.tipo == 1)
         {
             if (!activado)
             {
@@ -66,6 +73,7 @@ public class Manager_N1_A4_2 : MonoBehaviour
 
             if (colA.puntosActividad == 8)
             {
+                crono.iniciado = false;
                 finalA();
             }
         }
@@ -93,7 +101,11 @@ public class Manager_N1_A4_2 : MonoBehaviour
     //Inicia la actividad
     private void EmpezarActividad()
     {
+        CronómetroN1_A4 crono = cronometro.GetComponent<CronómetroN1_A4>();
+
+
         activado = true;
+        crono.iniciado = true;
         int cant = Mathf.Min(cuadrados_actividad.Count, Comida_actividad.Count);
 
         for (int i = 0; i < cant; i++)

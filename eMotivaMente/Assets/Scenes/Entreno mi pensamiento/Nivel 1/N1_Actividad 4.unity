@@ -4369,6 +4369,7 @@ MonoBehaviour:
   cuadrado2: {fileID: 0}
   cesta_ejemplo: {fileID: 629079671}
   cesta_actividad: {fileID: 561901878}
+  cronometro: {fileID: 1888131951}
   canvas_ejemplo: {fileID: 1830823582}
   canvas_actividad: {fileID: 257404196}
   canvasFinal: {fileID: 1214285429}
@@ -6378,7 +6379,6 @@ MonoBehaviour:
   canvas_ejemplo: {fileID: 1830823582}
   canvas_actividad: {fileID: 257404196}
   text: {fileID: 223992780}
-  Cesta_ejemplo: {fileID: 629079671}
   fuenteAudio: {fileID: 1401244090}
   tipo: 0
 --- !u!114 &1401244086
@@ -7850,8 +7850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eea09e51a13c44295ed6326e322b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cesta_actividad: {fileID: 0}
-  canvasInicio: {fileID: 0}
   iniciado: 0
   tiempo: 0
 --- !u!4 &1888131953
@@ -8167,37 +8165,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072005152}
   m_CullTransparentMesh: 1
---- !u!1 &2104267627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2104267628}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2104267628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104267627}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 808.6043, y: 349.9595, z: -5.1122837}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8210,4 +8177,3 @@ SceneRoots:
   - {fileID: 257404197}
   - {fileID: 1214285430}
   - {fileID: 1888131953}
-  - {fileID: 2104267628}

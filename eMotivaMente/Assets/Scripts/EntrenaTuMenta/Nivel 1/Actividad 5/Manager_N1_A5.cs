@@ -23,6 +23,7 @@ public class Manager_N1_A5 : MonoBehaviour
     private bool presionado = false; //Bool para saber si se ha presionado algún botón
     public int cont = 0;
     public int puntuacion;
+    public GameObject cronometro;
     void Start()
     {
         Rojo.onClick.AddListener(BotonRojo);
@@ -174,6 +175,8 @@ public class Manager_N1_A5 : MonoBehaviour
     IEnumerator actividadF()
     {
         Canvas_N1_A5 canva = canvaIncio.GetComponent<Canvas_N1_A5>();
+        CronómetroN1_A4 cronos = cronometro.GetComponent<CronómetroN1_A4>();
+
         while (cont < actividad.Count)
         {
             act.sprite = actividad[cont];
@@ -186,6 +189,7 @@ public class Manager_N1_A5 : MonoBehaviour
 
         cont = 0;
         modo = 0;
+        cronos.iniciado = false;
         act.gameObject.SetActive(false);
 
         if(puntuacion == 10) //Perfecto
