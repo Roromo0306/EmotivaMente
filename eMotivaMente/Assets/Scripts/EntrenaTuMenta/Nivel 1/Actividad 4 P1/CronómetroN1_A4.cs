@@ -30,4 +30,6 @@ public class CronómetroN1_A4 : MonoBehaviour
             tiempo += Time.deltaTime;
         }
     }
+
+    public int Tiempo => (int)tiempo; //convierte el float en int
 }

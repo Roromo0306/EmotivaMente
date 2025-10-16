@@ -363,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 1740593832}
   Reintentar: {fileID: 1009170527}
+  Manager: {fileID: 1825325684}
 --- !u!1 &535841812
 GameObject:
   m_ObjectHideFlags: 0

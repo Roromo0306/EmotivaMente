@@ -5,13 +5,8 @@ using TMPro;
 
 public class SendToGoogle : MonoBehaviour
 {
-    // Referencias a los objetos de entrada (Input Fields) en la escena
-    public GameObject Name;
-    public GameObject Edad;
-    public GameObject Residencia;
-
     // Texto para mostrar mensajes de estado al usuario
-    public TextMeshProUGUI StatusText;
+   // public TextMeshProUGUI StatusText;
 
     // Variables para guardar los valores escritos en los Input Fields
     private string nombre;
@@ -22,7 +17,7 @@ public class SendToGoogle : MonoBehaviour
     [SerializeField] private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8kaRT96vI1GBIKM6sgPQg9wxHfWvZeCaOb46VQ3jwTkI9rA/formResponse";
 
     // Coroutine para enviar los datos al formulario mediante POST
-    IEnumerator Post(string nombre, string edad, string residencia)
+    IEnumerator Post(string nombre, string edad, string residencia, int puntuacionPosN1_A1, int puntuacionNegN1_A1, int puntuacionPosN1_A2, int puntuacionNegN1_A2, int puntuacionPosN1_A3, int puntuacionNegN1_A3, int tiempoN1_A4_1, int tiempoN1_A4_2, int puntuacionN1_A5, int tiempoN1_A5)
     {
         // Crear un formulario web para enviar los datos
         WWWForm form = new WWWForm();
@@ -32,8 +27,23 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1078649829", edad);           // Campo edad
         form.AddField("entry.1719034656", residencia);   // Campo residencia
 
+        form.AddField("entry.1002535157", puntuacionPosN1_A1); //Puntuacion positiva de la actividad 1
+        form.AddField("entry.1415791863", puntuacionNegN1_A1); //Puntuacion negativa de la actividad 1
+
+        form.AddField("entry.1341741783", puntuacionPosN1_A2); //Puntuacion positiva de la actividad 2
+        form.AddField("entry.614738332", puntuacionNegN1_A2);  //Puntuacion negativa de la actividad 2
+
+        form.AddField("entry.229977826", puntuacionPosN1_A3); //Puntuacion positiva de la actividad 3
+        form.AddField("entry.1510870039", puntuacionNegN1_A3); //Puntuacion negativa de la actividad 3
+
+        form.AddField("entry.1301239763", tiempoN1_A4_1); //Tiempo de la actividad 4 parte 1
+        form.AddField("entry.532973242", tiempoN1_A4_2); //Tiempo de la actividad 4 parte 2
+
+        form.AddField("entry.283860871", puntuacionN1_A5); //Puntuacion de la actividad 5
+        form.AddField("entry.1107157474", tiempoN1_A5); //Tiempo de la actividad 5
+
         // Mostrar mensaje de que el envío está en proceso
-        StatusText.text = "Enviando...";
+       // StatusText.text = "Enviando...";
 
         // Crear y enviar la solicitud POST a la URL del formulario con los datos
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
@@ -43,38 +53,38 @@ public class SendToGoogle : MonoBehaviour
         if (www.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError("Error al enviar: " + www.error);   // Mostrar error en consola
-            StatusText.text = "Error al enviar.";               // Mostrar error en pantalla
+           // StatusText.text = "Error al enviar.";               // Mostrar error en pantalla
         }
         else
         {
             Debug.Log("¡Datos enviados con éxito!");            // Confirmación en consola
-            StatusText.text = "¡Enviado correctamente!";       // Confirmación en pantalla
+            //StatusText.text = "¡Enviado correctamente!";       // Confirmación en pantalla
 
-            // Limpiar los campos de texto para nueva entrada
+            /*// Limpiar los campos de texto para nueva entrada
             Name.GetComponent<TMP_InputField>().text = "";
             Edad.GetComponent<TMP_InputField>().text = "";
-            Residencia.GetComponent<TMP_InputField>().text = "";
+            Residencia.GetComponent<TMP_InputField>().text = "";*/
         }
     }
 
     // Función que se llama cuando el usuario quiere enviar los datos (ejemplo: botón)
-    public void Send()
+    public void Send(string nombre, string edad, string residencia, int puntuacionPosN1_A1, int puntuacionNegN1_A1, int puntuacionPosN1_A2, int puntuacionNegN1_A2, int puntuacionPosN1_A3, int puntuacionNegN1_A3, int tiempoN1_A4_1, int tiempoN1_A4_2, int puntuacionN1_A5, int tiempoN1_A5)
     {
-        // Obtener los textos de cada Input Field, y eliminar espacios en blanco al inicio y final
-        nombre = Name.GetComponent<TMP_InputField>().text.Trim();
-        edad = Edad.GetComponent<TMP_InputField>().text.Trim();
-        residencia = Residencia.GetComponent<TMP_InputField>().text.Trim();
+        /* // Obtener los textos de cada Input Field, y eliminar espacios en blanco al inicio y final
+         nombre = Name.GetComponent<TMP_InputField>().text.Trim();
+         edad = Edad.GetComponent<TMP_InputField>().text.Trim();
+         residencia = Residencia.GetComponent<TMP_InputField>().text.Trim();
 
-        // Validar que no haya campos vacíos; si alguno está vacío, mostrar advertencia y no enviar
-        if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(edad) || string.IsNullOrEmpty(residencia))
-        {
-            Debug.LogWarning("Por favor, completa todos los campos.");  // Aviso en consola
-            StatusText.text = "Por favor, completa todos los campos.";  // Aviso visible en UI
-            return;  // Salir sin hacer nada más
-        }
+         // Validar que no haya campos vacíos; si alguno está vacío, mostrar advertencia y no enviar
+         if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(edad) || string.IsNullOrEmpty(residencia))
+         {
+             Debug.LogWarning("Por favor, completa todos los campos.");  // Aviso en consola
+             StatusText.text = "Por favor, completa todos los campos.";  // Aviso visible en UI
+             return;  // Salir sin hacer nada más
+         }*/
 
         // Iniciar la coroutine para enviar los datos al formulario
-        StartCoroutine(Post(nombre, edad, residencia));
+        StartCoroutine(Post(nombre, edad, residencia, puntuacionPosN1_A1, puntuacionNegN1_A1, puntuacionPosN1_A2, puntuacionNegN1_A2, puntuacionPosN1_A3, puntuacionNegN1_A3, tiempoN1_A4_1, tiempoN1_A4_2, puntuacionN1_A5, tiempoN1_A5));
     }
 }
 

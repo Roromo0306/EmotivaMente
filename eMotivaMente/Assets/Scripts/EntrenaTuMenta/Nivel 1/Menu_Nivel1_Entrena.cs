@@ -6,9 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Menu_Nivel1_Entrena : MonoBehaviour
 {
-    public Button Sonido, N1, N2, N3, N4, N5;
+    [Header("Botones")]
+    public Button Sonido;
+    public Button N1;
+    public Button N2;
+    public Button N3;
+    public Button N4;
+    public Button N5;
+    public Button Salida;
+
+
     public AudioSource fuenteAudio;
-    public static bool n1 = false, n2= false, n3=false, n4=false, n5=false; 
+
+ 
+
+    [HideInInspector] public static bool n1 = false, n2= false, n3=false, n4=false, n5=false; 
     void Start()
     {
         Sonido.onClick.AddListener(sonido);
@@ -17,6 +29,8 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
         N3.onClick.AddListener(Nivel3);
         N4.onClick.AddListener(Nivel4);
         N5.onClick.AddListener(Nivel5);
+
+        Salida.gameObject.SetActive(true);
         Cursor.visible = true;
 
     }
@@ -56,6 +70,7 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
             Color c = N5.targetGraphic.color;
             c.a = 138f / 255f;
             N5.targetGraphic.color = c;
+            Salida.gameObject.SetActive(true);
         }
     }
 
@@ -103,5 +118,17 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
             SceneManager.LoadScene("N1_Actividad 5");
         }
         
+    }
+
+    public void CierrePrograma()
+    {
+        if (DatosEmotivamente.Instance != null)
+        {
+            DatosEmotivamente.Instance.EnviarDatos();
+        }
+        else
+        {
+            Debug.LogWarning("DatosEmotivamente.Instance es null — no se enviaron los datos.");
+        }
     }
 }

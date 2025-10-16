@@ -7,6 +7,7 @@ public class DatosEmotivamente : MonoBehaviour
    //Este script será un singleton que llevará todos los datos al final
 
     public static DatosEmotivamente Instance { get; private set; }
+    public SendToGoogle SG;
 
     //Datos iniciales
     public string Name;
@@ -27,12 +28,12 @@ public class DatosEmotivamente : MonoBehaviour
     public int puntuacionNegN1_A3;
 
     //Actividad 4
-    public float tiempoN1_A4_1;
-    public float tiempoN1_A4_2;
+    public int tiempoN1_A4_1;
+    public int tiempoN1_A4_2;
 
     //Actividad 5
     public int puntuacionN1_A5;
-    public float tiempoN1_A5;
+    public int tiempoN1_A5;
 
     private void Awake()
     {
@@ -44,5 +45,10 @@ public class DatosEmotivamente : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void EnviarDatos()
+    {
+        SG.Send(Name, edad, residencia, puntuacionPosN1_A1, puntuacionNegN1_A1, puntuacionPosN1_A2, puntuacionNegN1_A2, puntuacionPosN1_A3, puntuacionNegN1_A3, tiempoN1_A4_1, tiempoN1_A4_2, puntuacionN1_A5, tiempoN1_A5);
     }
 }

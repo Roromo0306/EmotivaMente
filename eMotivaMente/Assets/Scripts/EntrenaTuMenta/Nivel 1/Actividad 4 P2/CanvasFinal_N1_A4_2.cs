@@ -18,7 +18,7 @@ public class CanvasFinal_N1_A4_2 : MonoBehaviour
     {
         CronómetroN1_A4 crono = cronometro.GetComponent<CronómetroN1_A4>();
 
-        DatosEmotivamente.Instance.tiempoN1_A4_2 = crono.tiempo;
+        DatosEmotivamente.Instance.tiempoN1_A4_2 = crono.Tiempo;
         Menu_Nivel1_Entrena.n4 = true;
         SceneManager.LoadScene("Menú del nivel 1");
     }
