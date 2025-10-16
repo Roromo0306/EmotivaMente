@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Manager_N1_A4 : MonoBehaviour
+public class Manager_N1_A4_2 : MonoBehaviour
 {
     public GameObject Canvas;
     [HideInInspector] public bool activado = false;
@@ -140,7 +140,7 @@ public class Manager_N1_A4 : MonoBehaviour
 
         if (baldosa == 2 && nombre1 != null && nombre2 != null)
         {
-            if (nombre1 == nombre2)
+            if (nombre1 != nombre2)
             {
                 Debug.Log("Pareja");
 
@@ -156,7 +156,7 @@ public class Manager_N1_A4 : MonoBehaviour
                 imagen2 = null;
             }
             
-            if(nombre1  != nombre2)
+            if(nombre1  == nombre2)
             {
                 StartCoroutine(Reseteo());
             }
@@ -198,7 +198,7 @@ public class Manager_N1_A4 : MonoBehaviour
 
         if (baldosa == 2 && nombre1 != null && nombre2 != null)
         {
-            if (nombre1 == nombre2)
+            if (nombre1 != nombre2)
             {
                 Debug.Log("Pareja");
 

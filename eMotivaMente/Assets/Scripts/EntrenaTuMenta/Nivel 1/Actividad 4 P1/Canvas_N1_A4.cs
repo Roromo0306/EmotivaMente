@@ -32,6 +32,7 @@ public class Canvas_N1_A4 : MonoBehaviour
     {
         canvas.enabled = false;
         tipo = 1;
+
         canvas_ejemplo.enabled = true;
         Time.timeScale = 1;
     }
