@@ -28,25 +28,25 @@ public class DetectorColision : MonoBehaviour
         { 
         if (collision.gameObject.CompareTag("Maleta"))
         {
-            if(sp.sprite.name == "auriculares")
+            if(sp.sprite.name == "Assets_2")
             {
                 puntospos++;
                 parada = true;
             }
 
-            if(sp.sprite.name == "camiseta")
+            if(sp.sprite.name == "Assets_3")
             {
                 puntospos++;
                 parada = true;
             }
 
-            if(sp.sprite.name == "cushion-gbe1cbcd51_1280")
+            if(sp.sprite.name == "Assets_9")
             {
                 puntosneg++;
                 parada = true;
             }
 
-            if(sp.sprite.name == "jabón")
+            if(sp.sprite.name == "Assets_0")
             {
                 puntospos++;
                 parada = true;
@@ -58,31 +58,31 @@ public class DetectorColision : MonoBehaviour
                 parada = true;
             }
 
-            if(sp.sprite.name == "pantalón")
+            if(sp.sprite.name == "Assets_4")
             {
                 puntospos++;
                 parada = true;
             }
 
-            if(sp.sprite.name == "paraguas")
+            if(sp.sprite.name == "Assets_5")
             {
                 puntosneg++;
                 parada = true;
             }
 
-            if(sp.sprite.name == "peine")
+            if(sp.sprite.name == "Assets_1")
             {
                 puntospos++;
                 parada = true;
             }
 
-            if(sp.sprite.name == "pelota")
+            if(sp.sprite.name == "Assets_10")
             {
                 puntosneg++;
                 parada = true;
             }
 
-            if(sp.sprite.name == "zapatillas")
+            if(sp.sprite.name == "Assets_6")
             {
                 puntospos++;
                 parada = true;
