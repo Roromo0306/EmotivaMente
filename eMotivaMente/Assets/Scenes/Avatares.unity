@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: Ojos
       m_Image: {fileID: 526016043, guid: 35d4e3f65c81e9b4591a22292c6933eb, type: 3}
     - m_Text: Option B
       m_Image: {fileID: -445311917, guid: 35d4e3f65c81e9b4591a22292c6933eb, type: 3}
@@ -2943,7 +2943,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: Nariz
       m_Image: {fileID: -955275014, guid: 124eea70f8142c44f8c9940813d349f6, type: 3}
     - m_Text: Option B
       m_Image: {fileID: -1715580428, guid: 124eea70f8142c44f8c9940813d349f6, type: 3}
@@ -3170,7 +3170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: Ojos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3623,7 +3623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 178, y: -104}
+  m_AnchoredPosition: {x: 175, y: -104}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726130253
@@ -3676,7 +3676,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: Accesorios
       m_Image: {fileID: -760139820, guid: 9d1d6e0283c236f458402223bd8d25c5, type: 3}
     - m_Text: Option B
       m_Image: {fileID: -281433828, guid: 9d1d6e0283c236f458402223bd8d25c5, type: 3}
@@ -4143,7 +4143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: Boca
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4517,7 +4517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pelo Corto
+  m_text: Pelo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5082,7 +5082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: Nariz
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7721,7 +7721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: Accesorios
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8527,7 +8527,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Pelo Corto
+    - m_Text: Pelo
       m_Image: {fileID: -1647635957, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
     - m_Text: Option B
       m_Image: {fileID: 188707836, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
@@ -8686,7 +8686,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: Boca
       m_Image: {fileID: -128348285, guid: 3381ff2a33340504ea5a515bddb7b68e, type: 3}
     - m_Text: Option B
       m_Image: {fileID: 1066776026, guid: 3381ff2a33340504ea5a515bddb7b68e, type: 3}
@@ -9290,11 +9290,11 @@ MonoBehaviour:
   - {r: 0.45, g: 0.3, b: 0.18, a: 1}
   - {r: 0.3132075, g: 0.18928626, b: 0.093962215, a: 1}
   hairColors:
-  - {r: 0.1, g: 0.05, b: 0.02, a: 1}
+  - {r: 0.12452829, g: 0.06998421, b: 0.03641863, a: 1}
   - {r: 0.25, g: 0.15, b: 0.05, a: 1}
   - {r: 0.4, g: 0.25, b: 0.1, a: 1}
-  - {r: 0.7, g: 0.55, b: 0.2, a: 1}
-  - {r: 0.8, g: 0.5, b: 0.2, a: 1}
+  - {r: 0.89433956, g: 0.73529565, b: 0.3627981, a: 1}
+  - {r: 0.8415094, g: 0.27934495, b: 0.16988961, a: 1}
 --- !u!224 &2092565166
 RectTransform:
   m_ObjectHideFlags: 0
