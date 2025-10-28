@@ -1680,7 +1680,6 @@ MonoBehaviour:
   - {fileID: 2038213128, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
   - {fileID: -1506829446, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
   - {fileID: 1551843881, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
-  - {fileID: 21300000, guid: 83995eb658204b74d9bd7a2cfd1fe139, type: 3}
   - {fileID: 227793510, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
   - {fileID: -100751581, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
   - {fileID: 2037665618, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
@@ -1689,7 +1688,7 @@ MonoBehaviour:
   imagenesEjemplo:
   - {fileID: 2038213128, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
   - {fileID: -100751581, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
-  - {fileID: 21300000, guid: 83995eb658204b74d9bd7a2cfd1fe139, type: 3}
+  - {fileID: 1551843881, guid: 797e108540e393a429d5dcc616117d0b, type: 3}
   final: 0
   Fase: 0
   fase: 0

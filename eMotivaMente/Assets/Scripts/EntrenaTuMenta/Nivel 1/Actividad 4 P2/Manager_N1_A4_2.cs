@@ -227,7 +227,7 @@ public class Manager_N1_A4_2 : MonoBehaviour
                 cuadrado1 = cuadrado2 = null;
             }
 
-            if (nombre1 != nombre2)
+            if (nombre1 == nombre2)
             {
                 StartCoroutine(ReseteoA());
             }
@@ -258,6 +258,7 @@ public class Manager_N1_A4_2 : MonoBehaviour
 
     private IEnumerator ReseteoA()
     {
+        Debug.Log("Hola");
         yield return new WaitForSeconds(segundosEspera);
 
         int cant = Mathf.Min(cuadrados_actividad.Count, Comida_actividad.Count); //Lo que hace es contar los elementos de cada lista y se queda con el más pequeño

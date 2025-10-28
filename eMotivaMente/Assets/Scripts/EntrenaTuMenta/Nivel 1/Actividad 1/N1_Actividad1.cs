@@ -141,7 +141,7 @@ public class N1_Actividad1 : MonoBehaviour
         //Condición de victoria
         if(Fase)
         {
-            if (GenS.puntospos == 7 && GenS.puntosneg == 0)
+            if (GenS.puntospos == 6 && GenS.puntosneg == 0)
             {
                 //Ha acertado al 100%
                 final = 1;
@@ -157,7 +157,7 @@ public class N1_Actividad1 : MonoBehaviour
                 else
                 {
                    
-                    if (GenS.puntospos <= 7 && GenS.puntosneg <= 2)
+                    if (GenS.puntospos <= 6 && GenS.puntosneg <= 2)
                     {
                         //Esta bien pero con algunos fallos
                         final = 2;
