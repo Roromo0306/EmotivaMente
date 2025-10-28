@@ -10,6 +10,8 @@ public class AvatarDisplay : MonoBehaviour
     public Image eyesLayer;
     public Image noseLayer;
     public Image mouthLayer;
+    public Image browsLayer;
+    public Image accesoriesLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class AvatarDisplay : MonoBehaviour
         eyesLayer.sprite = Resources.Load<Sprite>($"Eyes/{avatar.eyes}");
         noseLayer.sprite = Resources.Load<Sprite>($"Nose/{avatar.nose}");
         mouthLayer.sprite = Resources.Load<Sprite>($"Mouth/{avatar.mouth}");
+        browsLayer.sprite = Resources.Load<Sprite>($"Mouth/{avatar.brows}");
+        accesoriesLayer.sprite = Resources.Load<Sprite>($"Mouth/{avatar.accesories}");
     }
 
     // Update is called once per frame
