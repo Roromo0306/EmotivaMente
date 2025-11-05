@@ -48,7 +48,7 @@ public class N1_Actividad1 : MonoBehaviour
 
     void Update()
     {
-        Canvas_Inicio_N1_A1 can = CanvasInicio.GetComponent<Canvas_Inicio_N1_A1>();
+        Canvas_Inicio_N1_A1 can = CanvasInicio.GetComponent<Canvas_Inicio_N1_A1>(); //Obtengo el componente del canvas
 
         //Modo ejemplo
         if(can.modo == 1)
@@ -58,17 +58,17 @@ public class N1_Actividad1 : MonoBehaviour
                 activado = true;
                 fase = 0; //Lo reinicio por seguridad
 
-                if(currentRoutine != null)
+                if(currentRoutine != null) //Paro la corrutina en caso de que siga de forma secundaria
                 {
                     StopCoroutine(currentRoutine);
                     currentRoutine = null;
                 }
                 
                 Cursor.visible = false; // Oculta cursor del sistema
-                cursorImage.SetActive(true);
+                cursorImage.SetActive(true); //Activo la imagen del cursor
 
-                generador.gameObject.SetActive(true);
-                currentRoutine = StartCoroutine(Ej1());
+                generador.gameObject.SetActive(true); //Activo el gameobject generador
+                currentRoutine = StartCoroutine(Ej1()); //Empiezo la corrutina
             }
         }
 
@@ -169,7 +169,7 @@ public class N1_Actividad1 : MonoBehaviour
  
     }
 
-    //Corrutina que recorre la lista de sprites cada 7 segundos
+    //Corrutina que recorre la lista de sprites cada 7 segundos. Esta corrutina pertenece a la actividad
     private IEnumerator Act1()
     {
         DetectorColision GenS = generador.GetComponent<DetectorColision>();
@@ -196,9 +196,9 @@ public class N1_Actividad1 : MonoBehaviour
                     Cursor.visible = true;
                     cursorImage.SetActive(false);
 
-                    generador.gameObject.SetActive(false);
+                    generador.gameObject.SetActive(false); //Ocultamos el generador
 
-                    currentRoutine = null;
+                    currentRoutine = null; //Cerramos la corrutina
                     yield break;
                 }
                 yield return new WaitForSeconds(7f);

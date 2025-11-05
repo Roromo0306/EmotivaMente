@@ -93,7 +93,7 @@ public class Manager_N1_A4 : MonoBehaviour
             int index = i;
             
             bt.onClick.RemoveAllListeners();
-            bt.onClick.AddListener(() => Mostrar_Ejemplo(index));
+            bt.onClick.AddListener(() => Mostrar_Ejemplo(index)); //Al pulsar el boton (que en este caso es el cuadrado) se activa esa función
 
         }
     }
@@ -104,7 +104,7 @@ public class Manager_N1_A4 : MonoBehaviour
         CronómetroN1_A4 crono = cronometro.GetComponent<CronómetroN1_A4>();
 
         activado = true;
-        crono.iniciado = true;
+        crono.iniciado = true; //Inicio para el cronometro
         int cant = Mathf.Min(cuadrados_actividad.Count, Comida_actividad.Count);
 
         for (int i = 0; i < cant; i++)
@@ -114,7 +114,7 @@ public class Manager_N1_A4 : MonoBehaviour
             int index = i;
 
             bt.onClick.RemoveAllListeners();
-            bt.onClick.AddListener(() => Mostrar_Actividad(index));
+            bt.onClick.AddListener(() => Mostrar_Actividad(index)); //Al pulsar el boton (que en este caso es el cuadrado) se activa esa función
 
         }
     }
@@ -134,40 +134,42 @@ public class Manager_N1_A4 : MonoBehaviour
 
             img.gameObject.SetActive(true);
 
-            if(baldosa == 0)
+            if(baldosa == 0) //Asigna el nombre y la imagen a estas dos variables
             {
                 nombre1 = img.name;
                 imagen1 = Comida_ejemplo[i];
             }
 
-            if(baldosa == 1)
+            if(baldosa == 1) //Asigna el nombre y la imagen a estas dos variables
             {
                 nombre2 = img.name;
                 imagen2 = Comida_ejemplo[i];
             }
 
-                baldosa++;
+                baldosa++; //Suma baldosa cada vez qeu se llama
         }
 
-        if (baldosa == 2 && nombre1 != null && nombre2 != null)
+        if (baldosa == 2 && nombre1 != null && nombre2 != null) //Si baldosa es 2 y los nombres estan asignados sucede lo siguiente
         {
-            if (nombre1 == nombre2)
+            if (nombre1 == nombre2) //Esto se activa si es una pareja
             {
                 Debug.Log("Pareja");
 
+                //Permite llevar las imagenes de los dos objetos implicados
                 LlevarObjeto llevarImagen1 = imagen1.GetComponent<LlevarObjeto>();
                 LlevarObjeto llevarImagen2 = imagen2.GetComponent<LlevarObjeto>();
 
                 llevarImagen1.activado = true;
                 llevarImagen2.activado = true;
 
+                //Reinicia las varibales
                 baldosa = 0;
                 nombre1 = nombre2 = null;
                 imagen1 = null;
                 imagen2 = null;
             }
             
-            if(nombre1  != nombre2)
+            if(nombre1  != nombre2) //Si no son parejas se activa la funcion reseteo
             {
                 StartCoroutine(Reseteo());
             }
@@ -175,7 +177,7 @@ public class Manager_N1_A4 : MonoBehaviour
         
     }
 
-    //Esta función se encarga de mostrar los cuadrados y sus imágenes
+    //Esta función se encarga de mostrar los cuadrados y sus imágenes. Ver comentarios de la funcion de arriba
     private void Mostrar_Actividad(int i)
     {
         Button bt = cuadrados_actividad[i];
@@ -234,7 +236,7 @@ public class Manager_N1_A4 : MonoBehaviour
 
     }
 
-    //Sirve para resetear cuando no se forme una pareja
+    //Sirve para resetear cuando no se forme una pareja de manera que resetea todo
     private IEnumerator Reseteo()
     {
         yield return new WaitForSeconds(segundosEspera);
@@ -255,6 +257,7 @@ public class Manager_N1_A4 : MonoBehaviour
         }
     }
 
+    //Funcion de reseteo de la actividad de manera que se oculta las imagenes y se activan los cuadrados
     private IEnumerator ReseteoA()
     {
         yield return new WaitForSeconds(segundosEspera);
@@ -275,7 +278,7 @@ public class Manager_N1_A4 : MonoBehaviour
         cuadrado1 = cuadrado2 = null;
     }
 
-    //Final del ejemplo
+    //Final del ejemplo que reseta los valores y activa el canvas de nuevo
     private void finalE()
     {
         Canvas_N1_A4 c = Canvas.GetComponent<Canvas_N1_A4>();
@@ -288,7 +291,7 @@ public class Manager_N1_A4 : MonoBehaviour
 
     }
 
-    //Final de la actividad
+    //Final de la actividad que resetea los valores y activa el canvas final
     private void finalA()
     {
         Canvas_N1_A4 c = Canvas.GetComponent<Canvas_N1_A4>();

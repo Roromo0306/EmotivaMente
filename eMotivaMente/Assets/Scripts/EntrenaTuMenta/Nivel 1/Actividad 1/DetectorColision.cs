@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DetectorColision : MonoBehaviour
 {
-    public int puntospos=0;
-    public int puntosneg=0;
+    public int puntospos=0; //Puntos positivos
+    public int puntosneg=0; //Puntos negativos
 
-    private GameObject esto;
+    private GameObject esto; //Es este gameobject
     private SpriteRenderer sp;
 
     public bool parada = false; //Uso este bool para parar la corrutina
@@ -26,7 +26,7 @@ public class DetectorColision : MonoBehaviour
         N1_Actividad1 n = manager.GetComponent<N1_Actividad1>();
         if(c.modo == 2)
         { 
-        if (collision.gameObject.CompareTag("Maleta"))
+        if (collision.gameObject.CompareTag("Maleta")) //Primero comprueba si colisiona con la maleta y luego comprueba nombre por nombre para sumar puntos positivos o negativos
         {
             if(sp.sprite.name == "Assets_2")
             {

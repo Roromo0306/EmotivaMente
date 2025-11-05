@@ -170,7 +170,7 @@ public class Manager_N1_A5 : MonoBehaviour
         
     }
 
-
+    //Corrutina de la actividad que hace que los semaforos avancen conforme pulsas los botones. Tambien controla las condiciones de victoria
     IEnumerator actividadF()
     {
         Canvas_N1_A5 canva = canvaIncio.GetComponent<Canvas_N1_A5>();
@@ -181,7 +181,7 @@ public class Manager_N1_A5 : MonoBehaviour
             act.sprite = actividad[cont];
             presionado = false;
 
-            yield return new WaitUntil(() => presionado);
+            yield return new WaitUntil(() => presionado); //La corrutina no avanza hasta que presionado sea true
 
             yield return null;
         }
@@ -191,6 +191,7 @@ public class Manager_N1_A5 : MonoBehaviour
         cronos.iniciado = false;
         act.gameObject.SetActive(false);
 
+        //Condiciones de victoria
         if(puntuacion == 10) //Perfecto
         {
             canva.Menu.gameObject.SetActive(true);

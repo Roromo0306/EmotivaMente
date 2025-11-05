@@ -12,7 +12,7 @@ public class colision_N1_A4 : MonoBehaviour
         Canvas_N1_A4 c = canvas.GetComponent<Canvas_N1_A4>();
         Manager_N1_A4 m = manager.GetComponent<Manager_N1_A4>();
 
-        if(c.tipo == 1)
+        if(c.tipo == 1) // Esto sucede si el modo es el ejemplo
         {
             if (collision.gameObject.CompareTag("Comida_A4"))
             {
@@ -21,11 +21,10 @@ public class colision_N1_A4 : MonoBehaviour
             }
         }
 
-        if(c.tipo == 2)
+        if(c.tipo == 2) //Esto sucede si el modo es la actividad
         {
             if (collision.gameObject.CompareTag("Comida_A4"))
             {
-                //Destroy(collision.gameObject);
                 collision.gameObject.SetActive(false);
                 puntosActividad += 0.5f;
             }
