@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Detector_Ejemplo_Col : MonoBehaviour
 {
-    private GameObject esto;
     private SpriteRenderer sp;
 
     public bool parada = false;
@@ -15,8 +14,7 @@ public class Detector_Ejemplo_Col : MonoBehaviour
     public int puntosNegativos = 0;
     private void Start()
     {
-        esto = this.gameObject;
-        sp = esto.GetComponent<SpriteRenderer>();
+        sp = GetComponent<SpriteRenderer>();
 
     }
 
