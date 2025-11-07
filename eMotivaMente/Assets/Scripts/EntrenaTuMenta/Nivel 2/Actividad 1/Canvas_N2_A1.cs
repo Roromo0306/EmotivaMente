@@ -8,7 +8,6 @@ public class Canvas_N2_A1 : MonoBehaviour
 {
     [Header("Canvas")]
     public Canvas canvas;
-    public Canvas canvasTexto;
     public Canvas canvasFinal;
 
     [Header("Botones")]
@@ -26,7 +25,6 @@ public class Canvas_N2_A1 : MonoBehaviour
     public AudioSource fuenteAudio;
     void Start()
     {
-        canvasTexto.enabled = false;
         Time.timeScale = 0;
         Ejemplo.onClick.AddListener(ejemplo);
         Actividad.onClick.AddListener(actividad);
@@ -43,7 +41,7 @@ public class Canvas_N2_A1 : MonoBehaviour
 
     private void ejemplo()
     {
-        Manager_N1_A2 m = managaer.GetComponent<Manager_N1_A2>();
+        Manager_N2_A1 m = managaer.GetComponent<Manager_N2_A1>();
         canvas.enabled = false;
         Ejemplo.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(false);
@@ -69,11 +67,10 @@ public class Canvas_N2_A1 : MonoBehaviour
 
     private void actividad()
     {
-        Manager_N1_A2 m = managaer.GetComponent<Manager_N1_A2>();
-        Detector_Ejemplo_Col d = detector.GetComponent<Detector_Ejemplo_Col>();
+        Manager_N2_A1 m = managaer.GetComponent<Manager_N2_A1>();
+        Detector_Colision_N2_A1 d = detector.GetComponent<Detector_Colision_N2_A1>();
 
         canvas.enabled = false;
-        canvasTexto.enabled = false; //Desactivo el canvas 2 para que no salgan los textos
         Ejemplo.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(false);
 
