@@ -29,4 +29,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Entreno mi pensamiento/Nivel 1/N1_Actividad 5.unity
     guid: a87ca25a133a6424294c197ed73aaa0d
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 2/MenuNivel2.unity
+    guid: 7d314ca48e13625478ba5ffc0e8391ed
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 2/Nivel2_Actividad 1.unity
+    guid: 03178d73e8f4aba4ab91174d95fb915a
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 2/Nivel2_Actividad 2.unity
+    guid: b953b416045fc7545b9bcd02d3f43988
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 2/Nivel2_Actividad 3.unity
+    guid: ff868ebd972e1db40ba0ecb43bf849f8
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 2/Nivel2_Actividad 4.unity
+    guid: 7e00378118269b942b5a9031aee6533b
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 2/Nivel2_Actividad 5.unity
+    guid: 5318d6cbf3dca3445908c1d39e86b373
   m_configObjects: {}
