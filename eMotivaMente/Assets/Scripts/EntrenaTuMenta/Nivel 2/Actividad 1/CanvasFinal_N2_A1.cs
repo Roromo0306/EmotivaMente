@@ -54,7 +54,6 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
                 Volver.gameObject.SetActive(true);
                 texto1.gameObject.SetActive(true);
                 canvasFinal.enabled = true;
-                Menu_Nivel1_Entrena.n2 = true;
             }
             else
             {
@@ -74,7 +73,6 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
                         Reintentar.gameObject.SetActive(true);
                         texto3.gameObject.SetActive(true);
                         canvasFinal.enabled = true;
-                        Menu_Nivel1_Entrena.n2 = true;
                     }
                 }
             }

@@ -37,7 +37,6 @@ public class Manager_N2_A1 : MonoBehaviour
 
     void Start()
     {
-        Canvas_N2_A1 can = canva.GetComponent<Canvas_N2_A1>();
 
         cursor = false; //Desactivo cursor
         Cursor.visible = true; //Activo el cursor para que se vea
@@ -83,11 +82,7 @@ public class Manager_N2_A1 : MonoBehaviour
                 }
             }
 
-
-
-            //Condiconales para la activacion de los textos
-
-            if (fase == 6)
+            if (fase == 6) //Ejemplo
             {
                 //Vuelta al canvas
 
@@ -132,7 +127,7 @@ public class Manager_N2_A1 : MonoBehaviour
         {
             foreach (var sprite in sprite_ejemplo)
             {
-                gen_ejemplo.parada = false;
+               // gen_ejemplo.parada = false;
                 generadorEjemploRenderer.sprite = sprite;
                 generador.transform.position = originalPositionEjemplo;
 
@@ -154,7 +149,7 @@ public class Manager_N2_A1 : MonoBehaviour
         {
             foreach (var sprite in sprite_actividad)
             {
-                gen_ejemplo.parada = false;
+               // gen_ejemplo.parada = false;
                 generadorEjemploRenderer.sprite = sprite;
                 generador.transform.position = originalPositionEjemplo;
 
