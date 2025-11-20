@@ -67,24 +67,24 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
 
     public void ejemplo()
     {
-        modo = 1;
-        EsteCanvas.enabled = false;
+        modo = 1; //Pongo el modo 1 para iniciar el modo ejemplo
+        EsteCanvas.enabled = false; //Desactivo el canvas
     }
 
     public void actividad()
     {
-        modo = 2;
-        EsteCanvas.enabled = false;
+        modo = 2; //Pongo el modo 2 para inciar el modo actividad
+        EsteCanvas.enabled = false; //Desactivo el canvas
     }
 
     public void reintentar()
     {
-        SceneManager.LoadScene("Nivel2_Actividad 3");
+        SceneManager.LoadScene("Nivel2_Actividad 3"); //Vuelvo a cargar la escena
     }
 
     public void menuPrincipal()
     {
-        SceneManager.LoadScene("MenuNivel2");
+        SceneManager.LoadScene("MenuNivel2"); //Cargo el la escena del menu principal
 
     }
 }

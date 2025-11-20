@@ -20,11 +20,6 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
 
     [HideInInspector] public int modo;
 
-    [Header("Textos")]
-    public TextMeshProUGUI texto2;
-    public TextMeshProUGUI texto1;
-    public TextMeshProUGUI texto3;
-
     public void ejemplo()
     {
         modo = 1; //Cambio el valor de modo para que el manager sepa que vamos a entrar en el modo ejemplo
