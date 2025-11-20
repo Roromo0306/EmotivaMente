@@ -25,10 +25,6 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
     public TextMeshProUGUI texto2;
     public TextMeshProUGUI texto1;
     public TextMeshProUGUI texto3;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
