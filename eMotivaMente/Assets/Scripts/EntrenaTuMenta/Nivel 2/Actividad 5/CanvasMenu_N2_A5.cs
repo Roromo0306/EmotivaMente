@@ -18,6 +18,34 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
 
     [HideInInspector] public int modo;
 
+    private void Update()
+    {
+        Manager_N2_A5 man = manager.GetComponent<Manager_N2_A5>();
+
+        if (man.Terminado) //Comprueba si se ha terminado la actividad
+        {
+            if(man.score == 19) //Ha acertado todo
+            {
+                MenuPrincipal.gameObject.SetActive(true);
+            }
+            else
+            {
+                if(man.score < 19 && man.score > 3) //Ha tenido fallos
+                {
+                    MenuPrincipal.gameObject.SetActive(true);
+                    Reintentar.gameObject.SetActive(true);
+                }
+                else
+                {
+                    if(man.score <= 3) //Ha fallado mucho y debe repetirlo
+                    {
+                        Reintentar.gameObject.SetActive(true);
+                    }
+                }
+            }
+        }
+    }
+
     public void ejemplo()
     {
         modo = 1; //Cambio el valor de modo para que el manager sepa que vamos a entrar en el modo ejemplo
@@ -34,8 +62,6 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
         //Desactivo los botones de actividad y ejemplo pero activo los de reintentar y menu para que al salir de la actividad el jugador pueda continuar de la manera que desee
         Actividad.gameObject.SetActive(false);
         Ejemplo.gameObject.SetActive(false);
-        MenuPrincipal.gameObject.SetActive(true);
-        Reintentar.gameObject.SetActive(true);
     }
 
     public void reintentar()
