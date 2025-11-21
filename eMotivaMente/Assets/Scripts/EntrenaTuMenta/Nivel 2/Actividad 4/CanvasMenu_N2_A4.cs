@@ -47,6 +47,7 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
 
     public void menuPrincipal()
     {
+        Menu_Nivel2.n4 = true;
         SceneManager.LoadScene("MenuNivel2"); //Cargo el menu principal
     }
 }

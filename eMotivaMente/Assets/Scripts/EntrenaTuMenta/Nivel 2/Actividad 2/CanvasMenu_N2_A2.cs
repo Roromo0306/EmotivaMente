@@ -90,6 +90,7 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
 
     public void menuPrincipal()
     {
+        Menu_Nivel2.n2 = true;
         SceneManager.LoadScene("MenuNivel2");
 
     }

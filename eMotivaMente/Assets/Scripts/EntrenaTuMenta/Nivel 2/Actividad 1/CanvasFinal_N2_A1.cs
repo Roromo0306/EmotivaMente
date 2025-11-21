@@ -94,6 +94,7 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
 
         //Cargo el menu
         SceneManager.LoadScene("Menu Nivel 2");
+        Menu_Nivel2.n1 = true; 
     }
 
     private void ReintentarB()

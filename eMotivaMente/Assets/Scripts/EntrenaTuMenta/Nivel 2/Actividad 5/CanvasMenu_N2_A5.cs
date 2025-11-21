@@ -71,7 +71,7 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
 
     public void menuPrincipal()
     {
-        SceneManager.LoadScene("MenuNivel2"); //Cargo el menu principal
+        SceneManager.LoadScene("Menu Nivel 3"); //Cargo el menu principal
     }
 }
 
