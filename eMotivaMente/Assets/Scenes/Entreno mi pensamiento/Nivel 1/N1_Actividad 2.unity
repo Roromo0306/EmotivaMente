@@ -3182,9 +3182,9 @@ MonoBehaviour:
   canva2: {fileID: 990017349}
   canvaFin: {fileID: 610197338}
   sprite_ejemplo:
-  - {fileID: 21300000, guid: 2ce36605a83ca33478528efbfbe7be4e, type: 3}
-  - {fileID: 21300000, guid: 220186f8b1736fe42baf540a4ba6d125, type: 3}
-  - {fileID: 21300000, guid: 1f446a5472977ba4a99940b7f78630a7, type: 3}
+  - {fileID: -1981112049, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
+  - {fileID: -1260770361, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
+  - {fileID: 2059202203, guid: 7bfd002f8ac155f4cb7dcb2db54a7216, type: 3}
   sprite_actividad:
   - {fileID: 21300000, guid: ff4194e0a6d12e949b29da47f3afd2aa, type: 3}
   - {fileID: 21300000, guid: 25766a189a1489147b22d86fcaf7a58a, type: 3}
@@ -3196,12 +3196,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 307dfc3ea2a0c124e8c5d95c690bdfbf, type: 3}
   - {fileID: 21300000, guid: cd03ea1f029106f4d95b1dd1b4df4c55, type: 3}
   - {fileID: 21300000, guid: bd9000bc8b59c7041ac6b00226d47356, type: 3}
-  - {fileID: 21300000, guid: 6876bcc818c8ed743bb1412e962843cb, type: 3}
+  - {fileID: 1086369709, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
   - {fileID: 21300000, guid: 0bcdfc64345e8fb4292d1d64b764b479, type: 3}
-  - {fileID: 21300000, guid: 21cf0fedd4c4d534cb66a5e134a541aa, type: 3}
-  - {fileID: 21300000, guid: 9f3cda48378c08c46873c9378c845561, type: 3}
-  - {fileID: 21300000, guid: 38486bd02fafbab4c9a589826e0a773e, type: 3}
-  - {fileID: 21300000, guid: 7f358e2c05ca9f9409d1e55151390800, type: 3}
+  - {fileID: 416513624, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
+  - {fileID: -597335168, guid: 7bfd002f8ac155f4cb7dcb2db54a7216, type: 3}
+  - {fileID: 1455398161, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
+  - {fileID: -1981112049, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
   texto1: {fileID: 387666275}
   texto2: {fileID: 1156500088}
   texto3: {fileID: 1956939695}

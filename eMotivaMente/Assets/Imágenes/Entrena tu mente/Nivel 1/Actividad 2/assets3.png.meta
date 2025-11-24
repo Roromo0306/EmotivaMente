@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: assets3_1
+      name: pera
       rect:
         serializedVersion: 2
         x: 97
@@ -118,7 +118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assets3_2
+      name: hamburguesa
       rect:
         serializedVersion: 2
         x: 516
@@ -139,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assets3_3
+      name: tijeras
       rect:
         serializedVersion: 2
         x: 1109
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assets3_4
+      name: cerezas
       rect:
         serializedVersion: 2
         x: 358
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assets3_5
+      name: botella
       rect:
         serializedVersion: 2
         x: 841
@@ -213,11 +213,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       assets3_0: 460861104
-      assets3_1: -1260770361
-      assets3_2: 416513624
-      assets3_3: -1981112049
-      assets3_4: 1086369709
-      assets3_5: 1455398161
+      botella: 1455398161
+      cerezas: 1086369709
+      hamburguesa: 416513624
+      pera: -1260770361
+      tijeras: -1981112049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
