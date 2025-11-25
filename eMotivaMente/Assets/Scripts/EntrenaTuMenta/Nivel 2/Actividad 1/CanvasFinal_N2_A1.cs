@@ -80,11 +80,11 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
 
     }
 
-    private void VolverB()
+    public void VolverB()
     {
         Detector_Colision_N2_A1 D = Generador.GetComponent<Detector_Colision_N2_A1>();
 
-        DatosEmotivamente.Instance.puntuacionPosN1_A2 = D.puntosPositivos; //Envio los puntos positivos
+       // DatosEmotivamente.Instance.puntuacionPosN1_A2 = D.puntosPositivos; //Envio los puntos positivos
 
        /* //Me aseguro que los puntos negativos no son 0 antes de enviarlos
         if (D.puntosNegativos != 0)
@@ -97,7 +97,7 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
         Menu_Nivel2.n1 = true; 
     }
 
-    private void ReintentarB()
+    public void ReintentarB()
     {
         SceneManager.LoadScene("Nivel2_Actividad 1");
     }
