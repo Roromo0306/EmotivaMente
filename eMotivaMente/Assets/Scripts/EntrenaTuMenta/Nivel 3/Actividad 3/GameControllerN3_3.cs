@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class GameController : MonoBehaviour
+public class GameControllerN3_3 : MonoBehaviour
 {
     [Header("UI")]
     public Image imagenUI;
