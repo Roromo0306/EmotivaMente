@@ -75,7 +75,8 @@ public class Manager_N2_A5 : MonoBehaviour
     {
         while (contador <= ImagenesAct.Count -1) //Indico que se repita por el numero de imagenes total que hay en la lista
         {
-            yield return new WaitForSeconds(10f); //Espero 10 segundos
+            yield return new WaitForSeconds(3f); //Espero 10 segundos
+            Debug.Log("hola");
             ImagenesAct[contador].gameObject.SetActive(true); //Activo la imagen
             contador++; //Aumento esta variable
         }

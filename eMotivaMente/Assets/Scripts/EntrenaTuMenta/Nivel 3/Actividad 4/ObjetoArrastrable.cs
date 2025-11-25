@@ -9,13 +9,13 @@ public class ObjetoArrastrable : MonoBehaviour, IBeginDragHandler, IDragHandler,
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Canvas canvas;
-    private GameController controller;
+    private GameControllerN3_4 controller;
 
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        controller = FindObjectOfType<GameController>();
+        controller = FindObjectOfType<GameControllerN3_4>();
         canvas = GetComponentInParent<Canvas>();
     }
 
