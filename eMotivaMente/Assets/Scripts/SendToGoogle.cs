@@ -17,7 +17,7 @@ public class SendToGoogle : MonoBehaviour
     [SerializeField] private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8kaRT96vI1GBIKM6sgPQg9wxHfWvZeCaOb46VQ3jwTkI9rA/formResponse";
 
     // Coroutine para enviar los datos al formulario mediante POST
-    IEnumerator Post(string nombre, string edad, string residencia, int puntuacionPosN1_A1, int puntuacionNegN1_A1, int puntuacionPosN1_A2, int puntuacionNegN1_A2, int puntuacionPosN1_A3, int puntuacionNegN1_A3, int tiempoN1_A4_1, int tiempoN1_A4_2, int puntuacionN1_A5, int tiempoN1_A5)
+    IEnumerator Post(string nombre, string edad, string residencia, int puntuacionPosN1_A1, int puntuacionNegN1_A1, int puntuacionPosN1_A2, int puntuacionNegN1_A2, int puntuacionPosN1_A3, int puntuacionNegN1_A3, int tiempoN1_A4_1, int tiempoN1_A4_2, int puntuacionN1_A5, int tiempoN1_A5, int puntuacionPosN2_A1, int puntuacionNegN2_A1, int puntuacionPosN2_A2, int puntuacionNegN2_A2, int puntuacionPosN2_A3, int puntuacionNegN2_A3, int tiempoN2_A4, int puntuacionPosN2_A5)
     {
         // Crear un formulario web para enviar los datos
         WWWForm form = new WWWForm();
@@ -42,8 +42,21 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.283860871", puntuacionN1_A5); //Puntuacion de la actividad 5
         form.AddField("entry.1107157474", tiempoN1_A5); //Tiempo de la actividad 5
 
+        form.AddField("entry.1735941657", puntuacionPosN2_A1); //Puntuacion positiva de la actividad 1 nivel 2
+        form.AddField("entry.1007286165", puntuacionNegN2_A1); //Puntuacion negativa de la actividad 1 nivel 2
+
+        form.AddField("entry.626743172", puntuacionPosN2_A2); //Puntuacion positiva de la actividad 2 nivel 2
+        form.AddField("entry.390555778", puntuacionNegN2_A2); //Puntuacion negativa de la actividad 2 nivel 2
+
+        form.AddField("entry.178356987", puntuacionPosN2_A3); //Puntuacion positiva de la actividad 3 nivel 2
+        form.AddField("entry.1012426736", puntuacionNegN2_A3); //Puntuacion negativa de la actividad 3 nivel 2
+
+        form.AddField("entry.832672456", tiempoN2_A4); //Tiempo de la actividad 4 nivel 2
+
+        form.AddField("entry.1145538934", puntuacionPosN2_A5); //Puntuacion positiva de la actividad 5 nivel 2
+
         // Mostrar mensaje de que el envío está en proceso
-       // StatusText.text = "Enviando...";
+        // StatusText.text = "Enviando...";
 
         // Crear y enviar la solicitud POST a la URL del formulario con los datos
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
@@ -68,7 +81,7 @@ public class SendToGoogle : MonoBehaviour
     }
 
     // Función que se llama cuando el usuario quiere enviar los datos (ejemplo: botón)
-    public void Send(string nombre, string edad, string residencia, int puntuacionPosN1_A1, int puntuacionNegN1_A1, int puntuacionPosN1_A2, int puntuacionNegN1_A2, int puntuacionPosN1_A3, int puntuacionNegN1_A3, int tiempoN1_A4_1, int tiempoN1_A4_2, int puntuacionN1_A5, int tiempoN1_A5)
+    public void Send(string nombre, string edad, string residencia, int puntuacionPosN1_A1, int puntuacionNegN1_A1, int puntuacionPosN1_A2, int puntuacionNegN1_A2, int puntuacionPosN1_A3, int puntuacionNegN1_A3, int tiempoN1_A4_1, int tiempoN1_A4_2, int puntuacionN1_A5, int tiempoN1_A5, int puntuacionPosN2_A1, int puntuacionNegN2_A1, int puntuacionPosN2_A2, int puntuacionNegN2_A2, int puntuacionPosN2_A3, int puntuacionNegN2_A3, int tiempoN2_A4, int puntuacionPosN2_A5)
     {
         /* // Obtener los textos de cada Input Field, y eliminar espacios en blanco al inicio y final
          nombre = Name.GetComponent<TMP_InputField>().text.Trim();
@@ -84,7 +97,7 @@ public class SendToGoogle : MonoBehaviour
          }*/
 
         // Iniciar la coroutine para enviar los datos al formulario
-        StartCoroutine(Post(nombre, edad, residencia, puntuacionPosN1_A1, puntuacionNegN1_A1, puntuacionPosN1_A2, puntuacionNegN1_A2, puntuacionPosN1_A3, puntuacionNegN1_A3, tiempoN1_A4_1, tiempoN1_A4_2, puntuacionN1_A5, tiempoN1_A5));
+        StartCoroutine(Post(nombre, edad, residencia, puntuacionPosN1_A1, puntuacionNegN1_A1, puntuacionPosN1_A2, puntuacionNegN1_A2, puntuacionPosN1_A3, puntuacionNegN1_A3, tiempoN1_A4_1, tiempoN1_A4_2, puntuacionN1_A5, tiempoN1_A5, puntuacionPosN2_A1, puntuacionNegN2_A1, puntuacionPosN2_A2, puntuacionNegN2_A2, puntuacionPosN2_A3, puntuacionNegN2_A3, tiempoN2_A4, puntuacionPosN2_A5));
     }
 }
 

@@ -82,15 +82,15 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
 
     public void VolverB()
     {
-        Detector_Colision_N2_A1 D = Generador.GetComponent<Detector_Colision_N2_A1>();
+       Detector_Colision_N2_A1 D = Generador.GetComponent<Detector_Colision_N2_A1>();
 
-       // DatosEmotivamente.Instance.puntuacionPosN1_A2 = D.puntosPositivos; //Envio los puntos positivos
+       DatosEmotivamente.Instance.puntuacionPosN2_A1 = D.puntosPositivos; //Envio los puntos positivos
 
-       /* //Me aseguro que los puntos negativos no son 0 antes de enviarlos
+       //Me aseguro que los puntos negativos no son 0 antes de enviarlos
         if (D.puntosNegativos != 0)
-            DatosEmotivamente.Instance.puntuacionNegN1_A2 = D.puntosNegativos;
+            DatosEmotivamente.Instance.puntuacionNegN2_A1 = D.puntosNegativos;
         else
-            DatosEmotivamente.Instance.puntuacionNegN1_A2 = 0;*/
+            DatosEmotivamente.Instance.puntuacionNegN2_A1 = 0;
 
         //Cargo el menu
         SceneManager.LoadScene("Menu Nivel 2");

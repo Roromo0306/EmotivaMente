@@ -35,6 +35,26 @@ public class DatosEmotivamente : MonoBehaviour
     public int puntuacionN1_A5;
     public int tiempoN1_A5;
 
+    //Nivel 2
+    //Actividad 1
+    public int puntuacionPosN2_A1;
+    public int puntuacionNegN2_A1;
+
+    //Actividad 2
+    public int puntuacionPosN2_A2;
+    public int puntuacionNegN2_A2;
+
+    //Actividad 3
+    public int puntuacionPosN2_A3;
+    public int puntuacionNegN2_A3;
+
+    //Actividad 4
+    public int tiempoN2_A4;
+
+    //Actividad 5
+    public int puntuacionPosN2_A5;
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -49,6 +69,6 @@ public class DatosEmotivamente : MonoBehaviour
 
     public void EnviarDatos()
     {
-        SG.Send(Name, edad, residencia, puntuacionPosN1_A1, puntuacionNegN1_A1, puntuacionPosN1_A2, puntuacionNegN1_A2, puntuacionPosN1_A3, puntuacionNegN1_A3, tiempoN1_A4_1, tiempoN1_A4_2, puntuacionN1_A5, tiempoN1_A5);
+        SG.Send(Name, edad, residencia, puntuacionPosN1_A1, puntuacionNegN1_A1, puntuacionPosN1_A2, puntuacionNegN1_A2, puntuacionPosN1_A3, puntuacionNegN1_A3, tiempoN1_A4_1, tiempoN1_A4_2, puntuacionN1_A5, tiempoN1_A5, puntuacionPosN2_A1, puntuacionNegN2_A1, puntuacionPosN2_A2, puntuacionNegN2_A2, puntuacionPosN2_A3, puntuacionNegN2_A3, tiempoN2_A4, puntuacionPosN2_A5);
     }
 }

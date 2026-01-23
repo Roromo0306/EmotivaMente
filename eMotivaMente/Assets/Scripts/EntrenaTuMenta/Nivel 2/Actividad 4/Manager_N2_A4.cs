@@ -32,8 +32,17 @@ public class Manager_N2_A4 : MonoBehaviour
     private bool ejemplo = false, actividad = false; //Bool para iniciar una sola vez el ejemplo o la actividad
     public int Paso = 0, indice = 0; //Enteros para controlar las listas
 
+    //Cronometro
+    private bool crono = false;
+    public float Cronometro = 0;
+
     void Update()
     {
+        if (crono)
+        {
+            Cronometro += Time.deltaTime;
+        }
+
         CanvasMenu_N2_A4 can = canvaMenu.GetComponent<CanvasMenu_N2_A4>(); //Referencia al canvas
 
         //Ejemplo
@@ -91,6 +100,7 @@ public class Manager_N2_A4 : MonoBehaviour
 
                 //Activo la corrutina
                 StartCoroutine(CicloImagenes());
+                crono = true;
 
                 //Pongo true el booleano para que no se repita mas este componente
                 actividad = true;
@@ -102,6 +112,7 @@ public class Manager_N2_A4 : MonoBehaviour
                 //Reseteo indice y paso
                 indice = 0;
                 Paso = 0;
+                crono = false;
 
                 //Recorro la lista para desactivar las imagenes que habian salido
                 for (int i = 0; i < Imagenes.Count; i++)

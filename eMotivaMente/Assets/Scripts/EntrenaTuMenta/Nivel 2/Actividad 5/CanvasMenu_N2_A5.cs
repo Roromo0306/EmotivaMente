@@ -71,7 +71,10 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
 
     public void menuPrincipal()
     {
-        SceneManager.LoadScene("Menu Nivel 3"); //Cargo el menu principal
+        Manager_N2_A5 man = manager.GetComponent<Manager_N2_A5>();
+        DatosEmotivamente.Instance.puntuacionPosN2_A5 = man.score; //Envio los puntos 
+
+        SceneManager.LoadScene("Menu Nivel 2"); //Cargo el menu principal
     }
 }
 

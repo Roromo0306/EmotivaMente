@@ -47,6 +47,10 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
 
     public void menuPrincipal()
     {
+        Manager_N2_A4 man = manager.GetComponent<Manager_N2_A4>();
+
+        DatosEmotivamente.Instance.tiempoN2_A4 = (int)man.Cronometro;
+
         Menu_Nivel2.n4 = true;
         SceneManager.LoadScene("MenuNivel2"); //Cargo el menu principal
     }

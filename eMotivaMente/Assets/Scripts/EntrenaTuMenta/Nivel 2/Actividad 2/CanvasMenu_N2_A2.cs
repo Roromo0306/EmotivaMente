@@ -90,6 +90,16 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
 
     public void menuPrincipal()
     {
+        DetectorColision_N2_A2 dec = detectorColision.GetComponent<DetectorColision_N2_A2>();
+
+        DatosEmotivamente.Instance.puntuacionPosN2_A2 = dec.puntosPositivos; //Envio los puntos positivos
+
+        //Me aseguro que los puntos negativos no son 0 antes de enviarlos
+        if (dec.puntosNegativos != 0)
+            DatosEmotivamente.Instance.puntuacionNegN2_A2 = dec.puntosNegativos;
+        else
+            DatosEmotivamente.Instance.puntuacionNegN2_A2 = 0;
+
         Menu_Nivel2.n2 = true;
         SceneManager.LoadScene("MenuNivel2");
 
