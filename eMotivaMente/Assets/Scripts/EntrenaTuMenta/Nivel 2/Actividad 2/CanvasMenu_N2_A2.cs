@@ -12,6 +12,9 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
     public Button Reintentar;
     public Button MenuPrincipal;
     public Button Ayuda;
+    public Button Audio;
+
+    public AudioSource fuenteAudio;
 
     [Header("Otros Gameobject")]
     public GameObject detectorColision;
@@ -30,6 +33,11 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public void sonido()
+    {
+        fuenteAudio.Play();
     }
 
     void Update()
@@ -74,12 +82,14 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
     public void ejemplo()
     {
         modo = 1;
+        Audio.gameObject.SetActive(false);
         EsteCanvas.enabled = false;
     }
 
     public void actividad()
     {
         modo = 2;
+        Audio.gameObject.SetActive(false);
         EsteCanvas.enabled = false;
     }
 

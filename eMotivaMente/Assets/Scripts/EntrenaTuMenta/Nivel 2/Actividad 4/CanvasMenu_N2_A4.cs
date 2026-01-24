@@ -12,6 +12,9 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
     public Button Actividad;
     public Button Reintentar;
     public Button MenuPrincipal;
+    public Button Audio;
+
+    public AudioSource fuenteAudio;
 
     [Header("Otros Gameobject")]
     public GameObject manager;
@@ -20,10 +23,15 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
 
     [HideInInspector] public int modo;
 
+    public void sonido()
+    {
+        fuenteAudio.Play();
+    }
     public void ejemplo()
     {
         modo = 1; //Cambio el valor de modo para que el manager sepa que vamos a entrar en el modo ejemplo
         EsteCanvas.enabled = false; //Desactivo el canvas
+        Audio.gameObject.SetActive(false);
 
         Ejemplo.gameObject.SetActive(false); //Desactivo ejemplo para redirigir al jugador a la actividad cuando acabe
     }
@@ -32,6 +40,7 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
     {
         modo = 2; //Cambio el valor de modo para que el manager sepa que vamos a entrar en el modo actividad
         EsteCanvas.enabled = false; //Desactivo el canvas
+        Audio.gameObject.SetActive(false);
 
         //Desactivo los botones de actividad y ejemplo pero activo los de reintentar y menu para que al salir de la actividad el jugador pueda continuar de la manera que desee
         Actividad.gameObject.SetActive(false);

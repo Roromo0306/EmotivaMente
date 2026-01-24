@@ -51,6 +51,7 @@ public class Manager_N2_A3 : MonoBehaviour
                 contador = 0;
                 can.modo = 0;
                 corrutina = true;
+                can.Audio.gameObject.SetActive(true);
                 CanvasMenu.enabled = true;
                 Time.timeScale = 0;
             }

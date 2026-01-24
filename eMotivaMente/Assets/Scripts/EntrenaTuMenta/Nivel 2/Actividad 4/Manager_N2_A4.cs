@@ -82,6 +82,7 @@ public class Manager_N2_A4 : MonoBehaviour
                 textosNumEj.SetActive(false);
                 textosInstrucEj.SetActive(false);
                 GeneradorEj.SetActive(false);
+                can.Audio.gameObject.SetActive(true);
 
                 //Reactivo el canvas
                 canvaMenu.enabled = true;

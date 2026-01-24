@@ -11,6 +11,9 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
     public Button Actividad;
     public Button Reintentar;
     public Button MenuPrincipal;
+    public Button Audio;
+
+    public AudioSource fuenteAudio;
 
     [Header("Otros Gameobject")]
     public GameObject detectorColision;
@@ -25,6 +28,12 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
     public TextMeshProUGUI texto2;
     public TextMeshProUGUI texto1;
     public TextMeshProUGUI texto3;
+
+
+    public void sonido()
+    {
+        fuenteAudio.Play();
+    }
 
     void Update()
     {
@@ -68,12 +77,15 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
     public void ejemplo()
     {
         modo = 1; //Pongo el modo 1 para iniciar el modo ejemplo
+        Audio.gameObject.SetActive(false);
         EsteCanvas.enabled = false; //Desactivo el canvas
+
     }
 
     public void actividad()
     {
         modo = 2; //Pongo el modo 2 para inciar el modo actividad
+        Audio.gameObject.SetActive(false);
         EsteCanvas.enabled = false; //Desactivo el canvas
     }
 

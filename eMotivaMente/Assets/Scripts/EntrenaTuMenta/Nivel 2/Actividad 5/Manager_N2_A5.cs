@@ -130,6 +130,8 @@ public class Manager_N2_A5 : MonoBehaviour
             contador++; //Aumento esta variable
         }
 
+        
+
         StopAllCoroutines(); //Al acabar el bucle llamo a esto para detener la corrutina
     }
 
@@ -157,11 +159,13 @@ public class Manager_N2_A5 : MonoBehaviour
 
         Debug.Log(score);
 
+
         //Desactivo estos componentes
         slotsEjemplo.gameObject.SetActive(false);
         botonEj.gameObject.SetActive(false);
 
         //Vuelve al canvas menu y resetea el modo
+        can.Audio.gameObject.SetActive(true);
         canvas.enabled = true;
         can.modo = 0;
     }
