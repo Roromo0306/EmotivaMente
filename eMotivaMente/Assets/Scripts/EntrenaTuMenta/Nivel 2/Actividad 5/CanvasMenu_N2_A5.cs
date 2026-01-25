@@ -85,7 +85,7 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
         DatosEmotivamente.Instance.puntuacionPosN2_A5 = man.score; //Envio los puntos 
 
         Menu_Nivel2.n5 = true;
-        SceneManager.LoadScene("Menu Nivel 2"); //Cargo el menu principal
+        SceneManager.LoadScene("MenuNivel2"); //Cargo el menu principal
     }
 }
 

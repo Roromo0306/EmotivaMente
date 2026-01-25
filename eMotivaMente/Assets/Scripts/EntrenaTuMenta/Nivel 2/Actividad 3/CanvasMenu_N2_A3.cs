@@ -96,7 +96,7 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
 
     public void menuPrincipal()
     {
-        Detector_Colision_N2_A3 dec = detectorColision.GetComponent<Detector_Colision_N2_A3>();
+       Detector_Colision_N2_A3 dec = detectorColision.GetComponent<Detector_Colision_N2_A3>();
 
         DatosEmotivamente.Instance.puntuacionPosN2_A3 = dec.puntosPositivos; //Envio los puntos positivos
 

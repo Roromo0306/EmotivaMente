@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
 using TMPro;
-using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AvatarCustomizer : MonoBehaviour
 {
@@ -244,5 +245,6 @@ public class AvatarCustomizer : MonoBehaviour
     {
         AvatarManager.Instance.avatarData = avatar;
         AvatarManager.Instance.SaveAvatar();
+        SceneManager.LoadScene("Menú del nivel 1");
     }
 }

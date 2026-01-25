@@ -75,7 +75,7 @@ public class Canvas_N1_A5 : MonoBehaviour
         DatosEmotivamente.Instance.tiempoN1_A5 = cronos.Tiempo;
         DatosEmotivamente.Instance.puntuacionN1_A5 = m.puntuacion;
 
-        SceneManager.LoadScene("Menú del nivel 1");
+        SceneManager.LoadScene("MenuNivel2");
 
 
     }

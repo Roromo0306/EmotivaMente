@@ -93,7 +93,7 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
             DatosEmotivamente.Instance.puntuacionNegN2_A1 = 0;
 
         //Cargo el menu
-        SceneManager.LoadScene("Menu Nivel 2");
+        SceneManager.LoadScene("MenuNivel2");
         Menu_Nivel2.n1 = true; 
     }
 

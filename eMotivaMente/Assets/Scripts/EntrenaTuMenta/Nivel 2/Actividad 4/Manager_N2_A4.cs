@@ -99,6 +99,8 @@ public class Manager_N2_A4 : MonoBehaviour
                 textosInstrucAct.SetActive(true);
                 GeneradorAct.SetActive(true);
 
+                StopAllCoroutines();
+
                 //Activo la corrutina
                 StartCoroutine(CicloImagenes());
                 crono = true;

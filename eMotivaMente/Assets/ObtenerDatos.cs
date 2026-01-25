@@ -31,7 +31,7 @@ public class ObtenerDatos : MonoBehaviour
         DatosEmotivamente.Instance.residencia = residencia;
 
         //Carga la siguiente escena
-        SceneManager.LoadScene("Menú del nivel 1");
+        SceneManager.LoadScene("Avatares");
 
     }
 }
