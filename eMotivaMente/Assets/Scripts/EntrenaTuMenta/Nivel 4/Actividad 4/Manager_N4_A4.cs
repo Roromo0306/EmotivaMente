@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Manager_N4_A2 : MonoBehaviour
+public class Manager_N4_A4 : MonoBehaviour
 {
     [HideInInspector] public int modo = 0;
     private bool para = false, empezar = false;
 
     public List<Sprite> ejemplo;
     public List<Sprite> actividad;
-    public Sprite coche, camion, moto;
+    public Sprite sprint, correr, andar, parado;
     public Image ej, act;
 
     public Canvas canvaIncio;
 
-    [Header("Botones rojo, ambar y verde")]
-    public Button Tarjeta;
-    public Button Flecha;
-    public Button Monedas;
+    [Header("Botones")]
+    public Button Correr;
+    public Button Andar;
+    public Button Sprint;
+    public Button Parado;
 
     private bool presionado = false; //Bool para saber si se ha presionado algún botón
     public int cont = 0;
@@ -26,9 +27,10 @@ public class Manager_N4_A2 : MonoBehaviour
 
     void Start()
     {
-        Tarjeta.onClick.AddListener(BotonTarjeta);
-        Flecha.onClick.AddListener(BotonFlecha);
-        Monedas.onClick.AddListener(BotonMonedas);
+        Correr.onClick.AddListener(BotonCorrer);
+        Andar.onClick.AddListener(BotonAndar);
+        Sprint.onClick.AddListener(BotonSprint);
+        Parado.onClick.AddListener(BotonParado);
 
         ej.gameObject.SetActive(false);
         act.gameObject.SetActive(false);
@@ -61,12 +63,12 @@ public class Manager_N4_A2 : MonoBehaviour
     }
 
     //Funciones Botones de la tarjeta, flecha y monedas
-    private void BotonTarjeta()
+    private void BotonCorrer()
     {
         //Ejemplo
         if (modo == 1)
         {
-            if (ej.sprite.name == "Coche")
+            if (ej.sprite.name == "Parado")
             {
                 presionado = true;
                 cont++;
@@ -76,7 +78,7 @@ public class Manager_N4_A2 : MonoBehaviour
         //Actividad
         if (modo == 2)
         {
-            if (act.sprite.name == "Coche")
+            if (act.sprite.name == "Parado")
             {
                 presionado = true;
                 puntuacion++;
@@ -90,12 +92,12 @@ public class Manager_N4_A2 : MonoBehaviour
         }
     }
 
-    private void BotonFlecha()
+    private void BotonAndar()
     {
         //Ejemplo
         if (modo == 1)
         {
-            if (ej.sprite.name == "Moto")
+            if (ej.sprite.name == "Sprint")
             {
                 presionado = true;
                 cont++;
@@ -105,7 +107,7 @@ public class Manager_N4_A2 : MonoBehaviour
         //Actividad
         if (modo == 2)
         {
-            if (act.sprite.name == "Moto")
+            if (act.sprite.name == "Sprint")
             {
                 presionado = true;
                 puntuacion++;
@@ -119,12 +121,12 @@ public class Manager_N4_A2 : MonoBehaviour
         }
     }
 
-    private void BotonMonedas()
+    private void BotonSprint()
     {
         //Ejemplo
         if (modo == 1)
         {
-            if (ej.sprite.name == "Camion")
+            if (ej.sprite.name == "Andar")
             {
                 presionado = true;
                 cont++;
@@ -134,7 +136,36 @@ public class Manager_N4_A2 : MonoBehaviour
         //Actividad
         if (modo == 2)
         {
-            if (act.sprite.name == "Camion")
+            if (act.sprite.name == "Andar")
+            {
+                presionado = true;
+                puntuacion++;
+                cont++;
+            }
+            else
+            {
+                presionado = true;
+                cont++;
+            }
+        }
+    }
+
+    private void BotonParado()
+    {
+        //Ejemplo
+        if (modo == 1)
+        {
+            if (ej.sprite.name == "Correr")
+            {
+                presionado = true;
+                cont++;
+            }
+        }
+
+        //Actividad
+        if (modo == 2)
+        {
+            if (act.sprite.name == "Correr")
             {
                 presionado = true;
                 puntuacion++;
@@ -174,7 +205,7 @@ public class Manager_N4_A2 : MonoBehaviour
     //Corrutina de la actividad que hace que los semaforos avancen conforme pulsas los botones. Tambien controla las condiciones de victoria
     IEnumerator actividadF()
     {
-        Canvas_N4_A2 canva = canvaIncio.GetComponent<Canvas_N4_A2>();
+        Canvas_N4_A4 canva = canvaIncio.GetComponent<Canvas_N4_A4>();
 
         while (cont < actividad.Count)
         {
@@ -211,7 +242,7 @@ public class Manager_N4_A2 : MonoBehaviour
             canvaIncio.enabled = true;
             para = false;
             puntuacion = 0;
-            
+
         }
 
         if (puntuacion <= 3) //Repetir
