@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Menu_Nivel2 : MonoBehaviour
+public class Menu_Nivel4 : MonoBehaviour
 {
     [Header("Botones")]
     public Button Sonido;
@@ -19,10 +19,6 @@ public class Menu_Nivel2 : MonoBehaviour
     public AudioSource fuenteAudio;
 
     [HideInInspector] public static bool n1 = false, n2 = false, n3 = false, n4 = false, n5 = false;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -70,14 +66,14 @@ public class Menu_Nivel2 : MonoBehaviour
 
     public void Nivel1()
     {
-        SceneManager.LoadScene("Nivel2_Actividad 1");
+        SceneManager.LoadScene("Nivel4_Actividad 1");
     }
 
     public void Nivel2()
     {
         if (n1)
         {
-            SceneManager.LoadScene("Nivel2_Actividad 2");
+            SceneManager.LoadScene("Nivel4_Actividad 2");
         }
 
     }
@@ -86,7 +82,7 @@ public class Menu_Nivel2 : MonoBehaviour
     {
         if (n2)
         {
-            SceneManager.LoadScene("Nivel2_Actividad 3");
+            SceneManager.LoadScene("Nivel4_Actividad 3");
         }
 
     }
@@ -95,7 +91,7 @@ public class Menu_Nivel2 : MonoBehaviour
     {
         if (n3)
         {
-            SceneManager.LoadScene("Nivel2_Actividad 4");
+            SceneManager.LoadScene("Nivel4_Actividad 4");
         }
 
     }
@@ -104,7 +100,7 @@ public class Menu_Nivel2 : MonoBehaviour
     {
         if (n4)
         {
-            SceneManager.LoadScene("Nivel2_Actividad 5");
+            SceneManager.LoadScene("Nivel4_Actividad 5");
         }
 
     }

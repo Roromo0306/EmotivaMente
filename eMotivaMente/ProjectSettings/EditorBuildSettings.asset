@@ -50,4 +50,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Avatares.unity
     guid: 1a198144b58c8ce4fb417796eccf926d
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 4/MenuNivel4.unity
+    guid: e3b3fb0f41ab77646886fc40e4913ef4
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 4/Nivel4_Actividad 1.unity
+    guid: 28637c0a594a73842aa47ac799a47797
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 4/Nivel4_Actividad 2.unity
+    guid: 5cf046b7e24dc1f47ab7e662b85ef1de
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 4/Nivel4_Actividad 3.unity
+    guid: 28e52acfa6807ac47b758b3057ce4b26
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 4/Nivel4_Actividad 4.unity
+    guid: 9dd090ae64697a149a9f290ceae42aeb
+  - enabled: 1
+    path: Assets/Scenes/Entreno mi pensamiento/Nivel 4/Nivel4_Actividad 5.unity
+    guid: 03b04ee998304f64e9cb15f4165e82da
   m_configObjects: {}
