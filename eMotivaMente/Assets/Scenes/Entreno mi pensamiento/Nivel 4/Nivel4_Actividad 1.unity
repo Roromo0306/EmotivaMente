@@ -152,7 +152,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2018696844}
+  m_Father: {fileID: 1175165810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -445,7 +445,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 124117118}
-  m_Father: {fileID: 2018696844}
+  m_Father: {fileID: 1175165810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -505,14 +505,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239eab5225c536f40ae88b906e0c9814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelMenu: {fileID: 2018696843}
   Ejemplo: {fileID: 453723267}
   Actividad: {fileID: 1799534818}
   Reintentar: {fileID: 2139709273}
   Menu: {fileID: 1713225364}
   Audio: {fileID: 2009416105}
-  Manager: {fileID: 966908504}
+  manager: {fileID: 966908505}
   fuenteAudio: {fileID: 1172706013}
-  canvaInicio: {fileID: 313493535}
 --- !u!114 &313493533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,7 +1130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4624156238a5bf24f9dcbbb0624dfc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modo: 0
   carasPositivas:
   - {fileID: 1466622479, guid: 1da32bb782efafc488c10f7496266b43, type: 3}
   - {fileID: 1930180574, guid: 1da32bb782efafc488c10f7496266b43, type: 3}
@@ -1143,12 +1142,9 @@ MonoBehaviour:
   - {fileID: 1934459130, guid: 1da32bb782efafc488c10f7496266b43, type: 3}
   - {fileID: 1077636918, guid: 1da32bb782efafc488c10f7496266b43, type: 3}
   - {fileID: -1296722386, guid: 1da32bb782efafc488c10f7496266b43, type: 3}
-  caraActual: {fileID: 103415004}
-  canvaInicio: {fileID: 313493535}
-  Saludar: {fileID: 220802439}
-  cont: 0
-  puntuacion: 0
-  errores: 0
+  imgCara: {fileID: 103415004}
+  btnSaludar: {fileID: 220802439}
+  canvas: {fileID: 313493532}
 --- !u!4 &966908506
 Transform:
   m_ObjectHideFlags: 0
@@ -1448,7 +1444,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 103415002}
+  - {fileID: 220802442}
   m_Father: {fileID: 313493531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2242,8 +2240,6 @@ RectTransform:
   - {fileID: 2139709272}
   - {fileID: 1713225363}
   - {fileID: 2009416104}
-  - {fileID: 103415002}
-  - {fileID: 220802442}
   m_Father: {fileID: 313493531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CanvasN4_A1 : MonoBehaviour
 {
+    [Header("Panel Menú")]
+    public GameObject panelMenu;
+
     [Header("Botones")]
     public Button Ejemplo;
     public Button Actividad;
@@ -14,10 +15,9 @@ public class CanvasN4_A1 : MonoBehaviour
     public Button Audio;
 
     [Header("Manager")]
-    public GameObject Manager;
+    public ManagerN4_A1 manager;
 
     public AudioSource fuenteAudio;
-    public Canvas canvaInicio;
 
     void Start()
     {
@@ -26,42 +26,51 @@ public class CanvasN4_A1 : MonoBehaviour
         Reintentar.onClick.AddListener(ReintentarF);
         Menu.onClick.AddListener(MenuF);
         Audio.onClick.AddListener(Sonido);
+
+        Reintentar.gameObject.SetActive(false);
+        Menu.gameObject.SetActive(false);
     }
 
-    private void Sonido()
+    void Sonido()
     {
         fuenteAudio.Play();
     }
 
-    private void EjemploF()
+    void EjemploF()
     {
-        ManagerN4_A1 m = Manager.GetComponent<ManagerN4_A1>();
-        canvaInicio.enabled = false;
-        m.modo = 1;
+        panelMenu.SetActive(false);
+        manager.IniciarEjemplo();
     }
 
-    private void ActividadF()
+    void ActividadF()
     {
-        ManagerN4_A1 m = Manager.GetComponent<ManagerN4_A1>();
-        canvaInicio.enabled = false;
-        m.modo = 2;
+        panelMenu.SetActive(false);
+        manager.IniciarActividad();
     }
 
-    private void ReintentarF()
+    void ReintentarF()
     {
-        ManagerN4_A1 m = Manager.GetComponent<ManagerN4_A1>();
-
+        panelMenu.SetActive(false);
         Reintentar.gameObject.SetActive(false);
         Menu.gameObject.SetActive(false);
-        Actividad.gameObject.SetActive(true);
-        Ejemplo.gameObject.SetActive(true);
 
-        m.puntuacion = 0;
-        m.errores = 0;
+        manager.ReiniciarActividad();
     }
 
-    private void MenuF()
+    void MenuF()
     {
         SceneManager.LoadScene("MenuNivel4");
+    }
+
+    // 👉 llamado desde el Manager al finalizar
+    public void MostrarMenuFinal(bool mostrarMenu, bool mostrarReintentar)
+    {
+        panelMenu.SetActive(true);
+
+        Menu.gameObject.SetActive(mostrarMenu);
+        Reintentar.gameObject.SetActive(mostrarReintentar);
+
+        Ejemplo.gameObject.SetActive(false);
+        Actividad.gameObject.SetActive(false);
     }
 }

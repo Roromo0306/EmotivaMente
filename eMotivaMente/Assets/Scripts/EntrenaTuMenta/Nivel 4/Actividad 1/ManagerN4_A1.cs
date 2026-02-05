@@ -5,49 +5,70 @@ using UnityEngine.UI;
 
 public class ManagerN4_A1 : MonoBehaviour
 {
-    [HideInInspector] public int modo = 0; // 0 nada, 1 ejemplo, 2 actividad
-    private bool empezar = false;
-    private bool presionado = false;
+    public enum Modo { Nada, Ejemplo, Actividad }
+    private Modo modo = Modo.Nada;
 
-    [Header("Caras")]
+    [Header("Sprites")]
     public List<Sprite> carasPositivas;
     public List<Sprite> carasNegativas;
+
     private List<Sprite> secuencia = new List<Sprite>();
 
-    public Image caraActual;
-    public Canvas canvaInicio;
+    [Header("UI Juego")]
+    public Image imgCara;
+    public Button btnSaludar;
 
-    [Header("Botón Saludar")]
-    public Button Saludar;
+    [Header("Canvas")]
+    public CanvasN4_A1 canvas;
 
-    public int cont = 0;
-    public int puntuacion = 0;
-    public int errores = 0;
+    private int indice = 0;
+    private bool pulsado = false;
+    private int errores = 0;
 
     void Start()
     {
-        Saludar.onClick.AddListener(SaludarF);
-        caraActual.gameObject.SetActive(false);
+        btnSaludar.onClick.AddListener(Saludar);
+        imgCara.gameObject.SetActive(false);
+        btnSaludar.gameObject.SetActive(false);
     }
 
-    void Update()
+    // ===================== INICIOS =====================
+
+    public void IniciarEjemplo()
     {
-        if (modo == 1 && !empezar)
-        {
-            empezar = true;
-            CrearSecuencia();
-            caraActual.gameObject.SetActive(true);
-            StartCoroutine(EjemploF());
-        }
-
-        if (modo == 2 && !empezar)
-        {
-            empezar = true;
-            CrearSecuencia();
-            caraActual.gameObject.SetActive(true);
-            StartCoroutine(ActividadF());
-        }
+        Preparar(Modo.Ejemplo);
     }
+
+    public void IniciarActividad()
+    {
+        Preparar(Modo.Actividad);
+    }
+
+    public void ReiniciarActividad()
+    {
+        errores = 0;
+        Preparar(Modo.Actividad);
+    }
+
+    void Preparar(Modo m)
+    {
+        modo = m;
+        indice = 0;
+        errores = 0;
+        CrearSecuencia();
+
+        imgCara.gameObject.SetActive(true);
+        btnSaludar.gameObject.SetActive(true);
+
+        StopAllCoroutines();
+
+        if (modo == Modo.Ejemplo)
+            StartCoroutine(Ejemplo());
+        else
+            StartCoroutine(Actividad());
+    }
+
+    // ===================== JUEGO =====================
 
     void CrearSecuencia()
     {
@@ -59,92 +80,76 @@ public class ManagerN4_A1 : MonoBehaviour
             secuencia.Add(carasNegativas[i]);
         }
 
-        // Mezclar
         for (int i = 0; i < secuencia.Count; i++)
         {
-            Sprite temp = secuencia[i];
             int rnd = Random.Range(i, secuencia.Count);
-            secuencia[i] = secuencia[rnd];
-            secuencia[rnd] = temp;
+            (secuencia[i], secuencia[rnd]) = (secuencia[rnd], secuencia[i]);
         }
     }
 
-    private void SaludarF()
+    void Saludar()
     {
-        presionado = true;
+        pulsado = true;
 
-        if (modo == 2)
+        if (modo == Modo.Actividad)
         {
-            if (carasPositivas.Contains(caraActual.sprite))
-                puntuacion++;
-            else
+            if (!carasPositivas.Contains(imgCara.sprite))
                 errores++;
         }
     }
 
-    IEnumerator EjemploF()
+    IEnumerator Ejemplo()
     {
-        while (cont < secuencia.Count)
+        while (indice < secuencia.Count)
         {
-            caraActual.sprite = secuencia[cont];
-            presionado = false;
-
+            imgCara.sprite = secuencia[indice];
             yield return new WaitForSeconds(5f);
-            cont++;
+            indice++;
         }
 
-        Resetear();
-        yield break;
+        Finalizar();
     }
 
-    IEnumerator ActividadF()
+    IEnumerator Actividad()
     {
-        CanvasN4_A1 canva = canvaInicio.GetComponent<CanvasN4_A1>();
-
-        while (cont < secuencia.Count)
+        while (indice < secuencia.Count)
         {
-            caraActual.sprite = secuencia[cont];
-            presionado = false;
+            imgCara.sprite = secuencia[indice];
+            pulsado = false;
 
-            float tiempo = 0f;
-            while (tiempo < 5f && !presionado)
+            float t = 0;
+            while (t < 5f && !pulsado)
             {
-                tiempo += Time.deltaTime;
+                t += Time.deltaTime;
                 yield return null;
             }
 
-            if (!presionado && carasPositivas.Contains(caraActual.sprite))
+            if (!pulsado && carasPositivas.Contains(imgCara.sprite))
                 errores++;
 
-            cont++;
+            indice++;
         }
 
-        caraActual.gameObject.SetActive(false);
-        canvaInicio.enabled = true;
-
-        // Valoración
-        if (errores == 0)
-        {
-            canva.Menu.gameObject.SetActive(true);
-        }
-        else if (errores <= 2)
-        {
-            canva.Menu.gameObject.SetActive(true);
-            canva.Reintentar.gameObject.SetActive(true);
-        }
-        else
-        {
-            canva.Reintentar.gameObject.SetActive(true);
-        }
-
-        Resetear();
-        yield break;
+        Evaluar();
+        Finalizar();
     }
 
-    void Resetear()
+    // ===================== FINAL =====================
+
+    void Evaluar()
     {
-        cont = 0;
-        modo = 0;
-        empezar = false;
+        if (errores == 0)
+            canvas.MostrarMenuFinal(true, false);
+        else if (errores <= 2)
+            canvas.MostrarMenuFinal(true, true);
+        else
+            canvas.MostrarMenuFinal(false, true);
+    }
+
+    void Finalizar()
+    {
+        imgCara.gameObject.SetActive(false);
+        btnSaludar.gameObject.SetActive(false);
+        modo = Modo.Nada;
     }
 }
