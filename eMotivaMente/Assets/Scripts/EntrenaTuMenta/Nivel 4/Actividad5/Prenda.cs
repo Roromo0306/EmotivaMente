@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class Prenda : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -8,29 +7,37 @@ public class Prenda : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public bool esRoja;
     public bool esAzul;
 
-    public Sprite sprite;
+    private CanvasGroup canvasGroup;
+    private Vector3 posicionInicial;
+    private Transform padreInicial;
 
-    private Transform padreOriginal;
-    private Canvas canvas;
-
-    void Start()
+    void Awake()
     {
-        canvas = GetComponentInParent<Canvas>();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        padreOriginal = transform.parent;
-        transform.SetParent(canvas.transform);
+        posicionInicial = transform.position;
+        padreInicial = transform.parent;
+
+        canvasGroup.blocksRaycasts = false;
+
+        Debug.Log($"[DRAG INICIO] {name}");
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position;
+        transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(padreOriginal);
+        canvasGroup.blocksRaycasts = true;
+
+        transform.position = posicionInicial;
+        transform.SetParent(padreInicial);
+
+        Debug.Log($"[DRAG FIN] {name}");
     }
 }

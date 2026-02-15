@@ -1,118 +1,157 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Manager_N4_A5 : MonoBehaviour
 {
-    public enum Modo { Nada, Ejemplo, Actividad }
-    private Modo modo = Modo.Nada;
+    public enum Modo { Ninguno, Ejemplo, Actividad }
+    public Modo modoActual = Modo.Ninguno;
 
-    [Header("Prendas")]
-    public List<Prenda> prendasArriba;
-    public List<Prenda> prendasAbajo;
+    [Header("Spawns")]
+    public Transform spawnArriba;
+    public Transform spawnAbajo;
 
-    [Header("UI")]
-    public Image imgArriba;
-    public Image imgAbajo;
+    [Header("Prefabs")]
+    public List<GameObject> prefabsArriba;
+    public List<GameObject> prefabsAbajo;
 
-    [Header("Canvas")]
-    public Canvas_N4_A5 canvas;
+    private GameObject prendaArribaActual;
+    private GameObject prendaAbajoActual;
 
-    private int errores = 0;
     private bool arribaCorrecto = false;
     private bool abajoCorrecto = false;
 
-    void Start()
-    {
-        OcultarPrendas();
-    }
+    public int errores = 0;
+
+    public Canvas canvasInicio;
 
     public void IniciarEjemplo()
     {
-        Preparar(Modo.Ejemplo);
+        Debug.Log("[MODO] Ejemplo");
+        ReiniciarVariables();
+        modoActual = Modo.Ejemplo;
+        StartCoroutine(SpawnPrendas());
     }
 
     public void IniciarActividad()
     {
-        Preparar(Modo.Actividad);
+        Debug.Log("[MODO] Actividad");
+        ReiniciarVariables();
+        modoActual = Modo.Actividad;
+        StartCoroutine(SpawnPrendas());
     }
 
-    public void ReiniciarActividad()
+    IEnumerator SpawnPrendas()
     {
-        errores = 0;
-        Preparar(Modo.Actividad);
-    }
+        Debug.Log("[SPAWN] Iniciando spawn");
 
-    void Preparar(Modo m)
-    {
-        modo = m;
-        errores = 0;
-        arribaCorrecto = false;
-        abajoCorrecto = false;
-
-        MostrarPrendas();
-        StartCoroutine(CambiarPrendas());
-    }
-
-    IEnumerator CambiarPrendas()
-    {
         while (!(arribaCorrecto && abajoCorrecto))
         {
-            imgArriba.sprite = prendasArriba[Random.Range(0, prendasArriba.Count)].sprite;
-            imgAbajo.sprite = prendasAbajo[Random.Range(0, prendasAbajo.Count)].sprite;
+            LimpiarPrendas();
+
+            prendaArribaActual = Instantiate(
+                prefabsArriba[Random.Range(0, prefabsArriba.Count)],
+                spawnArriba
+            );
+
+            prendaAbajoActual = Instantiate(
+                prefabsAbajo[Random.Range(0, prefabsAbajo.Count)],
+                spawnAbajo
+            );
+
+            prendaArribaActual.transform.localPosition = Vector3.zero;
+            prendaAbajoActual.transform.localPosition = Vector3.zero;
+
+            Debug.Log("[SPAWN] Prendas generadas");
 
             yield return new WaitForSeconds(3f);
         }
 
         Evaluar();
-        OcultarPrendas();
     }
 
-    public void ColocarPrenda(Prenda prenda, bool esArriba)
+    public void ColocarPrenda(Prenda prenda, bool zonaArriba)
     {
-        if (modo == Modo.Ejemplo)
+        Debug.Log($"[VALIDAR] {prenda.name}");
+
+        bool correcto = false;
+
+        if (modoActual == Modo.Ejemplo)
         {
-            if (prenda.esArriba == esArriba)
-            {
-                if (esArriba) arribaCorrecto = true;
-                else abajoCorrecto = true;
-            }
-            else
-                errores++;
+            correcto = prenda.esArriba == zonaArriba;
+            Debug.Log("[EJEMPLO] Solo se valida posición");
         }
         else
         {
-            if (prenda.esArriba == esArriba &&
-                ((esArriba && prenda.esRoja) || (!esArriba && prenda.esAzul)))
+            if (prenda.esArriba != zonaArriba)
             {
-                if (esArriba) arribaCorrecto = true;
-                else abajoCorrecto = true;
+                Debug.Log("[ERROR] Zona incorrecta");
+            }
+            else if (zonaArriba && !prenda.esRoja)
+            {
+                Debug.Log("[ERROR] Arriba no es roja");
+            }
+            else if (!zonaArriba && !prenda.esAzul)
+            {
+                Debug.Log("[ERROR] Abajo no es azul");
             }
             else
-                errores++;
+            {
+                correcto = true;
+            }
         }
+
+        if (correcto)
+        {
+            Debug.Log("[OK] Prenda correcta");
+
+            if (zonaArriba) arribaCorrecto = true;
+            else abajoCorrecto = true;
+        }
+        else
+        {
+            errores++;
+            Debug.Log($"[FALLO] Total errores: {errores}");
+        }
+
+        Destroy(prenda.gameObject);
     }
 
     void Evaluar()
     {
+        Debug.Log($"[FIN] Errores: {errores}");
+
+        canvasInicio.enabled = true;
+
         if (errores == 0)
-            canvas.MostrarResultado(true, false);
+            Debug.Log("[RESULTADO] PERFECTO");
         else if (errores <= 2)
-            canvas.MostrarResultado(true, true);
+            Debug.Log("[RESULTADO] BIEN CON ERRORES");
         else
-            canvas.MostrarResultado(false, true);
+            Debug.Log("[RESULTADO] REPETIR");
     }
 
-    void MostrarPrendas()
+    void LimpiarPrendas()
     {
-        imgArriba.gameObject.SetActive(true);
-        imgAbajo.gameObject.SetActive(true);
+        if (prendaArribaActual != null)
+            Destroy(prendaArribaActual);
+
+        if (prendaAbajoActual != null)
+            Destroy(prendaAbajoActual);
     }
 
-    void OcultarPrendas()
+    void ReiniciarVariables()
     {
-        imgArriba.gameObject.SetActive(false);
-        imgAbajo.gameObject.SetActive(false);
+        StopAllCoroutines();
+        LimpiarPrendas();
+        arribaCorrecto = false;
+        abajoCorrecto = false;
+        errores = 0;
+    }
+
+    public void Reiniciar()
+    {
+        ReiniciarVariables();
+        modoActual = Modo.Ninguno;
     }
 }

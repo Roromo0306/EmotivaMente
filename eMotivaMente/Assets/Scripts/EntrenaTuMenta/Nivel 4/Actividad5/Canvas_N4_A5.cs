@@ -42,7 +42,7 @@ public class Canvas_N4_A5 : MonoBehaviour
         Reintentar.gameObject.SetActive(false);
         Menu.gameObject.SetActive(false);
 
-        manager.ReiniciarActividad();
+        manager.Reiniciar();
     }
 
     void MenuF()
