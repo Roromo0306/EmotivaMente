@@ -25,6 +25,8 @@ public class Manager_N4_A5 : MonoBehaviour
 
     public Canvas canvasInicio;
 
+    // ------------------- INICIO EJEMPLO Y ACTIVIDAD -------------------
+
     public void IniciarEjemplo()
     {
         Debug.Log("[MODO] Ejemplo");
@@ -41,6 +43,8 @@ public class Manager_N4_A5 : MonoBehaviour
         StartCoroutine(SpawnPrendas());
     }
 
+    // ------------------- SPAWN DE PRENDAS -------------------
+
     IEnumerator SpawnPrendas()
     {
         Debug.Log("[SPAWN] Iniciando spawn");
@@ -49,17 +53,18 @@ public class Manager_N4_A5 : MonoBehaviour
         {
             LimpiarPrendas();
 
+            // SPAWN ARRIBA
             prendaArribaActual = Instantiate(
                 prefabsArriba[Random.Range(0, prefabsArriba.Count)],
                 spawnArriba
             );
+            prendaArribaActual.transform.localPosition = Vector3.zero;
 
+            // SPAWN ABAJO
             prendaAbajoActual = Instantiate(
                 prefabsAbajo[Random.Range(0, prefabsAbajo.Count)],
                 spawnAbajo
             );
-
-            prendaArribaActual.transform.localPosition = Vector3.zero;
             prendaAbajoActual.transform.localPosition = Vector3.zero;
 
             Debug.Log("[SPAWN] Prendas generadas");
@@ -70,30 +75,31 @@ public class Manager_N4_A5 : MonoBehaviour
         Evaluar();
     }
 
+    // ------------------- COLOCAR PRENDA -------------------
+
     public void ColocarPrenda(Prenda prenda, bool zonaArriba)
     {
-        Debug.Log($"[VALIDAR] {prenda.name}");
-
         bool correcto = false;
 
         if (modoActual == Modo.Ejemplo)
         {
             correcto = prenda.esArriba == zonaArriba;
-            Debug.Log("[EJEMPLO] Solo se valida posición");
+            Debug.Log("[EJEMPLO] Validando posición: " + correcto);
         }
         else
         {
+            // ACTIVIDAD: validar color y posición
             if (prenda.esArriba != zonaArriba)
             {
                 Debug.Log("[ERROR] Zona incorrecta");
             }
             else if (zonaArriba && !prenda.esRoja)
             {
-                Debug.Log("[ERROR] Arriba no es roja");
+                Debug.Log("[ERROR] Parte ARRIBA no es roja");
             }
             else if (!zonaArriba && !prenda.esAzul)
             {
-                Debug.Log("[ERROR] Abajo no es azul");
+                Debug.Log("[ERROR] Parte ABAJO no es azul");
             }
             else
             {
@@ -101,21 +107,24 @@ public class Manager_N4_A5 : MonoBehaviour
             }
         }
 
+        // Actualizamos solo la zona correspondiente
         if (correcto)
         {
-            Debug.Log("[OK] Prenda correcta");
-
             if (zonaArriba) arribaCorrecto = true;
             else abajoCorrecto = true;
+
+            Debug.Log("[OK] Prenda correcta en zona: " + (zonaArriba ? "ARRIBA" : "ABAJO"));
         }
         else
         {
             errores++;
-            Debug.Log($"[FALLO] Total errores: {errores}");
+            Debug.Log("[FALLO] Error número " + errores + " en zona: " + (zonaArriba ? "ARRIBA" : "ABAJO"));
         }
 
         Destroy(prenda.gameObject);
     }
+
+    // ------------------- EVALUAR RESULTADO -------------------
 
     void Evaluar()
     {
@@ -130,6 +139,8 @@ public class Manager_N4_A5 : MonoBehaviour
         else
             Debug.Log("[RESULTADO] REPETIR");
     }
+
+    // ------------------- LIMPIEZA -------------------
 
     void LimpiarPrendas()
     {
