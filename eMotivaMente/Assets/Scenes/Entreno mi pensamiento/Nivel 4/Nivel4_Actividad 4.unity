@@ -771,15 +771,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.018617796, g: 0, b: 0.99215686, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -884785840, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -812,7 +812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 908.77167, y: -424.9991}
+  m_AnchoredPosition: {x: 907.65, y: -425}
   m_SizeDelta: {x: 104.6951, y: 236.6423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &651173822
@@ -2017,15 +2017,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.99215686, b: 0.823175, a: 0}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1823102642, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2241,8 +2241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 630.86664, y: -424.9991}
-  m_SizeDelta: {x: 129.5875, y: 236.6423}
+  m_AnchoredPosition: {x: 633.6594, y: -425.00003}
+  m_SizeDelta: {x: 154.3792, y: 236.6423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1645258060
 MonoBehaviour:
@@ -2257,15 +2257,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20043735, g: 0.99215686, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 2146975605, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2491,19 +2491,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modo: 0
   ejemplo:
-  - {fileID: 564842203, guid: 5ce9c1902552daf44a1ee89e761ea156, type: 3}
-  - {fileID: 564842203, guid: 59d2d1aaacdaf1d43b6f49180654757a, type: 3}
+  - {fileID: -884785840, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
+  - {fileID: 2146975605, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
   - {fileID: 564842203, guid: 652149bbc9533ec41bb303334cd5790a, type: 3}
-  - {fileID: 564842203, guid: 737b1b664c265734086d6113c6f138c1, type: 3}
+  - {fileID: 1823102642, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
   actividad:
-  - {fileID: 564842203, guid: 737b1b664c265734086d6113c6f138c1, type: 3}
-  - {fileID: 564842203, guid: 59d2d1aaacdaf1d43b6f49180654757a, type: 3}
-  - {fileID: 564842203, guid: 5ce9c1902552daf44a1ee89e761ea156, type: 3}
+  - {fileID: 1823102642, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
+  - {fileID: 2146975605, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
+  - {fileID: -884785840, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
   - {fileID: 564842203, guid: 652149bbc9533ec41bb303334cd5790a, type: 3}
-  - {fileID: 564842203, guid: 5ce9c1902552daf44a1ee89e761ea156, type: 3}
-  - {fileID: 564842203, guid: 59d2d1aaacdaf1d43b6f49180654757a, type: 3}
+  - {fileID: -884785840, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
+  - {fileID: 2146975605, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
   - {fileID: 564842203, guid: 652149bbc9533ec41bb303334cd5790a, type: 3}
-  - {fileID: 564842203, guid: 737b1b664c265734086d6113c6f138c1, type: 3}
+  - {fileID: 1823102642, guid: e40050dbfe5be554d845649839afd3d0, type: 3}
   sprint: {fileID: 564842203, guid: 652149bbc9533ec41bb303334cd5790a, type: 3}
   correr: {fileID: 564842203, guid: 59d2d1aaacdaf1d43b6f49180654757a, type: 3}
   andar: {fileID: 564842203, guid: 737b1b664c265734086d6113c6f138c1, type: 3}
