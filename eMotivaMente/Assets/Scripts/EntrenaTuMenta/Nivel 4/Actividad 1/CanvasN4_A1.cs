@@ -59,10 +59,11 @@ public class CanvasN4_A1 : MonoBehaviour
 
     void MenuF()
     {
+        Menu_Nivel4.n1 = true;
         SceneManager.LoadScene("MenuNivel4");
     }
 
-    // 👉 llamado desde el Manager al finalizar
+    // Llamado desde el Manager al finalizar
     public void MostrarMenuFinal(bool mostrarMenu, bool mostrarReintentar)
     {
         panelMenu.SetActive(true);
