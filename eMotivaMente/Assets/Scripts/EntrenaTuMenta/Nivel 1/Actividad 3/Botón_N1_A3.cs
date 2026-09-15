@@ -10,7 +10,7 @@ public class Botón_N1_A3 : MonoBehaviour
     public int opcion, aciertos = 0, fallos = 0, BCT = 0, contadorEjemplo = 0, contadorActividad = 0;
     public Button Coche, Tren, start;
     public bool empezar = false;
-    public Canvas canvas, canvasfinal;
+    public Canvas canvasInicio, canvasfinal;
 
     public TextMeshProUGUI texto2, texto1, texto3;
     void Start()
@@ -33,7 +33,7 @@ public class Botón_N1_A3 : MonoBehaviour
 
     public void botonC()
     {
-        Canvas_N1_A3 c = canvas.GetComponent<Canvas_N1_A3>();
+        Canvas_N1_A3 c = canvasInicio.GetComponent<Canvas_N1_A3>();
         BCT = 1; //El botón del coche va a dar 1
 
         //Esto detecta si estamos en un ejemplo o en un actividad y sube el contador
@@ -63,7 +63,7 @@ public class Botón_N1_A3 : MonoBehaviour
 
     public void botonT()
     {
-        Canvas_N1_A3 c = canvas.GetComponent<Canvas_N1_A3>();
+        Canvas_N1_A3 c = canvasInicio.GetComponent<Canvas_N1_A3>();
 
         BCT = 2; //El botón del tren va a dar 2
 
@@ -112,10 +112,10 @@ public class Botón_N1_A3 : MonoBehaviour
     
     void Update()
     {
-        Canvas_N1_A3 c = canvas.GetComponent<Canvas_N1_A3>();
+        Canvas_N1_A3 c = canvasInicio.GetComponent<Canvas_N1_A3>();
         CanvasFinal_N1_A3 cf = canvasfinal.GetComponent<CanvasFinal_N1_A3>();
 
-        texto3.text = "Lo has hecho bien, has tenido " + aciertos + " puntos y " + fallos + " fallos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
+        texto3.text = "Lo has hecho bien, has tenido " + aciertos + " puntos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
 
         if (empezar)
         {
@@ -130,7 +130,11 @@ public class Botón_N1_A3 : MonoBehaviour
         if (c.modo == 1 && contadorEjemplo == 3)
         {
             Time.timeScale = 0;
-            canvas.enabled = true;
+            c.ejemplo.gameObject.SetActive(true); //Activa el boton de ejemplo
+            c.actividad.gameObject.SetActive(true); //Activa el boton de actividad
+            c.canvasEjemplo.enabled = false; //Desactiva el texto del ejemplo
+            c.BotonSonidos.enabled = false; //Volvemos a desactivar el boton
+            canvasInicio.enabled = true;
 
             //Reinicio contadores
             contadorEjemplo = 0;

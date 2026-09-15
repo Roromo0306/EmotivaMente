@@ -44,7 +44,7 @@ public class CanvasFinal_N2_A1 : MonoBehaviour
         Detector_Colision_N2_A1 D = Generador.GetComponent<Detector_Colision_N2_A1>();
         Canvas_N2_A1 c = canvasPrincipal.GetComponent<Canvas_N2_A1>();
 
-        texto3.text = "Lo has hecho bien, has tenido " + D.puntosPositivos + " puntos y " + D.puntosNegativos + " fallos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
+        texto3.text = "Lo has hecho bien, has tenido " + D.puntosPositivos + " puntos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
 
         if (c.empezado)
         {

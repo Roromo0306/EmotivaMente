@@ -15,10 +15,13 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
     public Button Audio;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
 
     [Header("Otros Gameobject")]
     public GameObject detectorColision;
     public GameObject manager;
+    public GameObject gif;
 
     [Space]
     public Canvas EsteCanvas;
@@ -38,6 +41,25 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
     public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(46f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     void Update()
@@ -45,7 +67,7 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
         Manager_N2_A2 man = manager.GetComponent<Manager_N2_A2>();
         DetectorColision_N2_A2 dec = detectorColision.GetComponent<DetectorColision_N2_A2>();
 
-        texto3.text = "Lo has hecho bien, has tenido " + dec.puntosPositivos + " puntos y " + dec.puntosNegativos + " fallos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
+        texto3.text = "Lo has hecho bien, has tenido " + dec.puntosPositivos + " puntos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
 
         if (man.actTerminada)
         {
@@ -53,6 +75,7 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
             {
                 //Has acertado al 100%
                 MenuPrincipal.gameObject.SetActive(true);
+                gif.gameObject.SetActive(true);
                 texto1.gameObject.SetActive(true);
 
             }
@@ -71,6 +94,7 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
                         //Esta bien pero con algunos fallos
                         MenuPrincipal.gameObject.SetActive(true);
                         Reintentar.gameObject.SetActive(true);
+                        gif.gameObject.SetActive(true);
                         texto3.gameObject.SetActive(true);
 
                     }
@@ -83,6 +107,7 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
     {
         modo = 1;
         Audio.gameObject.SetActive(false);
+        gif.gameObject.SetActive(false);
         EsteCanvas.enabled = false;
     }
 

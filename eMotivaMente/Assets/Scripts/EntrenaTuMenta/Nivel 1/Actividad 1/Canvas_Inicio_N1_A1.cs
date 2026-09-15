@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class Canvas_Inicio_N1_A1 : MonoBehaviour
     public Canvas canvas;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
 
     void Start()
     {
@@ -33,8 +36,27 @@ public class Canvas_Inicio_N1_A1 : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void sonido()
+    public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(39f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 }

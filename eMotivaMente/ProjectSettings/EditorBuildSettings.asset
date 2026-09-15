@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Entreno mi pensamiento/Nivel 4/Nivel4_Actividad 5.unity
     guid: 03b04ee998304f64e9cb15f4165e82da
+  - enabled: 1
+    path: Assets/Scenes/MenusNiveles.unity
+    guid: 976b9d6ac0a9eb749a09ec8b5ab13914
   m_configObjects: {}

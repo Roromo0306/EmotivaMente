@@ -15,6 +15,8 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
     public Button Audio;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
 
     [Header("Otros Gameobject")]
     public GameObject manager;
@@ -26,6 +28,25 @@ public class CanvasMenu_N2_A4 : MonoBehaviour
     public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(52f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
     public void ejemplo()
     {

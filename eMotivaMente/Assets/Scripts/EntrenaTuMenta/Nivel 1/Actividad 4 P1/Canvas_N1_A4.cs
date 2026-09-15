@@ -11,6 +11,9 @@ public class Canvas_N1_A4 : MonoBehaviour
     public TextMeshProUGUI text;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
+    public float tiempo;
 
     [HideInInspector] public int tipo = 0;
     
@@ -23,9 +26,28 @@ public class Canvas_N1_A4 : MonoBehaviour
         canvas_actividad.enabled = false;
     }
 
-    private void sonido()
+    public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(tiempo);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     private void ejemplo()

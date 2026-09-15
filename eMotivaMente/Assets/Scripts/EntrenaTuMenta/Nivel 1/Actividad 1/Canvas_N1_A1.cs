@@ -35,15 +35,14 @@ public class Canvas_N1_A1 : MonoBehaviour
         N1_Actividad1 n = Manager.GetComponent<N1_Actividad1>();
         DetectorColision d = generador.GetComponent<DetectorColision>();
 
-        texto2.text = "Lo has hecho bien, has tenido " + d.puntospos + " puntos y " + d.puntosneg + " fallos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
+        texto2.text = "Lo has hecho bien, has tenido " + d.puntospos + " puntos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
       
         //Distintos finales
         if (n.Fase)
         {
             canvas.enabled=true;
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             Cursor.visible = true;
-            n.cursorImage.SetActive(false);
 
             if (n.final == 1) //Final perfecto
             {

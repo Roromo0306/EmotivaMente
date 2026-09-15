@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Menu_Nivel1_Entrena : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
 
 
     public AudioSource fuenteAudio;
-
- 
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
 
     [HideInInspector] public static bool n1 = false, n2= false, n3=false, n4=false, n5=false; 
     void Start()
@@ -31,7 +32,6 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
         N5.onClick.AddListener(Nivel5);
 
         Salida.gameObject.SetActive(true);
-        Cursor.visible = true;
 
     }
 
@@ -77,6 +77,25 @@ public class Menu_Nivel1_Entrena : MonoBehaviour
     public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(23f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     private void Nivel1()

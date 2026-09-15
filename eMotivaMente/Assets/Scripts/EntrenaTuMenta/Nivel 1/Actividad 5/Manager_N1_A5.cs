@@ -195,6 +195,7 @@ public class Manager_N1_A5 : MonoBehaviour
         if(puntuacion == 10) //Perfecto
         {
             canva.Menu.gameObject.SetActive(true);
+            canva.gif.gameObject.SetActive(true);
             canva.Actividad.gameObject.SetActive(false);
             canva.Ejemplo.gameObject.SetActive(false);
 
@@ -207,6 +208,7 @@ public class Manager_N1_A5 : MonoBehaviour
         {
             canva.Menu.gameObject.SetActive(true);
             canva.Reintentar.gameObject.SetActive(true);
+            canva.gif.gameObject.SetActive(true);
             canva.Actividad.gameObject.SetActive(false);
             canva.Ejemplo.gameObject.SetActive(false);
 

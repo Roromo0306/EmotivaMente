@@ -14,6 +14,8 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
     public Button Audio;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
 
     [Header("Otros Gameobject")]
     public GameObject detectorColision;
@@ -33,6 +35,25 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
     public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(24f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     void Update()
@@ -40,7 +61,7 @@ public class CanvasMenu_N2_A3 : MonoBehaviour
         Manager_N2_A3 man = manager.GetComponent<Manager_N2_A3>();
         Detector_Colision_N2_A3 dec = detectorColision.GetComponent<Detector_Colision_N2_A3>();
 
-        texto3.text = "Lo has hecho bien, has tenido " + dec.puntosPositivos + " puntos y " + dec.puntosNegativos + " fallos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
+        texto3.text = "Lo has hecho bien, has tenido " + dec.puntosPositivos + " puntos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
 
         if (man.actTerminada)
         {

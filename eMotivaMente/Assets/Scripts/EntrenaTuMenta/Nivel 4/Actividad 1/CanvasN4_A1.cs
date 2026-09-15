@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,6 +21,8 @@ public class CanvasN4_A1 : MonoBehaviour
     public ManagerN4_A1 manager;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
 
     void Start()
     {
@@ -25,15 +30,34 @@ public class CanvasN4_A1 : MonoBehaviour
         Actividad.onClick.AddListener(ActividadF);
         Reintentar.onClick.AddListener(ReintentarF);
         Menu.onClick.AddListener(MenuF);
-        Audio.onClick.AddListener(Sonido);
+        Audio.onClick.AddListener(sonido);
 
         Reintentar.gameObject.SetActive(false);
         Menu.gameObject.SetActive(false);
     }
 
-    void Sonido()
+    public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(29f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     void EjemploF()

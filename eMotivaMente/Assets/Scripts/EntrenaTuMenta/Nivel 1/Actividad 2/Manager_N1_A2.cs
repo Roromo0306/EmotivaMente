@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 using TMPro;
 using System.Runtime.ExceptionServices;
@@ -14,8 +15,6 @@ public class Manager_N1_A2 : MonoBehaviour
     public TextMeshProUGUI texto1, texto2, texto3;
     public GameObject generador_ejemplo;
 
-    public GameObject cursorImage;
-
     [HideInInspector] public SpriteRenderer generadorEjemploRenderer;
     [HideInInspector] public Collider2D generadorEjemploCollider;
     private Vector3 originalPositionEjemplo;
@@ -28,15 +27,10 @@ public class Manager_N1_A2 : MonoBehaviour
     public int fase = 0, faseAct =0;
     public bool Fase = false, canvas =false;
 
-    [HideInInspector] public bool cursor = false;
-
 
     void Start()
     {
         Canvas_N1_A2 can = canva.GetComponent<Canvas_N1_A2>();
-
-        cursor = false; //Desactivo cursor
-        Cursor.visible = true; //Activo el cursor para que se vea
 
         // Obtiene componentes
         generadorEjemploRenderer = generador_ejemplo.GetComponent<SpriteRenderer>();
@@ -66,27 +60,42 @@ public class Manager_N1_A2 : MonoBehaviour
         canvasFin canFin = canvaFin.GetComponent<canvasFin>();
 
         //Actualiza posición del cursor personalizado
-        if (cursor)
-        {
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorld.z = 0;
-            cursorImage.transform.position = mouseWorld;
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorld.z = 0;
 
-            //Detecta clic inicial
-            if (Input.GetMouseButtonDown(0))
+        // Detecta clic inicial
+        if (Input.GetMouseButtonDown(0))
+        {
+            Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
+
+            if (hit == generadorEjemploCollider)
             {
-                Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
-                if (hit == generadorEjemploCollider)
-                {
-                    isDragging = true;
-                    offset = generador_ejemplo.transform.position - mouseWorld;
-                }
+                isDragging = true;
+                offset = generador_ejemplo.transform.position - mouseWorld;
+            }
+        }
+
+
+        // Control de colisiones y arrastre
+        if (!gen_ejemplo.parada)
+        {
+            if (isDragging)
+            {
+                generador_ejemplo.transform.position = mouseWorld + offset;
+                boxCollider.enabled = false;
             }
 
+            if (Input.GetMouseButtonUp(0) && isDragging)
+            {
+                boxCollider.enabled = true;
+                isDragging = false;
+            }
+        }
 
-            //Con este if lo que controlo es que si se detecta una colision entre la
-            //caja o el playo y el sprite, el jugador ya no puede coger el objeto hasta que cambie
-            if (gen_ejemplo.parada)
+
+        //Con este if lo que controlo es que si se detecta una colision entre la
+        //caja o el playo y el sprite, el jugador ya no puede coger el objeto hasta que cambie
+        if (gen_ejemplo.parada)
             {
 
             }
@@ -106,9 +115,9 @@ public class Manager_N1_A2 : MonoBehaviour
                     isDragging = false;
                 }
             }
-        }
+        
 
-
+    
 
         //Condiconales para la activacion de los textos
         if (canvas)
@@ -147,8 +156,6 @@ public class Manager_N1_A2 : MonoBehaviour
             generadorEjemploCollider.enabled = false; //Deshabilito el colider y el renderer del generador de ejemplo
             generadorEjemploRenderer.enabled = false;
             fase = 0; //Vuelvo a poner la fase en 0
-            cursor = false; //Desactivo la imagen de la mano (para que no lo siga)
-            Cursor.visible = true; //Activo el cursor para que se vea
         }
 
         //Condición de fin al terminar la actividad principal
@@ -160,8 +167,6 @@ public class Manager_N1_A2 : MonoBehaviour
             generadorEjemploCollider.enabled = false; //Desabilito el colider y el renderer del generador de ejemplo
             generadorEjemploRenderer.enabled = false;
             fase = 0; //Vuelvo a poner la fase en 0
-            cursor = false; //Desactivo cursor
-            Cursor.visible = true; //Activo el cursor para que se vea
 
             can.empezado = true;
         }
@@ -184,7 +189,7 @@ public class Manager_N1_A2 : MonoBehaviour
                 generador_ejemplo.transform.position = originalPositionEjemplo;
 
                 fase++;
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(5f);
             }
         }
         can.corru = null;
@@ -206,7 +211,7 @@ public class Manager_N1_A2 : MonoBehaviour
                 generador_ejemplo.transform.position = originalPositionEjemplo;
 
                 faseAct++;
-                yield return new WaitForSeconds(7f);
+                yield return new WaitForSeconds(5f);
             }
             
         }

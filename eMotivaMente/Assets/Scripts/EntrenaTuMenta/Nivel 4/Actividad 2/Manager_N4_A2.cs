@@ -196,6 +196,7 @@ public class Manager_N4_A2 : MonoBehaviour
             canva.Menu.gameObject.SetActive(true);
             canva.Actividad.gameObject.SetActive(false);
             canva.Ejemplo.gameObject.SetActive(false);
+            canva.gif.gameObject.SetActive(true);
 
             canvaIncio.enabled = true;
             para = false;
@@ -208,6 +209,7 @@ public class Manager_N4_A2 : MonoBehaviour
             canva.Reintentar.gameObject.SetActive(true);
             canva.Actividad.gameObject.SetActive(false);
             canva.Ejemplo.gameObject.SetActive(false);
+            canva.gif.gameObject.SetActive(true);
             canvaIncio.enabled = true;
             para = false;
             puntuacion = 0;

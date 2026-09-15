@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,12 +16,16 @@ public class Canvas_N4_A3 : MonoBehaviour
 
     [Header("Manager")]
     public GameObject Manager;
-
+    public GameObject gif;
 
 
     private int final = 0;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
+    public GameObject panel;
+
     public Canvas canvaIncio;
 
     void Start()
@@ -32,9 +37,30 @@ public class Canvas_N4_A3 : MonoBehaviour
         Audio.onClick.AddListener(sonido);
     }
 
-    private void sonido()
+    public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+        panel.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(46f);
+
+        textoAudio.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     private void ejemplo()
@@ -62,6 +88,7 @@ public class Canvas_N4_A3 : MonoBehaviour
         Menu.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(true);
         Ejemplo.gameObject.SetActive(true);
+        gif.gameObject.SetActive(false);
         m.puntuacion = 0;
     }
 

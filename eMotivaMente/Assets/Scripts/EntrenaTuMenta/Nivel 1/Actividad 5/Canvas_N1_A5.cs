@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,10 +18,14 @@ public class Canvas_N1_A5 : MonoBehaviour
     public GameObject Manager;
     public GameObject cronometro;
 
+    public GameObject gif;
 
     private int final = 0;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
+
     public Canvas canvaIncio;
     void Start()
     {
@@ -31,9 +36,28 @@ public class Canvas_N1_A5 : MonoBehaviour
         Audio.onClick.AddListener(sonido);
     }
 
-    private void sonido()
+    public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(31f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     private void ejemplo()
@@ -63,6 +87,7 @@ public class Canvas_N1_A5 : MonoBehaviour
         Menu.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(true);
         Ejemplo.gameObject.SetActive(true);
+        gif.gameObject.SetActive(false);
         m.puntuacion = 0;
     }
 

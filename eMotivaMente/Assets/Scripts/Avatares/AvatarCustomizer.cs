@@ -245,6 +245,6 @@ public class AvatarCustomizer : MonoBehaviour
     {
         AvatarManager.Instance.avatarData = avatar;
         AvatarManager.Instance.SaveAvatar();
-        SceneManager.LoadScene("Menú del nivel 1");
+        SceneManager.LoadScene("MenusNiveles");
     }
 }

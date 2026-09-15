@@ -33,7 +33,7 @@ public class canvasFin : MonoBehaviour
         Detector_Ejemplo_Col D = Generador.GetComponent<Detector_Ejemplo_Col>();
         Canvas_N1_A2 c = CanvasPrincipal.GetComponent<Canvas_N1_A2>();
 
-        texto3.text = "Lo has hecho bien, has tenido " + D.puntosPositivos+ " puntos y " + D.puntosNegativos + " fallos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
+        texto3.text = "Lo has hecho bien, has tenido " + D.puntosPositivos+ " puntos. Puedes volver a intentarlo para mejorar o puedes volver al menú para continuar con la siguiente actividad";
 
         if (c.empezado)
         {

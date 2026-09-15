@@ -6,7 +6,6 @@ using UnityEngine;
 public class N1_Actividad1 : MonoBehaviour
 {
    
-    public GameObject cursorImage; //Imagen del cursor
 
     public GameObject generador;
     public List<Sprite> imagenes;
@@ -42,7 +41,6 @@ public class N1_Actividad1 : MonoBehaviour
     void Start()
     {
         boxCollider = generador.GetComponent<BoxCollider2D>();
-        cursorImage.SetActive(false);
         generador.gameObject.SetActive(false);
     }
 
@@ -63,9 +61,6 @@ public class N1_Actividad1 : MonoBehaviour
                     StopCoroutine(currentRoutine);
                     currentRoutine = null;
                 }
-                
-                Cursor.visible = false; // Oculta cursor del sistema
-                cursorImage.SetActive(true); //Activo la imagen del cursor
 
                 generador.gameObject.SetActive(true); //Activo el gameobject generador
                 currentRoutine = StartCoroutine(Ej1()); //Empiezo la corrutina
@@ -86,9 +81,6 @@ public class N1_Actividad1 : MonoBehaviour
                     currentRoutine = null;
                 }
 
-                Cursor.visible = false; // Oculta cursor del sistema
-                cursorImage.SetActive(true);
-
                 generador.gameObject.SetActive(true);
 
                 // Inicia el ciclo de sprites
@@ -102,7 +94,6 @@ public class N1_Actividad1 : MonoBehaviour
         //Actualiza posición del cursor personalizado
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0;
-        cursorImage.transform.position = mouseWorld;
 
         //Detecta clic inicial
         if (Input.GetMouseButtonDown(0))
@@ -192,16 +183,12 @@ public class N1_Actividad1 : MonoBehaviour
                     can.modo = 0;
                     activado = false;
 
-                    //Reiniciamos el cursor
-                    Cursor.visible = true;
-                    cursorImage.SetActive(false);
-
                     generador.gameObject.SetActive(false); //Ocultamos el generador
 
                     currentRoutine = null; //Cerramos la corrutina
                     yield break;
                 }
-                yield return new WaitForSeconds(7f);
+                yield return new WaitForSeconds(5f);
                 
             }
         }
@@ -230,17 +217,13 @@ public class N1_Actividad1 : MonoBehaviour
                     can.modo = 0;
                     activado = false;
 
-                    //Reiniciamos el cursor
-                    Cursor.visible = true;
-                    cursorImage.SetActive(false);
-
                     generador.gameObject.SetActive(false);
 
                     currentRoutine = null;
                     yield break;
 
                 }
-                yield return new WaitForSeconds(7f);
+                yield return new WaitForSeconds(5f);
 
 
             }

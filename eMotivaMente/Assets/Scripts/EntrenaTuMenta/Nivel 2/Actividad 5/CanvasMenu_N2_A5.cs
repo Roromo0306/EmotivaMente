@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CanvasMenu_N2_A5 : MonoBehaviour
 {
@@ -14,16 +15,38 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
     public Button Audio;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
 
     [Header("Otros Gameobject")]
     public GameObject manager;
     public Canvas EsteCanvas;
+    public GameObject gif;
 
     [HideInInspector] public int modo;
 
     public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(43f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     private void Update()
@@ -35,6 +58,7 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
             if(man.score == 19) //Ha acertado todo
             {
                 MenuPrincipal.gameObject.SetActive(true);
+                gif.gameObject.SetActive(true);
             }
             else
             {
@@ -42,6 +66,7 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
                 {
                     MenuPrincipal.gameObject.SetActive(true);
                     Reintentar.gameObject.SetActive(true);
+                    gif.gameObject.SetActive(true);
                 }
                 else
                 {
@@ -59,7 +84,7 @@ public class CanvasMenu_N2_A5 : MonoBehaviour
         modo = 1; //Cambio el valor de modo para que el manager sepa que vamos a entrar en el modo ejemplo
         EsteCanvas.enabled = false; //Desactivo el canvas
         Audio.gameObject.SetActive(false);
-
+        gif.gameObject.SetActive(false);
         Ejemplo.gameObject.SetActive(false); //Desactivo ejemplo para redirigir al jugador a la actividad cuando acabe
     }
 

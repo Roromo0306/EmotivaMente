@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ public class Canvas_N1_A2 : MonoBehaviour
     public Coroutine corru = null;
 
     public AudioSource fuenteAudio;
+    public TextMeshProUGUI textoAudio;
+    private Coroutine coroutineTexto;
     void Start()
     {
         canvas2.enabled = false;
@@ -26,9 +29,28 @@ public class Canvas_N1_A2 : MonoBehaviour
         canvasfin.enabled = false;
         empezado = false;
     }
-    private void sonido()
+    public void sonido()
     {
         fuenteAudio.Play();
+
+        //Corrutina. Si se vuelve a pulsar el boton el temporizador se reinicia
+        if (coroutineTexto != null)
+        {
+            StopCoroutine(coroutineTexto);
+        }
+
+        coroutineTexto = StartCoroutine(MostrarTextoAudio());
+    }
+
+    private IEnumerator MostrarTextoAudio()
+    {
+        textoAudio.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(36f);
+
+        textoAudio.gameObject.SetActive(false);
+
+        coroutineTexto = null;
     }
 
     private void ejemplo()
@@ -47,10 +69,6 @@ public class Canvas_N1_A2 : MonoBehaviour
 
         m.canvas = true;
         Time.timeScale = 1;
-
-        //Activo cusor
-        m.cursor = true;
-        Cursor.visible = false;
 
         //Activo el sprite renderer u el collider del generador de ejemplo
         m.generadorEjemploRenderer.enabled = true;
@@ -77,10 +95,6 @@ public class Canvas_N1_A2 : MonoBehaviour
 
         m.canvas = true;
         Time.timeScale = 1;
-
-        //Activo cusor. Lo primero es para activar que la imagen siga al cursor y el segundo para desactivar la imagen del cursor
-        m.cursor = true;
-        Cursor.visible = false;
 
         //Activo el sprite renderer u el collider del generador de ejemplo
         m.generadorEjemploRenderer.enabled = true;
