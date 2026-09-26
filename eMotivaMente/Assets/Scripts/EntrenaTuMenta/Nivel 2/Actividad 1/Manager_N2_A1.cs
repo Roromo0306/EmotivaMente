@@ -15,6 +15,34 @@ public class Manager_N2_A1 : MonoBehaviour
     public List<Sprite> sprite_ejemplo;
     public List<Sprite> sprite_actividad;
 
+    [Header("Escalas Actividad")]
+    public List<Vector3> escalasActividad = new List<Vector3>
+{
+    new Vector3(1.69f, 1.69f, 1.69f), // Zapatos
+    new Vector3(1.47f, 1.47f, 1.47f), // socks
+    new Vector3(1.69f, 1.69f, 1.69f), // zapatillas2
+    new Vector3(3.45f, 3.45f, 3.45f), // sportSuit
+    new Vector3(1.15f, 1.15f, 1.15f), // corbata2
+    new Vector3(1.07f, 1.07f, 1.07f), // tenisBall
+    new Vector3(3.54f, 3.54f, 3.54f), // tenisStik
+    new Vector3(0.91f, 0.91f, 0.91f), // lazo2
+    new Vector3(2.12f, 2.12f, 2.12f), // BasketBall
+    new Vector3(2.53f, 2.53f, 2.53f), // tShirt
+    new Vector3(1.38f, 1.38f, 1.38f), // hat
+    new Vector3(1.17f, 1.17f, 1.17f), // bantk
+    new Vector3(1.81f, 1.81f, 1.81f)  // planta
+};
+
+    [Header("Escalas Ejemplo")]
+    public List<Vector3> escalasEjemplo = new List<Vector3>
+{
+    new Vector3(2.08f, 2.08f, 2.08f), // gorra2
+    new Vector3(1.57f, 1.57f, 1.57f), // shose
+    new Vector3(1.14f, 1.14f, 1.14f), // babochka
+    new Vector3(2.47f, 3.62f, 3.62f), // dress
+    new Vector3(2.13f, 1.645f, 1.645f) // grasHat
+};
+
     [Space]
     public GameObject generador;
 
@@ -65,7 +93,6 @@ public class Manager_N2_A1 : MonoBehaviour
         //Actualiza posición del cursor personalizado
         if (cursor)
         {
-            MoveCursorToMouse();
 
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorld.z = 0;
@@ -118,6 +145,7 @@ public class Manager_N2_A1 : MonoBehaviour
     }
 
     //Corrutina del ejemplo
+    //Corrutina del ejemplo
     public IEnumerator Act2Ejemplo()
     {
         Detector_Colision_N2_A1 gen_ejemplo = generador.GetComponent<Detector_Colision_N2_A1>();
@@ -125,20 +153,25 @@ public class Manager_N2_A1 : MonoBehaviour
 
         while (true)
         {
-            foreach (var sprite in sprite_ejemplo)
+            for (int i = 0; i < sprite_ejemplo.Count; i++)
             {
-               // gen_ejemplo.parada = false;
-                generadorEjemploRenderer.sprite = sprite;
+                // gen_ejemplo.parada = false;
+                generadorEjemploRenderer.sprite = sprite_ejemplo[i];
                 generador.transform.position = originalPositionEjemplo;
+
+                // Cambio de escala según el sprite
+                generador.transform.localScale = escalasEjemplo[i];
 
                 fase++;
                 yield return new WaitForSeconds(10f);
             }
         }
+
         can.corru = null;
         yield break;
     }
 
+    //Corrutina de la actividad
     //Corrutina de la actividad
     public IEnumerator Act2()
     {
@@ -147,54 +180,21 @@ public class Manager_N2_A1 : MonoBehaviour
 
         while (true)
         {
-            foreach (var sprite in sprite_actividad)
+            for (int i = 0; i < sprite_actividad.Count; i++)
             {
-               // gen_ejemplo.parada = false;
-                generadorEjemploRenderer.sprite = sprite;
+                // gen_ejemplo.parada = false;
+                generadorEjemploRenderer.sprite = sprite_actividad[i];
                 generador.transform.position = originalPositionEjemplo;
+
+                // Cambio de escala según el sprite
+                generador.transform.localScale = escalasActividad[i];
 
                 faseAct++;
                 yield return new WaitForSeconds(7f);
             }
-
         }
+
         can.corru = null;
         yield break;
-    }
-
-    //Esto es lo que permite que la imagen del cursor siga al cursor al ser un canvas
-    private void MoveCursorToMouse()
-    {
-        Canvas cursorCanvas = cursorRect.GetComponentInParent<Canvas>();
-        if (cursorCanvas == null)
-        {
-            // fallback: usar ScreenPoint directamente
-            cursorRect.position = Input.mousePosition;
-            return;
-        }
-
-        if (cursorCanvas.renderMode == RenderMode.ScreenSpaceOverlay)
-        {
-            cursorRect.position = Input.mousePosition;
-            return;
-        }
-        else if (cursorCanvas.renderMode == RenderMode.ScreenSpaceCamera)
-        {
-            // transforma punto de pantalla a world point dentro del rect del canvas
-            RectTransform canvasRect = cursorCanvas.GetComponent<RectTransform>();
-            Vector3 worldPoint;
-            if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, Input.mousePosition, cursorCanvas.worldCamera, out worldPoint))
-            {
-                cursorRect.position = worldPoint;
-                return;
-            }
-        }
-        else // WorldSpace
-        {
-            Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            world.z = cursorRect.position.z; // mantener z del rectTransform
-            cursorRect.position = world;
-            return;
-        }
     }
 }

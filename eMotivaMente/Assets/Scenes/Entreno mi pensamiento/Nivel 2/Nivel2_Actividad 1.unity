@@ -1128,9 +1128,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1093101577}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 1093101582}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1177,81 +1177,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388830008}
-  m_CullTransparentMesh: 1
---- !u!1 &451204777
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 451204778}
-  - component: {fileID: 451204780}
-  - component: {fileID: 451204779}
-  m_Layer: 0
-  m_Name: Cursor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &451204778
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451204777}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 968662845}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37, y: 40}
-  m_SizeDelta: {x: 183.2043, y: 132.0016}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &451204779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451204777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 060ad1a93c79b464aaa6d72d6b4314e1, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &451204780
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451204777}
   m_CullTransparentMesh: 1
 --- !u!1 &459169435
 GameObject:
@@ -1977,8 +1902,28 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e3d68de3bed76bf47b851c0d4dcd8c7a, type: 3}
   - {fileID: 21300000, guid: 872e08a44666f8f46a5dd88dae01458e, type: 3}
   - {fileID: 21300000, guid: 308242e2dc0d497429e910e6cc1de7b3, type: 3}
+  escalasActividad:
+  - {x: 1.69, y: 1.69, z: 1.69}
+  - {x: 1.47, y: 1.47, z: 1.47}
+  - {x: 1.69, y: 1.69, z: 1.69}
+  - {x: 3.45, y: 3.45, z: 3.45}
+  - {x: 1.15, y: 1.15, z: 1.15}
+  - {x: 1.07, y: 1.07, z: 1.07}
+  - {x: 3.54, y: 3.54, z: 3.54}
+  - {x: 0.91, y: 0.91, z: 0.91}
+  - {x: 2.12, y: 2.12, z: 2.12}
+  - {x: 2.53, y: 2.53, z: 2.53}
+  - {x: 1.38, y: 1.38, z: 1.38}
+  - {x: 1.17, y: 1.17, z: 1.17}
+  - {x: 1.81, y: 1.81, z: 1.81}
+  escalasEjemplo:
+  - {x: 2.08, y: 2.08, z: 2.08}
+  - {x: 1.57, y: 1.57, z: 1.57}
+  - {x: 1.14, y: 1.14, z: 1.14}
+  - {x: 2.47, y: 3.62, z: 3.62}
+  - {x: 2.13, y: 1.645, z: 1.645}
   generador: {fileID: 821152182}
-  cursorImage: {fileID: 451204777}
+  cursorImage: {fileID: 0}
   generadorEjemploRenderer: {fileID: 0}
   generadorEjemploCollider: {fileID: 0}
   isDragging: 0
@@ -2280,7 +2225,7 @@ RectTransform:
   m_GameObject: {fileID: 821152182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.55, y: 1.55, z: 1.55}
+  m_LocalScale: {x: 1.43, y: 1.43, z: 1.43}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 968662845}
@@ -2497,7 +2442,6 @@ RectTransform:
   - {fileID: 2020673193}
   - {fileID: 781214361}
   - {fileID: 821152187}
-  - {fileID: 451204778}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2581,6 +2525,7 @@ GameObject:
   - component: {fileID: 1093101579}
   - component: {fileID: 1093101578}
   - component: {fileID: 1093101577}
+  - component: {fileID: 1093101582}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -2683,6 +2628,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1093101582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093101576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1099101876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,8 +2883,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 291}
-  m_SizeDelta: {x: 880.5152, y: 436.1244}
+  m_AnchoredPosition: {x: 0.000030518, y: 289.71664}
+  m_SizeDelta: {x: 949.8163, y: 433.5577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483260644
 MonoBehaviour:
@@ -2951,11 +2908,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Como ya has visto nos hallamos en la ciudad con nuestras rutinas de cada
     d\xEDa. Como ya sabes, hacer deporte es muy importante, ya que nos mantiene en
-    forma y nos hace sentir mejor con nosotros mismos. Antes de ir a trabajar haremos
-    deporte. En esta actividad me ir\xE1n apareciendo diversas cosas que me pueden
-    ser \xFAtiles para hacer deporte. Las que me sirvan las meter\xE9 en una bolsa,
-    las que no me sirvan las pondr\xE9 en un canasto para luego ordenar todas las
-    cosas"
+    forma y nos hace sentir mejor con nosotros mismos. \n\nAntes de ir a trabajar
+    haremos deporte. En esta actividad me ir\xE1n apareciendo diversas cosas que
+    me pueden ser \xFAtiles para hacer deporte. \n\nLas que me sirvan las meter\xE9
+    en una bolsa, las que no me sirvan las pondr\xE9 en un canasto para luego ordenar
+    todas las cosas"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2982,14 +2939,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.7
-  m_fontSizeBase: 29.7
+  m_fontSize: 28.67
+  m_fontSizeBase: 28.67
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

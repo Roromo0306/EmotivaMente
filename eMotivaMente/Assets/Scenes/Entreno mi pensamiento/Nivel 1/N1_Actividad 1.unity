@@ -468,13 +468,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Te vas de vacaciones y debes poner en tu maleta todas las cosas que necesitas
     para irte de viaje. Ver\xE1s que ir\xE1n apareciendo distintos objetos en la
-    pantalla y con la mano los deber\xE1s arrastrar para meterlos en la maleta. \r\nEmpezamos
+    pantalla y con la mano los deber\xE1s arrastrar para meterlos en la maleta. \r\n\nEmpezamos
     a preparar la maleta para el viaje. Ir\xE1n saliendo diferentes objetos que deber\xE1s
     arrastrar con la mano para poner en la maleta pero debes recordar que hay tres
     objetos que no debes arrastrar a la maleta, estos objetos son, un coj\xEDn, una
-    pelota y un paraguas grande. Cuando aparezca alguno de estos tres objetos, recuerda
-    que no debes hacer nada y as\xED desaparecer\xE1n. Tienes poco tiempo para meter
-    las cosas en la maleta porque se te escapa el tren. Presta mucha atenci\xF3n
+    pelota y un paraguas grande. \n\nCuando aparezca alguno de estos tres objetos,
+    recuerda que no debes hacer nada y as\xED desaparecer\xE1n. Tienes poco tiempo
+    para meter las cosas en la maleta porque se te escapa el tren. Presta mucha atenci\xF3n
     y no te equivoques! \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2037,6 +2037,7 @@ GameObject:
   - component: {fileID: 1206220187}
   - component: {fileID: 1206220186}
   - component: {fileID: 1206220185}
+  - component: {fileID: 1206220191}
   - component: {fileID: 1206220190}
   m_Layer: 5
   m_Name: BotonSalida
@@ -2161,6 +2162,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1206220191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206220184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1302874620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,9 +3258,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1206220185}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 1206220191}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

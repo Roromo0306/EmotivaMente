@@ -3665,7 +3665,7 @@ MonoBehaviour:
     - m_Text: Gafas
       m_Image: {fileID: -760139820, guid: 9d1d6e0283c236f458402223bd8d25c5, type: 3}
     - m_Text: Sin Gafas
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 1052836603, guid: 9d1d6e0283c236f458402223bd8d25c5, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

@@ -967,14 +967,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "En el recorrido por este pa\xEDs imaginario estamos cargando comida para
-    el viaje con la finalidad de poder llegar a la \xFAltima actividad que nos queda.
-    Para conocer qu\xE9 tipo de comidas hay en este pa\xEDs, la actividad nos mostrar\xE1
-    distintos tipos de alimentos. Para ello deberemos tocar encima del cuadrado y
-    nos saldr\xE1 una imagen de un alimento, seguidamente tendremos que buscar la
-    imagen igual en el panel de cuadrados. Si al tocar nos sale la misma imagen,
-    con la mano la introduciremos en el cesto. Si por el contrario sale otra foto
-    distinta, deberemos tocar cada una de las im\xE1genes que nos han salido para
-    que se vuelvan a esconder y seguir intent\xE1ndolo. Finalizar\xE1 esta parte
+    el viaje con la finalidad de poder llegar a la \xFAltima actividad que nos queda.\n\nPara
+    conocer qu\xE9 tipo de comidas hay en este pa\xEDs, la actividad nos mostrar\xE1
+    distintos tipos de alimentos. \n\nPara ello deberemos tocar encima del cuadrado
+    y nos saldr\xE1 una imagen de un alimento, seguidamente tendremos que buscar
+    la imagen igual en el panel de cuadrados. Si al tocar nos sale la misma imagen,
+    con la mano la introduciremos en el cesto. \n\nSi por el contrario sale otra
+    foto distinta, deberemos tocar cada una de las im\xE1genes que nos han salido
+    para que se vuelvan a esconder y seguir intent\xE1ndolo. Finalizar\xE1 esta parte
     de la actividad cuando se hayan recogido todas las fotos y se hayan puesto en
     el cesto las 8 parejas . \xA1Adelante!"
   m_isRightToLeft: 0
@@ -1003,14 +1003,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.6
-  m_fontSizeBase: 13.6
+  m_fontSize: 12.07
+  m_fontSizeBase: 12.07
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1069,8 +1069,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.215862, y: 345.15683}
-  m_SizeDelta: {x: 488.2333, y: 154.0017}
+  m_AnchoredPosition: {x: 42.6982, y: 354.98}
+  m_SizeDelta: {x: 533.4855, y: 142.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &225448342
 GameObject:
@@ -4807,9 +4807,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1191125548}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 1191125553}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5479,6 +5479,7 @@ GameObject:
   - component: {fileID: 1191125550}
   - component: {fileID: 1191125549}
   - component: {fileID: 1191125548}
+  - component: {fileID: 1191125553}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -5581,6 +5582,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1191125553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191125547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1194098011
 GameObject:
   m_ObjectHideFlags: 0

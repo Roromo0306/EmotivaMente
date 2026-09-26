@@ -2345,14 +2345,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Para preparar una fiesta de cumplea\xF1os necesitamos tarjetas de invitaci\xF3n,
-    comida para la fiesta, pastel, velas de cumplea\xF1os y regalos. Adem\xE1s deberemos
-    seguir un orden en la organizaci\xF3n de la fiesta que es el siguiente: 1- Enviar
-    las tarjetas de invitaci\xF3n 2- Preparar la lista de lo que tenemos que comprar
-    3- Ir a comprar 4-Preparar la comida de la fiesta 5- Sacar el pastel 6- Encender
-    las velas 7- Soplar las velas 8- Dar los regalos Acu\xE9rdate de este orden porque
-    ir\xE1n saliendo todos los pasos de forma desorganizada y tendr\xE1s que estar
-    muy atento/ para pinchar solamente cuando el paso que salga sea el correcto siguiendo
-    el orden de estos pasos y no te puedes equivocar!! Preparado? "
+    comida para la fiesta, pastel, velas de cumplea\xF1os y regalos.\n\nAdem\xE1s
+    deberemos seguir un orden en la organizaci\xF3n de la fiesta que es el siguiente:
+    \n1- Enviar las tarjetas de invitaci\xF3n 2- Preparar la lista de lo que tenemos
+    que comprar 3- Ir a comprar 4-Preparar la comida de la fiesta 5- Sacar el pastel
+    6- Encender las velas 7- Soplar las velas 8- Dar los regalos \n\nAcu\xE9rdate
+    de este orden porque ir\xE1n saliendo todos los pasos de forma desorganizada
+    y tendr\xE1s que estar muy atento/ para pinchar solamente cuando el paso que
+    salga sea el correcto siguiendo el orden de estos pasos y no te puedes equivocar!!
+    Preparado? "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2379,14 +2380,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.4
-  m_fontSizeBase: 38.4
+  m_fontSize: 32.3
+  m_fontSizeBase: 32.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2445,8 +2446,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -117.5732, y: 227.95003}
-  m_SizeDelta: {x: 1459.5535, y: 555.9}
+  m_AnchoredPosition: {x: -160.24016, y: 249.81076}
+  m_SizeDelta: {x: 1551.0732, y: 544.2786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &628582987
 GameObject:
@@ -4823,9 +4824,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1543462610}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 1543462615}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5272,6 +5273,7 @@ GameObject:
   - component: {fileID: 1543462612}
   - component: {fileID: 1543462611}
   - component: {fileID: 1543462610}
+  - component: {fileID: 1543462615}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -5374,6 +5376,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1543462615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543462609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1629144665
 GameObject:
   m_ObjectHideFlags: 0

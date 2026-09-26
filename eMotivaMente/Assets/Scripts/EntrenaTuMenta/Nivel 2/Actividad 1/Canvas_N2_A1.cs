@@ -79,10 +79,6 @@ public class Canvas_N2_A1 : MonoBehaviour
         m.canvas = true;
         Time.timeScale = 1;
 
-        //Activo cusor
-        m.cursor = true;
-        Cursor.visible = false;
-
         //Activo el sprite renderer u el collider del generador de ejemplo
         m.generadorEjemploRenderer.enabled = true;
         m.generadorEjemploCollider.enabled = true;
@@ -107,10 +103,6 @@ public class Canvas_N2_A1 : MonoBehaviour
 
         m.canvas = true;
         Time.timeScale = 1;
-
-        //Activo cusor. Lo primero es para activar que la imagen siga al cursor y el segundo para desactivar la imagen del cursor
-        m.cursor = true;
-        Cursor.visible = false;
 
         //Activo el sprite renderer u el collider del generador de ejemplo
         m.generadorEjemploRenderer.enabled = true;

@@ -1317,9 +1317,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1555653294}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 1555653299}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2651,6 +2651,7 @@ GameObject:
   - component: {fileID: 1555653296}
   - component: {fileID: 1555653295}
   - component: {fileID: 1555653294}
+  - component: {fileID: 1555653299}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -2753,6 +2754,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1555653299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555653293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1637647732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3761,11 +3774,11 @@ MonoBehaviour:
   m_text: "Antes de ir a trabajar debo dejar la casa ordenada, tengo muchas cosas
     y cada una debe ir a su lugar, sin embargo algunas de las cosas que tengo se
     las debo llevar a una amiga y ponerlas en la bolsa roja para d\xE1rselas despu\xE9s
-    (pantal\xF3n, peine, donut, cuchillo, jab\xF3n de manos y gorra). Si no recuerdas
+    (pantal\xF3n, peine, donut, cuchillo, jab\xF3n de manos y gorra). \n\nSi no recuerdas
     puedes tocar el interrogante y te dir\xE1 que cosas tienes que llevar a tu amiga.
     Tenemos un poco de prisa porque tenemos que ir a trabajar y si tardas mucho a
     guardar las cosas en su lugar, estas desaparecer\xE1n y ya no las podr\xE1s colocar.
-    Cuando inicies el juego te ir\xE1n apareciendo las distintas cosas que debes
+    \n\nCuando inicies el juego te ir\xE1n apareciendo las distintas cosas que debes
     ordenar. Para empezar, toca a inicio"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3793,14 +3806,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.1
-  m_fontSizeBase: 32.1
+  m_fontSize: 27.68
+  m_fontSizeBase: 27.68
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3859,8 +3872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148, y: -325.88}
-  m_SizeDelta: {x: 785.2345, y: 462.2364}
+  m_AnchoredPosition: {x: 156, y: -330}
+  m_SizeDelta: {x: 819.1531, y: 434.5992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2052237511
 GameObject:

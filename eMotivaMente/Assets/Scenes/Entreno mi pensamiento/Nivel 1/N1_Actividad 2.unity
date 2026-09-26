@@ -1540,8 +1540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.02, y: 299}
-  m_SizeDelta: {x: 959.9756, y: 348.958}
+  m_AnchoredPosition: {x: 30.79509, y: 302.51788}
+  m_SizeDelta: {x: 989.5258, y: 341.9222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &847733886
 MonoBehaviour:
@@ -1564,11 +1564,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Ahora es el momento de poner en el plato las que cosas que podemos comer.
-    Aparecer\xE1n alimentos que deber\xE1s arrastrar con la mano y ponerlos en el
-    plato, tambi\xE9n aparecer\xE1n objetos que no son alimentos que deber\xE1s poner
-    en la caja, pero ojo! solo si caben. Si los objetos no caben, no deber\xE1s hacer
-    nada y as\xED desaparecer\xE1n. Cuando acabes, ya lo tendr\xE1s todo organizado
-    y podr\xE1s empezar a comer. Si lo has entendido, empezamos con un ejemplo. \xA1Pru\xE9balo! "
+    \n\nAparecer\xE1n alimentos que deber\xE1s arrastrar con la mano y ponerlos en
+    el plato, tambi\xE9n aparecer\xE1n objetos que no son alimentos que deber\xE1s
+    poner en la caja, pero ojo! solo si caben.\n\nSi los objetos no caben, no deber\xE1s
+    hacer nada y as\xED desaparecer\xE1n. \n\nCuando acabes, ya lo tendr\xE1s todo
+    organizado y podr\xE1s empezar a comer. Si lo has entendido, empezamos con un
+    ejemplo. \xA1Pru\xE9balo! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1595,14 +1596,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.7
-  m_fontSizeBase: 38.7
+  m_fontSize: 33.36
+  m_fontSizeBase: 33.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2285,6 +2286,7 @@ GameObject:
   - component: {fileID: 1199081878}
   - component: {fileID: 1199081877}
   - component: {fileID: 1199081876}
+  - component: {fileID: 1199081881}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -2387,6 +2389,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1199081881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199081875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1414068402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,7 +2962,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.1, y: 2.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -3020,15 +3034,15 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.74, y: 5.16}
+    newSize: {x: 2.74, y: 5.16}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.2, y: 9.52}
+  m_Size: {x: 14.25, y: 7.4}
   m_EdgeRadius: 0
 --- !u!50 &1573726181
 Rigidbody2D:
@@ -3624,9 +3638,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1199081876}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 1199081881}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3731,6 +3745,27 @@ MonoBehaviour:
   texto2: {fileID: 1156500088}
   texto3: {fileID: 1956939695}
   generador_ejemplo: {fileID: 1573726176}
+  escalasActividad:
+  - {x: 0.17, y: 0.17, z: 0.17}
+  - {x: 0.18, y: 0.18, z: 0.18}
+  - {x: 0.52, y: 0.52, z: 0.52}
+  - {x: 0.13, y: 0.13, z: 0.13}
+  - {x: 0.18, y: 0.18, z: 0.18}
+  - {x: 0.52, y: 0.52, z: 0.52}
+  - {x: 0.37, y: 0.37, z: 0.37}
+  - {x: 0.23, y: 0.23, z: 0.23}
+  - {x: 0.36, y: 0.36, z: 0.36}
+  - {x: 0.17, y: 0.17, z: 0.17}
+  - {x: 0.41, y: 0.41, z: 0.41}
+  - {x: 0.13, y: 0.13, z: 0.13}
+  - {x: 0.58, y: 0.58, z: 0.58}
+  - {x: 0.64, y: 0.64, z: 0.64}
+  - {x: 0.47, y: 0.47, z: 0.47}
+  - {x: 0.33, y: 0.33, z: 0.33}
+  escalasEjemplo:
+  - {x: 0.33, y: 0.33, z: 0.33}
+  - {x: 0.64, y: 0.64, z: 0.64}
+  - {x: 0.43, y: 0.43, z: 0.43}
   generadorEjemploRenderer: {fileID: 0}
   generadorEjemploCollider: {fileID: 0}
   isDragging: 0

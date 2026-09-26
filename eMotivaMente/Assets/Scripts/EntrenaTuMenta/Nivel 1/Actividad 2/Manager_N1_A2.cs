@@ -15,6 +15,36 @@ public class Manager_N1_A2 : MonoBehaviour
     public TextMeshProUGUI texto1, texto2, texto3;
     public GameObject generador_ejemplo;
 
+
+    [Header("Escalas")]
+    public List<Vector3> escalasActividad = new List<Vector3>
+    {
+    new Vector3(0.19f, 0.19f, 0.19f), // Queso
+    new Vector3(0.20f, 0.20f, 0.20f), // Manzana
+    new Vector3(0.52f, 0.52f, 0.52f), // Piano
+    new Vector3(0.13f, 0.13f, 0.13f), // Fresa
+    new Vector3(0.18f, 0.18f, 0.18f), // Zanahoria
+    new Vector3(0.52f, 0.52f, 0.52f), // Piano2
+    new Vector3(0.37f, 0.37f, 0.37f), // Armario
+    new Vector3(0.23f, 0.23f, 0.23f), // Pan
+    new Vector3(0.36f, 0.36f, 0.36f), // Armario2
+    new Vector3(0.17f, 0.17f, 0.17f), // Pescado
+    new Vector3(0.41f, 0.41f, 0.41f), // Cerezas
+    new Vector3(0.13f, 0.13f, 0.13f), // Sacacorchos
+    new Vector3(0.58f, 0.58f, 0.58f), // Hamburguesas
+    new Vector3(0.64f, 0.64f, 0.64f), // Árbol
+    new Vector3(0.47f, 0.47f, 0.47f), // Botella
+    new Vector3(0.33f, 0.33f, 0.33f)  // Tijera
+    };
+
+    [Header("Escalas ejemplo")]
+    public List<Vector3> escalasEjemplo = new List<Vector3>
+    {
+    new Vector3(0.33f, 0.33f, 0.33f), // Tijera
+    new Vector3(0.64f, 0.64f, 0.64f), // Árbol
+    new Vector3(0.43f, 0.43f, 0.43f)  // Pera
+    };
+
     [HideInInspector] public SpriteRenderer generadorEjemploRenderer;
     [HideInInspector] public Collider2D generadorEjemploCollider;
     private Vector3 originalPositionEjemplo;
@@ -182,18 +212,24 @@ public class Manager_N1_A2 : MonoBehaviour
 
         while (true)
         {
-            foreach (var sprite in sprite_ejemplo)
+            for (int i = 0; i < sprite_ejemplo.Count; i++)
             {
                 gen_ejemplo.parada = false;
-                generadorEjemploRenderer.sprite = sprite;
+
+                // Cambiar sprite
+                generadorEjemploRenderer.sprite = sprite_ejemplo[i];
+
+                // Restaurar posición
                 generador_ejemplo.transform.position = originalPositionEjemplo;
 
+                // Cambiar escala
+                generador_ejemplo.transform.localScale = escalasEjemplo[i];
+
                 fase++;
+
                 yield return new WaitForSeconds(5f);
             }
         }
-        can.corru = null;
-        yield break;
     }
 
     //Corrutina de la actividad
@@ -204,19 +240,24 @@ public class Manager_N1_A2 : MonoBehaviour
 
         while (true)
         {
-            foreach (var sprite in sprite_actividad)
+            for (int i = 0; i < sprite_actividad.Count; i++)
             {
                 gen_ejemplo.parada = false;
-                generadorEjemploRenderer.sprite = sprite;
+
+                // Cambiar sprite
+                generadorEjemploRenderer.sprite = sprite_actividad[i];
+
+                // Restaurar posición
                 generador_ejemplo.transform.position = originalPositionEjemplo;
 
+                // Cambiar escala
+                generador_ejemplo.transform.localScale = escalasActividad[i];
+
                 faseAct++;
+
                 yield return new WaitForSeconds(5f);
             }
-            
         }
-        can.corru = null;
-        yield break;
     }
 
 }

@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 55604135}
   - component: {fileID: 55604134}
   - component: {fileID: 55604133}
+  - component: {fileID: 55604138}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -534,6 +535,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &55604138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55604132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &60392989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,9 +4451,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 55604133}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 55604138}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4987,10 +5000,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "La segunda parte de la actividad cambia un poco. Ahora nos toca crear
-    un men\xFA de comidas. Es decir, deberemos aparejar una imagen de comida salada
+    un men\xFA de comidas.\n\nEs decir, deberemos aparejar una imagen de comida salada
     y una de dulce, no importa qu\xE9 tipo de pareja sea, siempre deber\xE1 haber
-    una foto de comida dulce y otra de salada. Las parejas que vayas formando se
-    deber\xE1n coger y poner en la cesta. Si coinciden dos fotos de comida salada
+    una foto de comida dulce y otra de salada. \n\nLas parejas que vayas formando
+    se deber\xE1n coger y poner en la cesta. Si coinciden dos fotos de comida salada
     o dos fotos de comida dulce deber\xE1s taparlas e intentarlo de nuevo."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5025,7 +5038,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

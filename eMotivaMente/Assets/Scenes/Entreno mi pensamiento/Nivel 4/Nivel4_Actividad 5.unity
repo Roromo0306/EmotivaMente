@@ -740,13 +740,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Eres trabajador de esta tienda de ropa y te han encargado vestir a estos
-    maniqu\xEDs del escaparate. Tus jefes son muy exigentes y lo quieren de una manera
-    determinada, aquente dejan ponerle un toque personal, a tu gusto! La consigna
-    que te han dado tus jefes es clara, quieren que el maniqu\xED lleve puesto una
-    parte de arriba roja y unos pantalones azules. Ahora, t\xFA decides qu\xE9 tipo
-    de prenda pondr\xE1s mientras sea roja para la parte de arriba y azul para la
-    parte de abajo. Si te salen complementos u otras cosas, no debes hacer nada,
-    est\xE1n ah\xED para distraerte. "
+    maniqu\xEDs del escaparate. \n\nTus jefes son muy exigentes y lo quieren de una
+    manera determinada, aquente dejan ponerle un toque personal, a tu gusto! \n\nLa
+    consigna que te han dado tus jefes es clara, quieren que el maniqu\xED lleve
+    puesto una parte de arriba roja y unos pantalones azules. Ahora, t\xFA decides
+    qu\xE9 tipo de prenda pondr\xE1s mientras sea roja para la parte de arriba y
+    azul para la parte de abajo. Si te salen complementos u otras cosas, no debes
+    hacer nada, est\xE1n ah\xED para distraerte. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -773,14 +773,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30.9
+  m_fontSizeBase: 30.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -904,6 +904,7 @@ GameObject:
   - component: {fileID: 813529252}
   - component: {fileID: 813529251}
   - component: {fileID: 813529250}
+  - component: {fileID: 813529255}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -1006,6 +1007,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &813529255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813529249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &922969508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,9 +2165,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 813529250}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 813529255}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

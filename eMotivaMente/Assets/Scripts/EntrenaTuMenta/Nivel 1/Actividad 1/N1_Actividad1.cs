@@ -11,6 +11,20 @@ public class N1_Actividad1 : MonoBehaviour
     public List<Sprite> imagenes;
     public List<Sprite> imagenesEjemplo;
 
+    [Header("Escalas")]
+    public List<Vector3> escalas = new List<Vector3>
+{
+    new Vector3(0.12f, 0.1167f, 0.1576f), // Cascos
+    new Vector3(0.18f, 0.1751f, 0.236f), // Camiseta
+    new Vector3(0.1979f, 0.1925f, 0.26f), // Almohada
+    new Vector3(0.12f, 0.1167f, 0.1576f), // Jabón
+    new Vector3(0.14f, 0.1362f, 0.1839f), // Pants
+    new Vector3(0.18f, 0.1751f, 0.2364f), // Paraguas
+    new Vector3(0.12f, 0.1167f, 0.1576f), // Peine
+    new Vector3(0.2f, 0.1946f, 0.2627f), // Pelota
+    new Vector3(0.16f, 0.1556f, 0.2101f)  // Zapatillas
+};
+
     private SpriteRenderer generadorRenderer;
     private Collider2D generadorCollider;
     private Vector3 originalPosition; //Posición original del generador
@@ -167,29 +181,35 @@ public class N1_Actividad1 : MonoBehaviour
         Canvas_Inicio_N1_A1 can = CanvasInicio.GetComponent<Canvas_Inicio_N1_A1>();
         while (true)
         {
-            foreach (var sprite in imagenes)
+            for (int i = 0; i < imagenes.Count; i++)
             {
                 GenS.parada = false;
-                generadorRenderer.sprite = sprite;
+
+                generadorRenderer.sprite = imagenes[i];
+
                 generador.transform.position = originalPosition;
+
+                // Cambia el tamaño según la imagen
+                generador.transform.localScale = escalas[i];
+
                 fase++;
 
-                if(fase == 11)
+                if (fase == 10)
                 {
                     Fase = true;
 
-                    //Reiniciamos las variables
+                    // Reiniciamos las variables
                     fase = 0;
                     can.modo = 0;
                     activado = false;
 
-                    generador.gameObject.SetActive(false); //Ocultamos el generador
+                    generador.gameObject.SetActive(false);
 
-                    currentRoutine = null; //Cerramos la corrutina
+                    currentRoutine = null;
                     yield break;
                 }
+
                 yield return new WaitForSeconds(5f);
-                
             }
         }
     }
@@ -200,17 +220,29 @@ public class N1_Actividad1 : MonoBehaviour
         DetectorColision GenS = generador.GetComponent<DetectorColision>();
         Canvas_Inicio_N1_A1 can = CanvasInicio.GetComponent<Canvas_Inicio_N1_A1>();
 
+        // Índices de las imágenes de ejemplo dentro de "escalas"
+        int[] indicesEscala = { 1, 5, 3 };
+
         while (true)
         {
-            foreach (var sprite in imagenesEjemplo)
+            for (int i = 0; i < imagenesEjemplo.Count; i++)
             {
                 GenS.parada = false;
-                generadorRenderer.sprite = sprite;
+
+                // Cambiar imagen
+                generadorRenderer.sprite = imagenesEjemplo[i];
+
+                // Restaurar posición
                 generador.transform.position = originalPosition;
+
+                // Cambiar escala
+                generador.transform.localScale = escalas[indicesEscala[i]];
+
                 fase++;
+
                 if (fase == 4)
                 {
-                    //Reiniciamos las variables
+                    // Reiniciamos las variables
                     fase = 0;
                     CanvasInicio.enabled = true;
                     Time.timeScale = 0;
@@ -221,11 +253,9 @@ public class N1_Actividad1 : MonoBehaviour
 
                     currentRoutine = null;
                     yield break;
-
                 }
+
                 yield return new WaitForSeconds(5f);
-
-
             }
         }
     }

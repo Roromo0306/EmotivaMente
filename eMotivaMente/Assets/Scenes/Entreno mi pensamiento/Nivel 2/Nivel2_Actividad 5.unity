@@ -839,10 +839,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Tienes que prepararte la comida y sabes que es importante comer platos
-    saludables para nuestra salud y beber mucha agua. La comida saludable incluye
+    saludables para nuestra salud y beber mucha agua. \n\nLa comida saludable incluye
     comer verduras, carne, pescado, frutas y comer muchos menos pasteles, refrescos
     con az\xFAcar, embutidos, pastas de pasteler\xEDa, tomar mucho az\xFAcar, entre
-    otros\u201D A continuaci\xF3n ir\xE1n saliendo platos de comida y deber\xE1s
+    otros\u201D. \n\nA continuaci\xF3n ir\xE1n saliendo platos de comida y deber\xE1s
     introducir en el plato de los saludables los que son buenos para tu salud y no
     deber\xE1s incluir los no saludables, es decir, los que perjudican tu salud y
     debes controlar"
@@ -872,14 +872,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.98
-  m_fontSizeBase: 35.98
+  m_fontSize: 33.7
+  m_fontSizeBase: 33.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6368,9 +6368,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915103521}
-        m_TargetAssemblyTypeName: SalirPrograma, Assembly-CSharp
-        m_MethodName: SalirConDatos
+      - m_Target: {fileID: 1915103526}
+        m_TargetAssemblyTypeName: SalirMenuPrincipal, Assembly-CSharp
+        m_MethodName: VolverMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7060,6 +7060,7 @@ GameObject:
   - component: {fileID: 1915103523}
   - component: {fileID: 1915103522}
   - component: {fileID: 1915103521}
+  - component: {fileID: 1915103526}
   m_Layer: 5
   m_Name: BotonSalida
   m_TagString: Untagged
@@ -7162,6 +7163,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1915103526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915103520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1bb5d9d881c3148aa19e3f0dd65ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940245028
 GameObject:
   m_ObjectHideFlags: 0
