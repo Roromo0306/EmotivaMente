@@ -18,7 +18,7 @@ public class Canvas_N1_A5 : MonoBehaviour
     public GameObject Manager;
     public GameObject cronometro;
 
-    public GameObject gif;
+    //public GameObject gif;
 
     private int final = 0;
 
@@ -87,7 +87,7 @@ public class Canvas_N1_A5 : MonoBehaviour
         Menu.gameObject.SetActive(false);
         Actividad.gameObject.SetActive(true);
         Ejemplo.gameObject.SetActive(true);
-        gif.gameObject.SetActive(false);
+        //gif.gameObject.SetActive(false);
         m.puntuacion = 0;
     }
 

@@ -27,7 +27,6 @@ public class Canvas_N4_A4 : MonoBehaviour
     public AudioSource fuenteAudio;
     public TextMeshProUGUI textoAudio;
     private Coroutine coroutineTexto;
-    public GameObject panel;
 
     public Canvas canvaIncio;
 
@@ -56,12 +55,10 @@ public class Canvas_N4_A4 : MonoBehaviour
     private IEnumerator MostrarTextoAudio()
     {
         textoAudio.gameObject.SetActive(true);
-        panel.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(55f);
 
         textoAudio.gameObject.SetActive(false);
-        panel.gameObject.SetActive(false);
 
         coroutineTexto = null;
     }

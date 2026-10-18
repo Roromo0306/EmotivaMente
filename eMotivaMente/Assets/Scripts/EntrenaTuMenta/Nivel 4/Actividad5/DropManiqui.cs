@@ -8,11 +8,11 @@ public class DropManiqui : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("[DROP DETECTADO]");
+        //Debug.Log("[DROP DETECTADO]");
 
         if (eventData.pointerDrag == null)
         {
-            Debug.Log("[DROP] pointerDrag es null");
+            //Debug.Log("[DROP] pointerDrag es null");
             return;
         }
 
@@ -20,11 +20,11 @@ public class DropManiqui : MonoBehaviour, IDropHandler
 
         if (prenda == null)
         {
-            Debug.Log("[DROP] No es una prenda");
+            //Debug.Log("[DROP] No es una prenda");
             return;
         }
 
-        Debug.Log($"[DROP OK] {prenda.name}");
+        //Debug.Log($"[DROP OK] {prenda.name}");
         manager.ColocarPrenda(prenda, esZonaArriba);
     }
 }

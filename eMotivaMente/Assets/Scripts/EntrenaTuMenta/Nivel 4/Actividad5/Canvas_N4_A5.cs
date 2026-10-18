@@ -20,15 +20,15 @@ public class Canvas_N4_A5 : MonoBehaviour
     public TextMeshProUGUI textoAudio;
     private Coroutine coroutineTexto;
 
+    public GameObject textoBien;
+    public GameObject textoMal;
+
     void Start()
     {
         Ejemplo.onClick.AddListener(EjemploF);
         Actividad.onClick.AddListener(ActividadF);
         Reintentar.onClick.AddListener(ReintentarF);
         Menu.onClick.AddListener(MenuF);
-
-        Reintentar.gameObject.SetActive(false);
-        Menu.gameObject.SetActive(false);
     }
 
     void EjemploF()
@@ -40,6 +40,8 @@ public class Canvas_N4_A5 : MonoBehaviour
     void ActividadF()
     {
         panelMenu.SetActive(false);
+        Actividad.gameObject.SetActive(false);
+        Ejemplo.gameObject.SetActive(false);
         manager.IniciarActividad();
     }
 
@@ -48,13 +50,18 @@ public class Canvas_N4_A5 : MonoBehaviour
         panelMenu.SetActive(false);
         Reintentar.gameObject.SetActive(false);
         Menu.gameObject.SetActive(false);
+        textoBien.SetActive(false);
+        textoMal.SetActive(false);
+
+        Actividad.gameObject.SetActive(true);
+        Ejemplo.gameObject.SetActive(true);
 
         manager.Reiniciar();
     }
 
     void MenuF()
     {
-        SceneManager.LoadScene("MenuNivel5");
+        SceneManager.LoadScene("Pantalla Final");
     }
 
     public void MostrarResultado(bool mostrarMenu, bool mostrarReintentar)
@@ -91,4 +98,5 @@ public class Canvas_N4_A5 : MonoBehaviour
 
         coroutineTexto = null;
     }
+
 }

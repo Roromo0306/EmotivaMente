@@ -29,7 +29,7 @@ public class Manager_N4_A5 : MonoBehaviour
 
     public void IniciarEjemplo()
     {
-        Debug.Log("[MODO] Ejemplo");
+        //Debug.Log("[MODO] Ejemplo");
         ReiniciarVariables();
         modoActual = Modo.Ejemplo;
         StartCoroutine(SpawnPrendas());
@@ -37,7 +37,7 @@ public class Manager_N4_A5 : MonoBehaviour
 
     public void IniciarActividad()
     {
-        Debug.Log("[MODO] Actividad");
+        //Debug.Log("[MODO] Actividad");
         ReiniciarVariables();
         modoActual = Modo.Actividad;
         StartCoroutine(SpawnPrendas());
@@ -47,7 +47,7 @@ public class Manager_N4_A5 : MonoBehaviour
 
     IEnumerator SpawnPrendas()
     {
-        Debug.Log("[SPAWN] Iniciando spawn");
+        //Debug.Log("[SPAWN] Iniciando spawn");
 
         while (!(arribaCorrecto && abajoCorrecto))
         {
@@ -67,7 +67,7 @@ public class Manager_N4_A5 : MonoBehaviour
             );
             prendaAbajoActual.transform.localPosition = Vector3.zero;
 
-            Debug.Log("[SPAWN] Prendas generadas");
+            //Debug.Log("[SPAWN] Prendas generadas");
 
             yield return new WaitForSeconds(3f);
         }
@@ -84,22 +84,22 @@ public class Manager_N4_A5 : MonoBehaviour
         if (modoActual == Modo.Ejemplo)
         {
             correcto = prenda.esArriba == zonaArriba;
-            Debug.Log("[EJEMPLO] Validando posición: " + correcto);
+            //Debug.Log("[EJEMPLO] Validando posición: " + correcto);
         }
         else
         {
             // ACTIVIDAD: validar color y posición
             if (prenda.esArriba != zonaArriba)
             {
-                Debug.Log("[ERROR] Zona incorrecta");
+                //Debug.Log("[ERROR] Zona incorrecta");
             }
             else if (zonaArriba && !prenda.esRoja)
             {
-                Debug.Log("[ERROR] Parte ARRIBA no es roja");
+                //Debug.Log("[ERROR] Parte ARRIBA no es roja");
             }
             else if (!zonaArriba && !prenda.esAzul)
             {
-                Debug.Log("[ERROR] Parte ABAJO no es azul");
+                //Debug.Log("[ERROR] Parte ABAJO no es azul");
             }
             else
             {
@@ -128,16 +128,36 @@ public class Manager_N4_A5 : MonoBehaviour
 
     void Evaluar()
     {
+        Canvas_N4_A5 canvas = canvasInicio.GetComponent<Canvas_N4_A5>();
         Debug.Log($"[FIN] Errores: {errores}");
 
         canvasInicio.enabled = true;
 
         if (errores == 0)
+        {
             Debug.Log("[RESULTADO] PERFECTO");
+            canvas.panelMenu.SetActive(true);
+            canvas.Menu.gameObject.SetActive(true);
+            canvas.textoBien.gameObject.SetActive(true);
+        }
+            
         else if (errores <= 2)
+        {
             Debug.Log("[RESULTADO] BIEN CON ERRORES");
+            canvas.panelMenu.SetActive(true);
+            canvas.Menu.gameObject.SetActive(true);
+            canvas.Reintentar.gameObject.SetActive(true);
+            canvas.textoMal.gameObject.SetActive(true);
+        }
+
         else
+        {
             Debug.Log("[RESULTADO] REPETIR");
+            canvas.panelMenu.SetActive(true);
+            canvas.Reintentar.gameObject.SetActive(true);
+            canvas.textoMal.gameObject.SetActive(true);
+        }
+            
     }
 
     // ------------------- LIMPIEZA -------------------
