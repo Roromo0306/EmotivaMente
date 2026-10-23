@@ -1137,11 +1137,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Ojos A
+    - m_Text: Ojos 1
       m_Image: {fileID: 526016043, guid: 35d4e3f65c81e9b4591a22292c6933eb, type: 3}
-    - m_Text: Ojos B
+    - m_Text: Ojos 2
       m_Image: {fileID: -445311917, guid: 35d4e3f65c81e9b4591a22292c6933eb, type: 3}
-    - m_Text: Ojos C
+    - m_Text: Ojos 3
       m_Image: {fileID: 1870972035, guid: 35d4e3f65c81e9b4591a22292c6933eb, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2939,11 +2939,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Nariz A
+    - m_Text: Nariz 1
       m_Image: {fileID: -955275014, guid: 124eea70f8142c44f8c9940813d349f6, type: 3}
-    - m_Text: Nariz B
+    - m_Text: Nariz 2
       m_Image: {fileID: -1715580428, guid: 124eea70f8142c44f8c9940813d349f6, type: 3}
-    - m_Text: Nariz C
+    - m_Text: Nariz 3
       m_Image: {fileID: -1932073085, guid: 124eea70f8142c44f8c9940813d349f6, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3162,7 +3162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ojos A
+  m_text: Ojos 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3511,11 +3511,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Cejas A
+    - m_Text: Cejas 1
       m_Image: {fileID: -20754710, guid: 87349739c7552c34abc7204912261e2a, type: 3}
-    - m_Text: ' Cejas B'
+    - m_Text: ' Cejas 2'
       m_Image: {fileID: 1331083735, guid: 87349739c7552c34abc7204912261e2a, type: 3}
-    - m_Text: Cejas C
+    - m_Text: Cejas 3
       m_Image: {fileID: 301039856, guid: 87349739c7552c34abc7204912261e2a, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4127,7 +4127,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Boca A
+  m_text: Boca 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4501,7 +4501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pelo A
+  m_text: Pelo 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5066,7 +5066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nariz A
+  m_text: Nariz 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5712,7 +5712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cejas A
+  m_text: Cejas 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8645,17 +8645,17 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Pelo A
+    - m_Text: Pelo 1
       m_Image: {fileID: -1647635957, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
-    - m_Text: Pelo B
+    - m_Text: Pelo 2
       m_Image: {fileID: 188707836, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
-    - m_Text: Pelo C
+    - m_Text: Pelo 3
       m_Image: {fileID: -875421253, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
-    - m_Text: Pelo D
+    - m_Text: Pelo 4
       m_Image: {fileID: -275757691, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
-    - m_Text: Pelo E
+    - m_Text: Pelo 5
       m_Image: {fileID: -1313263260, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
-    - m_Text: Pelo F
+    - m_Text: Pelo 6
       m_Image: {fileID: -1150403103, guid: 5b16b42c2367f2b4b9f9e4c02f12c895, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8802,13 +8802,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Boca A
+    - m_Text: Boca 1
       m_Image: {fileID: -128348285, guid: 3381ff2a33340504ea5a515bddb7b68e, type: 3}
-    - m_Text: Boca B
+    - m_Text: Boca 2
       m_Image: {fileID: 1066776026, guid: 3381ff2a33340504ea5a515bddb7b68e, type: 3}
-    - m_Text: Boca C
+    - m_Text: Boca 3
       m_Image: {fileID: 665936730, guid: 3381ff2a33340504ea5a515bddb7b68e, type: 3}
-    - m_Text: Boca D
+    - m_Text: Boca 4
       m_Image: {fileID: -30981999, guid: 3381ff2a33340504ea5a515bddb7b68e, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class N1_Actividad1 : MonoBehaviour
 {
-   
 
     public GameObject generador;
     public List<Sprite> imagenes;

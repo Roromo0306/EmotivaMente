@@ -42,7 +42,6 @@ public class Canvas_N1_A1 : MonoBehaviour
         {
             canvas.enabled=true;
             //Time.timeScale = 0;
-            Cursor.visible = true;
 
             if (n.final == 1) //Final perfecto
             {

@@ -59,20 +59,14 @@ public class Manager_N2_A1 : MonoBehaviour
     private BoxCollider2D boxCollider;
     private RectTransform cursorRect;
 
-    [HideInInspector] public int fase = 0, faseAct = 0;
+     public int fase = 0, faseAct = 0;
     [HideInInspector] public bool Fase = false, canvas = false;
-    [HideInInspector] public bool cursor = false;
 
     void Start()
     {
-
-        cursor = false; //Desactivo cursor
-        Cursor.visible = true; //Activo el cursor para que se vea
-
         // Obtiene componentes
         generadorEjemploRenderer = generador.GetComponent<Image>();
         generadorEjemploCollider = generador.GetComponent<Collider2D>();
-        cursorRect = cursorImage ? cursorImage.GetComponent<RectTransform>() : null;
 
         // Guarda posición original del generador
         originalPositionEjemplo = generador.transform.position;
@@ -84,19 +78,14 @@ public class Manager_N2_A1 : MonoBehaviour
         generadorEjemploCollider.enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Canvas_N2_A1 can = canva.GetComponent<Canvas_N2_A1>();
         CanvasFinal_N2_A1 canFin = canvaFin.GetComponent<CanvasFinal_N2_A1>();
 
-        //Actualiza posición del cursor personalizado
-        if (cursor)
-        {
 
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorld.z = 0;
-            //cursorImage.transform.position = mouseWorld;
 
             //Detecta clic inicial
             if (Input.GetMouseButtonDown(0))
@@ -121,8 +110,6 @@ public class Manager_N2_A1 : MonoBehaviour
                 generadorEjemploCollider.enabled = false; //Deshabilito el colider y el renderer del generador de ejemplo
                 generadorEjemploRenderer.enabled = false;
                 fase = 0; //Vuelvo a poner la fase en 0
-                cursor = false; //Desactivo la imagen de la mano (para que no lo siga)
-                Cursor.visible = true; //Activo el cursor para que se vea
             }
 
             //Condición de fin al terminar la actividad principal
@@ -134,15 +121,13 @@ public class Manager_N2_A1 : MonoBehaviour
                 generadorEjemploCollider.enabled = false; //Desabilito el colider y el renderer del generador de ejemplo
                 generadorEjemploRenderer.enabled = false;
                 fase = 0; //Vuelvo a poner la fase en 0
-                cursor = false; //Desactivo cursor
-                Cursor.visible = true; //Activo el cursor para que se vea
 
                 can.empezado = true;
             }
 
 
         }
-    }
+    
 
     //Corrutina del ejemplo
     //Corrutina del ejemplo
