@@ -130,7 +130,6 @@ public class Manager_N2_A1 : MonoBehaviour
     
 
     //Corrutina del ejemplo
-    //Corrutina del ejemplo
     public IEnumerator Act2Ejemplo()
     {
         Detector_Colision_N2_A1 gen_ejemplo = generador.GetComponent<Detector_Colision_N2_A1>();
@@ -148,7 +147,7 @@ public class Manager_N2_A1 : MonoBehaviour
                 generador.transform.localScale = escalasEjemplo[i];
 
                 fase++;
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(7f);
             }
         }
 
@@ -156,7 +155,6 @@ public class Manager_N2_A1 : MonoBehaviour
         yield break;
     }
 
-    //Corrutina de la actividad
     //Corrutina de la actividad
     public IEnumerator Act2()
     {
@@ -175,7 +173,7 @@ public class Manager_N2_A1 : MonoBehaviour
                 generador.transform.localScale = escalasActividad[i];
 
                 faseAct++;
-                yield return new WaitForSeconds(7f);
+                yield return new WaitForSeconds(4f);
             }
         }
 

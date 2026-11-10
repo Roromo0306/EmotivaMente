@@ -93,7 +93,7 @@ public class Manager_N2_A2 : MonoBehaviour
             imagenGenerador.sprite = sprite; //Pongo la imagen del sprite 
             generador.transform.position = originalPosition; //Reposiciono la imagen en su lugar original
             
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(7f);
             contador++;
         }
 
@@ -110,7 +110,7 @@ public class Manager_N2_A2 : MonoBehaviour
             imagenGenerador.sprite = sprite; //Pongo la imagen del sprite 
             generador.transform.position = originalPosition; //Reposiciono la imagen en su lugar original
 
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(4f);
             contador++;
         }
 

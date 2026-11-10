@@ -3029,8 +3029,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 433.9}
-  m_SizeDelta: {x: 621.2973, y: 54.131}
+  m_AnchoredPosition: {x: 0.000087738, y: 433.9}
+  m_SizeDelta: {x: 733.1428, y: 54.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310735786
 MonoBehaviour:
@@ -3079,8 +3079,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 50.58
+  m_fontSizeBase: 50.58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4466,7 +4466,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0bcdfc64345e8fb4292d1d64b764b479, type: 3}
   - {fileID: 416513624, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
   - {fileID: -597335168, guid: 7bfd002f8ac155f4cb7dcb2db54a7216, type: 3}
-  - {fileID: 1455398161, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
+  - {fileID: 21300000, guid: 779281e8ad4803e45896bb992602fdb3, type: 3}
   - {fileID: -1981112049, guid: ed508d0f124c3f2419ea9e656819c2be, type: 3}
   texto1: {fileID: 387666275}
   texto2: {fileID: 1156500088}

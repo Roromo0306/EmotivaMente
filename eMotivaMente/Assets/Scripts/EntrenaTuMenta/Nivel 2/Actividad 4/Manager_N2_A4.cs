@@ -147,7 +147,7 @@ public class Manager_N2_A4 : MonoBehaviour
         {
             botonEj.image.sprite = ImagenesSpriteEj[Paso]; //Aplico la imagen de la lista en el sprite
 
-            yield return new WaitForSeconds(10f); //Espero 10 segundos
+            yield return new WaitForSeconds(7f); //Espero 7 segundos
 
             if (Paso < ImagenesSpriteEj.Count - 1) //Mientras no haya llegado al final paso aumenta en uno
             {
@@ -180,7 +180,7 @@ public class Manager_N2_A4 : MonoBehaviour
         { 
             boton.image.sprite = ImagenesSprite[Paso]; //Aplico la imagen de la lista en el sprite
 
-            yield return new WaitForSeconds(10f); //Espero 10 segundos
+            yield return new WaitForSeconds(4f); //Espero 4 segundos
 
             textosInstrucAct.gameObject.SetActive(false); //Desactivo los textos 
 

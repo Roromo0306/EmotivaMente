@@ -118,7 +118,7 @@ public class ManagerN4_A1 : MonoBehaviour
             pulsado = false;
 
             float t = 0;
-            while (t < 5f && !pulsado)
+            while (t < 3.5f && !pulsado)
             {
                 t += Time.deltaTime;
                 yield return null;

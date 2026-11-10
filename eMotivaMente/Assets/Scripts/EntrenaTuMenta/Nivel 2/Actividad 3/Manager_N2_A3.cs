@@ -133,7 +133,7 @@ public class Manager_N2_A3 : MonoBehaviour
             // Cambiar escala
             generador.transform.localScale = escalasEjemplo[i];
 
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(7f);
 
             contador++;
         }
@@ -157,7 +157,7 @@ public class Manager_N2_A3 : MonoBehaviour
             // Cambiar escala
             generador.transform.localScale = escalasActividad[i];
 
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(4f);
 
             contador++;
         }

@@ -69,7 +69,7 @@ public class Manager_N4_A5 : MonoBehaviour
 
             //Debug.Log("[SPAWN] Prendas generadas");
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(3.5f);
         }
 
         Evaluar();
