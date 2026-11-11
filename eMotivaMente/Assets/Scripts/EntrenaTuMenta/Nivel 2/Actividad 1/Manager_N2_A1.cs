@@ -21,16 +21,16 @@ public class Manager_N2_A1 : MonoBehaviour
     new Vector3(1.69f, 1.69f, 1.69f), // Zapatos
     new Vector3(1.47f, 1.47f, 1.47f), // socks
     new Vector3(1.69f, 1.69f, 1.69f), // zapatillas2
-    new Vector3(3.45f, 3.45f, 3.45f), // sportSuit
+    new Vector3(4.37f, 4.37f, 4.37f), // sportSuit
     new Vector3(1.15f, 1.15f, 1.15f), // corbata2
     new Vector3(1.07f, 1.07f, 1.07f), // tenisBall
     new Vector3(3.54f, 3.54f, 3.54f), // tenisStik
-    new Vector3(0.91f, 0.91f, 0.91f), // lazo2
+    new Vector3(1.7f, 1.7f, 1.7f), // cuchara
     new Vector3(2.12f, 2.12f, 2.12f), // BasketBall
     new Vector3(2.53f, 2.53f, 2.53f), // tShirt
     new Vector3(1.38f, 1.38f, 1.38f), // hat
     new Vector3(1.17f, 1.17f, 1.17f), // bantk
-    new Vector3(1.81f, 1.81f, 1.81f)  // planta
+    new Vector3(2.59f, 2.59f, 2.59f)  // planta
 };
 
     [Header("Escalas Ejemplo")]

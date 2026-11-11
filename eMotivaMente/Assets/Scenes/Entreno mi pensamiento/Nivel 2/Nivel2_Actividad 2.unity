@@ -982,17 +982,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736455402}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2121212, y: 1.2121212, z: 1.2121212}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1289207516}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 816.4341, y: 456.28333}
-  m_SizeDelta: {x: 229.2766, y: 123.1971}
+  m_AnchoredPosition: {x: 814.2982, y: 437.33}
+  m_SizeDelta: {x: 225.7524, y: 154.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736455404
 MonoBehaviour:
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2f53d4605b5c51429de25843fea0646, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4a07c97ebc03ec418973bece1e6a42f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1952,7 +1952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1163331833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pantal\xF3n, peine, donut, cuchillo, jab\xF3n de manos y gorra."
+  m_text: "Pantal\xF3n, peine, donut, gorra, jab\xF3n de manos y gorra."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2341,7 +2341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1204398161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3581,7 +3581,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c8c89e16bfc6db148aaf25a482388734, type: 3}
   - {fileID: 21300000, guid: 1044a105e0eae1443bbff007cc528d7c, type: 3}
   - {fileID: 21300000, guid: 184d9583ce6762e4192642a663ec7a4a, type: 3}
-  - {fileID: 21300000, guid: c415a730f3f26e442bcb7d0813dab6f1, type: 3}
+  - {fileID: 21300000, guid: 17e18459cebd35a408ce2f0f7b10c561, type: 3}
   - {fileID: -154164376, guid: 1db398961940438428fc8f7043b808ba, type: 3}
   - {fileID: 21300000, guid: bd356c36abe9eab4eb47b0017de5f009, type: 3}
   - {fileID: 21300000, guid: 779281e8ad4803e45896bb992602fdb3, type: 3}

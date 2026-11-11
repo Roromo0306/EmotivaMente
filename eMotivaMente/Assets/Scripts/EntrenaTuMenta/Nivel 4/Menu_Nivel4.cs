@@ -16,6 +16,13 @@ public class Menu_Nivel4 : MonoBehaviour
     public Button N5;
     public Button Salida;
 
+    [Header("Completados")]
+    public GameObject A1C;
+    public GameObject A2C;
+    public GameObject A3C;
+    public GameObject A4C;
+    public GameObject A5C;
+
 
     public AudioSource fuenteAudio;
     public TextMeshProUGUI textoAudio;
@@ -30,6 +37,7 @@ public class Menu_Nivel4 : MonoBehaviour
             Color c = N1.targetGraphic.color;
             c.a = 138f / 255f;
             N1.targetGraphic.color = c;
+            A1C.SetActive(true);
         }
 
         if (n2)
@@ -37,6 +45,7 @@ public class Menu_Nivel4 : MonoBehaviour
             Color c = N2.targetGraphic.color;
             c.a = 138f / 255f;
             N2.targetGraphic.color = c;
+            A2C.SetActive(true);
         }
 
         if (n3)
@@ -44,6 +53,7 @@ public class Menu_Nivel4 : MonoBehaviour
             Color c = N3.targetGraphic.color;
             c.a = 138f / 255f;
             N3.targetGraphic.color = c;
+            A3C.SetActive(true);
         }
 
         if (n4)
@@ -51,6 +61,7 @@ public class Menu_Nivel4 : MonoBehaviour
             Color c = N4.targetGraphic.color;
             c.a = 138f / 255f;
             N4.targetGraphic.color = c;
+            A4C.SetActive(true);
         }
 
         if (n5)
@@ -59,6 +70,7 @@ public class Menu_Nivel4 : MonoBehaviour
             c.a = 138f / 255f;
             N5.targetGraphic.color = c;
             Salida.gameObject.SetActive(true);
+            A5C.SetActive(true);
         }
     }
 

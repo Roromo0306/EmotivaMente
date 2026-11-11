@@ -76,7 +76,7 @@ public class DetectorColision_N2_A2 : MonoBehaviour
         {
             if (can.modo == 2)
             {
-                if (sp.sprite.name == "pantalon" || sp.sprite.name == "peine" || sp.sprite.name == "Donut-g 65b 8129e 2_1280_0" || sp.sprite.name == "cuchillo" || sp.sprite.name == "jabon" || sp.sprite.name == "gorra")
+                if (sp.sprite.name == "pantalon" || sp.sprite.name == "peine" || sp.sprite.name == "Donut-g 65b 8129e 2_1280_0" || sp.sprite.name == "gorra" || sp.sprite.name == "jabon" || sp.sprite.name == "gorra")
                 {
                     puntosPositivos++;
                 }

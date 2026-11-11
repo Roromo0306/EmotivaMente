@@ -116,6 +116,9 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
         modo = 2;
         Audio.gameObject.SetActive(false);
         EsteCanvas.enabled = false;
+        Actividad.gameObject.SetActive(false);
+        Ejemplo.gameObject.SetActive(false);
+        
     }
 
     public void reintentar()
@@ -140,7 +143,7 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
 
     }
 
-    public void ayuda()
+    /*public void ayuda()
     {
         StartCoroutine(texAy());
     }
@@ -152,5 +155,5 @@ public class CanvasMenu_N2_A2 : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         textoAyuda.gameObject.SetActive(false);
-    }
+    }*/
 }
